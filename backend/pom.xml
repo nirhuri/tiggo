@@ -5,6 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
     <modules>
         <module>transaction-service</module>
+        <module>common</module>
+        <module>common/common-domain</module>
     </modules>
 
     <parent>
@@ -24,7 +26,40 @@
         <maven-compiler-plugin.version>3.9.0</maven-compiler-plugin.version>
     </properties>
 
-    <dependencyManagement></dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>transaction-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>transaction-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>transaction-application</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>transaction-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>transaction-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.saver-system</groupId>
+                <artifactId>common-domain</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
     </dependencies>

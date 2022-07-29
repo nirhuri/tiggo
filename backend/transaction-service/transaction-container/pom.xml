@@ -14,4 +14,27 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-domain-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-application-service</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-application</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-dataaccess</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-messaging</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

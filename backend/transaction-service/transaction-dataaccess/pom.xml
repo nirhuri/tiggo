@@ -14,4 +14,11 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-application-service</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

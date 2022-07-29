@@ -14,4 +14,11 @@
     <properties>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>common-domain</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>

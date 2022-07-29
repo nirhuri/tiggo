@@ -7,17 +7,21 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="transaction-application" />
+        <module name="common" />
+        <module name="transaction-domain-core" />
+        <module name="common-domain" />
         <module name="transaction-messaging" />
         <module name="transaction-application-service" />
         <module name="transaction-container" />
         <module name="transaction-dataaccess" />
-        <module name="transaction-domain-core" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="backend" options="" />
+      <module name="common" options="-parameters" />
+      <module name="common-domain" options="-parameters" />
       <module name="transaction-application" options="-parameters" />
       <module name="transaction-application-service" options="-parameters" />
       <module name="transaction-container" options="-parameters" />

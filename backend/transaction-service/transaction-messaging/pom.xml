@@ -12,9 +12,13 @@
     <artifactId>transaction-messaging</artifactId>
 
     <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.saver-system</groupId>
+            <artifactId>transaction-application-service</artifactId>
+        </dependency>
+    </dependencies>
 
 </project>
