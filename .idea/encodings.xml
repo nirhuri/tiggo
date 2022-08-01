@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/backend/common/common-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/common/common-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/common/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/common/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-application/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-application/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-container/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-container/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-dataaccess/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-dataaccess/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-application-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-application-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain-core/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain-core/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-messaging/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/backend/transaction-service/transaction-messaging/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

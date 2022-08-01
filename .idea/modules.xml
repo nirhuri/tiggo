@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/backend/common/common.iml" filepath="$PROJECT_DIR$/backend/common/common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/common/common-domain/common-domain.iml" filepath="$PROJECT_DIR$/backend/common/common-domain/common-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/financial-managment-backend.iml" filepath="$PROJECT_DIR$/.idea/financial-managment-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/saver-system.iml" filepath="$PROJECT_DIR$/backend/saver-system.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-application/transaction-application.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-application/transaction-application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-application-service/transaction-application-service.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-application-service/transaction-application-service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-container/transaction-container.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-container/transaction-container.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-dataaccess/transaction-dataaccess.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-dataaccess/transaction-dataaccess.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain-core/transaction-domain-core.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-domain/transaction-domain-core/transaction-domain-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-messaging/transaction-messaging.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-messaging/transaction-messaging.iml" />
+      <module fileurl="file://$PROJECT_DIR$/backend/transaction-service/transaction-service.iml" filepath="$PROJECT_DIR$/backend/transaction-service/transaction-service.iml" />
+    </modules>
+  </component>
+</project>
