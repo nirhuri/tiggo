@@ -1,1 +1,1 @@
-# financial-managment-backend
+# ddd-playground-backend
