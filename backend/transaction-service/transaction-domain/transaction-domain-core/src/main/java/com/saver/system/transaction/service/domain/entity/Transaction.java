@@ -7,7 +7,7 @@ import com.saver.system.domain.valueobject.TransactionId;
 import com.saver.system.domain.valueobject.UserId;
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
-import com.saver.system.transaction.service.domain.valueobject.transactionStrategy.TransactionStrategy;
+import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.TransactionStrategy;
 
 //fgfgf
 public abstract class Transaction extends AggregateRoot<TransactionId> {

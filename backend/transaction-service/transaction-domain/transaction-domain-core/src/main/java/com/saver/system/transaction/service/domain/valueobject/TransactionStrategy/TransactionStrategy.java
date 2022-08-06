@@ -1,4 +1,4 @@
-package com.saver.system.transaction.service.domain.valueobject.transactionStrategy;
+package com.saver.system.transaction.service.domain.valueobject.TransactionStrategy;
 
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
 
