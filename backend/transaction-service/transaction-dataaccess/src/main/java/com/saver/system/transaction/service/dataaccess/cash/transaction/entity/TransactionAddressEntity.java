@@ -19,7 +19,7 @@ public class TransactionAddressEntity {
     private UUID id;
 
     @OneToMany(mappedBy = "transaction")
-    private CashTransaction transaction;
+    private CashTransactionEntity transaction;
 
     private String businessName;
 

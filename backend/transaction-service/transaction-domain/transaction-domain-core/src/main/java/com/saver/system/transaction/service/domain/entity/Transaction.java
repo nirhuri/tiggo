@@ -26,6 +26,22 @@ public abstract class Transaction extends AggregateRoot<TransactionId> {
         this.transactionType = transactionType;
     }
 
+    public AccountId getAccountId() {
+        return accountId;
+    }
+
+    public UserId getUserId() {
+        return userId;
+    }
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public TransactionAddress getTransactionAddress() {
+        return transactionAddress;
+    }
+
     public TransactionType getTransactionType() {
         return transactionType.getTransactionType();
     }

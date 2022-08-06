@@ -6,6 +6,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.Objects;
 import java.util.UUID;
 
 @Getter
@@ -21,6 +22,7 @@ public class CashTransactionEntity {
     private UUID userId;
     private UUID accountId;
     private BigDecimal transactionAmount;
+    @Enumerated(EnumType.STRING)
     private TransactionType transactionType;
     private String failureMessages;
 
@@ -28,4 +30,18 @@ public class CashTransactionEntity {
     @ManyToOne()
     @JoinColumn(name = "TRANSACTION_ID")
     private TransactionAddressEntity transactionAddress;
+
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        CashTransactionEntity that = (CashTransactionEntity) o;
+        return id.equals(that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
 }
