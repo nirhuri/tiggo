@@ -2,9 +2,9 @@ package com.saver.system.transaction.service.domain.valueobject.TransactionStrat
 
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
 
-public class TransactionPayments extends TransactionStrategy {
+public class CashTransaction extends TransactionStrategy {
     @Override
     public TransactionType getTransactionType() {
-        return TransactionType.PAYMENTS;
+        return TransactionType.CASH;
     }
 }
