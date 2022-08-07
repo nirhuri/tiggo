@@ -1,6 +1,7 @@
 package com.saver.system.transaction.service.application.rest;
 
 
+import com.saver.system.transaction.service.domain.ports.input.service.TransactionApplicationService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -10,5 +11,5 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/transactions", produces = "application/vnd.api.v1+json")
 public class TransactionController {
 
-    //private final TransactionApplicationService transactionApplicationService;
+    private final TransactionApplicationService transactionApplicationService;
 }
