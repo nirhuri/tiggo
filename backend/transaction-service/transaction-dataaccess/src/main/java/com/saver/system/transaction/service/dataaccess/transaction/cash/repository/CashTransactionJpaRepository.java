@@ -1,6 +1,6 @@
-package com.saver.system.transaction.service.dataaccess.cash.transaction.repository;
+package com.saver.system.transaction.service.dataaccess.transaction.cash.repository;
 
-import com.saver.system.transaction.service.dataaccess.cash.transaction.entity.CashTransactionEntity;
+import com.saver.system.transaction.service.dataaccess.transaction.cash.entity.CashTransactionEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

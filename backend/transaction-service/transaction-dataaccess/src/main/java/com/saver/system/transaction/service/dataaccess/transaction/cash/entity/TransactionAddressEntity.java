@@ -1,6 +1,5 @@
-package com.saver.system.transaction.service.dataaccess.cash.transaction.entity;
+package com.saver.system.transaction.service.dataaccess.transaction.cash.entity;
 
-import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
 import lombok.*;
 
 import javax.persistence.*;

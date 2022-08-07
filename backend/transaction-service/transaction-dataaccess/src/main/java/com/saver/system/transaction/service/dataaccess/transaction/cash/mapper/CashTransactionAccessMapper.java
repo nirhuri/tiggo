@@ -1,11 +1,11 @@
-package com.saver.system.transaction.service.dataaccess.cash.transaction.mapper;
+package com.saver.system.transaction.service.dataaccess.transaction.cash.mapper;
 
 import com.saver.system.domain.valueobject.AccountId;
 import com.saver.system.domain.valueobject.Money;
 import com.saver.system.domain.valueobject.TransactionId;
 import com.saver.system.domain.valueobject.UserId;
-import com.saver.system.transaction.service.dataaccess.cash.transaction.entity.CashTransactionEntity;
-import com.saver.system.transaction.service.dataaccess.cash.transaction.entity.TransactionAddressEntity;
+import com.saver.system.transaction.service.dataaccess.transaction.cash.entity.CashTransactionEntity;
+import com.saver.system.transaction.service.dataaccess.transaction.cash.entity.TransactionAddressEntity;
 import com.saver.system.transaction.service.domain.entity.Transaction;
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
 import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
