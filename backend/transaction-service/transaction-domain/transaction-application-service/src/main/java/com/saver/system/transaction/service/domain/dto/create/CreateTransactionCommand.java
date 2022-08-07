@@ -16,7 +16,7 @@ public class CreateTransactionCommand {
     @NotNull
     private final UUID userId;
     @NotNull
-    private final UUID customerId;
+    private final UUID accountId;
     @NotNull
     private final BigDecimal transactionAmount;
     @NotNull
