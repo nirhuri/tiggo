@@ -15,10 +15,10 @@ public abstract class Transaction extends AggregateRoot<TransactionId> {
     private final AccountId accountId;
     private final TransactionAddress transactionAddress;
     private final Money money;
-    private final TransactionStrategy transactionType;
+    private final TransactionType transactionType;
 
     public Transaction(UserId userId, AccountId accountId, TransactionAddress transactionAddress, Money money,
-            TransactionStrategy transactionType) {
+            TransactionType transactionType) {
         this.userId = userId;
         this.accountId = accountId;
         this.transactionAddress = transactionAddress;
@@ -43,6 +43,6 @@ public abstract class Transaction extends AggregateRoot<TransactionId> {
     }
 
     public TransactionType getTransactionType() {
-        return transactionType.getTransactionType();
+        return transactionType;
     }
 }

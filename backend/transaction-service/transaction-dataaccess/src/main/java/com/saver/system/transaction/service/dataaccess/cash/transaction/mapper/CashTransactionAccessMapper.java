@@ -1,9 +1,14 @@
 package com.saver.system.transaction.service.dataaccess.cash.transaction.mapper;
 
+import com.saver.system.domain.valueobject.AccountId;
+import com.saver.system.domain.valueobject.Money;
+import com.saver.system.domain.valueobject.TransactionId;
+import com.saver.system.domain.valueobject.UserId;
 import com.saver.system.transaction.service.dataaccess.cash.transaction.entity.CashTransactionEntity;
 import com.saver.system.transaction.service.dataaccess.cash.transaction.entity.TransactionAddressEntity;
 import com.saver.system.transaction.service.domain.entity.Transaction;
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
+import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -23,10 +28,24 @@ public class CashTransactionAccessMapper {
         return cashTransactionEntity;
     }
 
+    public CashTransaction cashTransactionEntityToCashTransaction(CashTransactionEntity cashTransactionEntity) {
+        return CashTransaction.builder()
+                .id(new TransactionId(cashTransactionEntity.getId()))
+                .userId(new UserId(cashTransactionEntity.getUserId()))
+                .accountId(new AccountId(cashTransactionEntity.getAccountId()))
+                .transactionAddress(transactionAddressEntityToTransactionAddress(cashTransactionEntity.getTransactionAddress()))
+                .money(new Money(cashTransactionEntity.getTransactionAmount())).build();
+    }
+
     private TransactionAddressEntity transactionAddressToAddressEntity(TransactionAddress transactionAddress) {
         return TransactionAddressEntity.builder()
                 .id(transactionAddress.getId())
                 .businessName(transactionAddress.getBusinessName())
                 .build();
+    }
+
+    private TransactionAddress transactionAddressEntityToTransactionAddress(TransactionAddressEntity address) {
+        return new TransactionAddress(address.getId(),
+                address.getBusinessName());
     }
 }
