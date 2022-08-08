@@ -1,6 +1,7 @@
 package com.saver.system.transaction.service.domain.dto.create;
 
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
+import com.saver.system.transaction.service.domain.valueobject.TransactionType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -21,4 +22,10 @@ public class CreateTransactionCommand {
     private final BigDecimal transactionAmount;
     @NotNull
     private final TransactionAddress address;
+    @NotNull
+    private final TransactionType transactionType;
+    @NotNull
+    private final String transactionDataType;
+
+
 }
