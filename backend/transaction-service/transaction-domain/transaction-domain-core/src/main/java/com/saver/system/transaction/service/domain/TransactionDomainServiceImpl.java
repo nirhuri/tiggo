@@ -3,11 +3,9 @@ package com.saver.system.transaction.service.domain;
 import com.saver.system.transaction.service.domain.entity.Transaction;
 import com.saver.system.transaction.service.domain.event.TransactionCreatedEvent;
 
-public class TransactionDomainServiceImpl implements TransactionDomainService {
+public class TransactionDomainServiceImpl  implements  TransactionDomainService {
 
     public TransactionCreatedEvent validateAndInitiateTransaction(Transaction transaction) {
-        transaction.validateTransaction();
-
         return new TransactionCreatedEvent(transaction);
     }
 
