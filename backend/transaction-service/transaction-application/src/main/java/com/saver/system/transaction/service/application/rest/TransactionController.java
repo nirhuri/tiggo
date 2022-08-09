@@ -25,7 +25,9 @@ public class TransactionController {
     public ResponseEntity<CreateTransactionResponse> createTransaction(@RequestBody CreateTransactionCommand createTransactionCommand) {
         log.info("Creating transaction for user: {} at account: {}",
                 createTransactionCommand.getUserId(), createTransactionCommand.getAccountId());
+
         CreateTransactionResponse createTransactionResponse = transactionApplicationService.createTransaction(createTransactionCommand);
+
         log.info("Transaction created with for user id: {}", createTransactionResponse.getUserId());
         return ResponseEntity.ok(createTransactionResponse);
     }
