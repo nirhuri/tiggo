@@ -4,7 +4,7 @@ import com.saver.system.domain.valueobject.UserId;
 import com.saver.system.transaction.service.dataaccess.transaction.cash.mapper.CashTransactionAccessMapper;
 import com.saver.system.transaction.service.dataaccess.transaction.cash.repository.CashTransactionJpaRepository;
 import com.saver.system.transaction.service.domain.ports.output.repository.CashTransactionRepository;
-import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
+import com.saver.system.transaction.service.domain.entity.CashTransaction;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;

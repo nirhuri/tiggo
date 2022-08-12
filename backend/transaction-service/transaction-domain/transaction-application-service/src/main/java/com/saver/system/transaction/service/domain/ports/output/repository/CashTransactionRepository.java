@@ -1,7 +1,7 @@
 package com.saver.system.transaction.service.domain.ports.output.repository;
 
 import com.saver.system.domain.valueobject.UserId;
-import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
+import com.saver.system.transaction.service.domain.entity.CashTransaction;
 
 import java.util.Optional;
 

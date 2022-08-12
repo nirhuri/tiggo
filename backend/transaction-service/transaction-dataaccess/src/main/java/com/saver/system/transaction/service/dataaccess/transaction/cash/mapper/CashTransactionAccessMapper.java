@@ -8,7 +8,7 @@ import com.saver.system.transaction.service.dataaccess.transaction.cash.entity.C
 import com.saver.system.transaction.service.dataaccess.transaction.cash.entity.TransactionAddressEntity;
 import com.saver.system.transaction.service.domain.entity.Transaction;
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
-import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.CashTransaction;
+import com.saver.system.transaction.service.domain.entity.CashTransaction;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -29,12 +29,12 @@ public class CashTransactionAccessMapper {
     }
 
     public CashTransaction cashTransactionEntityToCashTransaction(CashTransactionEntity cashTransactionEntity) {
-        return CashTransaction.builder()
-                .id(new TransactionId(cashTransactionEntity.getId()))
+        return (CashTransaction) CashTransaction.builder()
+                .transactionId(new TransactionId(cashTransactionEntity.getId()))
                 .userId(new UserId(cashTransactionEntity.getUserId()))
                 .accountId(new AccountId(cashTransactionEntity.getAccountId()))
                 .transactionAddress(transactionAddressEntityToTransactionAddress(cashTransactionEntity.getTransactionAddress()))
-                .money(new Money(cashTransactionEntity.getTransactionAmount())).build();
+                .amount(new Money(cashTransactionEntity.getTransactionAmount())).build();
     }
 
     private TransactionAddressEntity transactionAddressToAddressEntity(TransactionAddress transactionAddress) {

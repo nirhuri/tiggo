@@ -8,7 +8,7 @@ import com.saver.system.domain.valueobject.UserId;
 import com.saver.system.transaction.service.domain.exception.TransactionDomainException;
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
-import com.saver.system.transaction.service.domain.valueobject.TransactionStrategy.TransactionStrategy;
+
 
 //fgfgf
 public  class Transaction extends AggregateRoot<TransactionId> {
@@ -16,8 +16,8 @@ public  class Transaction extends AggregateRoot<TransactionId> {
     private final AccountId accountId;
     private final TransactionAddress transactionAddress;
     private final Money amount;
-    private final TransactionType transactionType;
-    private final TransactionStrategy transactionStrategy;
+    protected  TransactionType transactionType;
+
     private  final  String Category;
 
     public Transaction(Builder builder) {
@@ -26,11 +26,10 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         this.accountId = builder.accountId;
         this.transactionAddress = builder.transactionAddress;
         this.amount = builder.amount;
-        this.transactionType = builder.transactionType;
-        this.transactionStrategy = builder.transactionStrategy;
         this.Category = builder.category;
+        this.transactionType = builder.transactionType;
     }
-
+     public TransactionType getTransactionType(){return transactionType;};//need to be  method
     public AccountId getAccountId() {
         return accountId;
     }
@@ -47,13 +46,9 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         return transactionAddress;
     }
 
-    public TransactionType getTransactionType() {
-        return transactionType;
-    }
 
-    public TransactionStrategy getTransactionStrategy() {
-        return transactionStrategy;
-    }
+
+
     public String getCategory() {
         return Category;
     }
@@ -77,8 +72,8 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         private AccountId accountId;
         private TransactionAddress transactionAddress;
         private Money amount;
-        private TransactionType transactionType;
-        private TransactionStrategy transactionStrategy;
+        protected TransactionType transactionType;
+
         private TransactionId transactionId;
 
         private String category;
@@ -103,10 +98,7 @@ public  class Transaction extends AggregateRoot<TransactionId> {
             this.transactionType = transactionType;
             return this;
         }
-        public Builder transactionStrategy(TransactionStrategy transactionStrategy) {
-            this.transactionStrategy = transactionStrategy;
-            return this;
-        }
+
         public Builder transactionId(TransactionId transactionId) {
             this.transactionId = transactionId;
             return this;
