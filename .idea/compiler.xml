@@ -8,8 +8,8 @@
         <outputRelativeToContentRoot value="true" />
         <module name="transaction-application" />
         <module name="common" />
-        <module name="transaction-domain-core" />
         <module name="common-domain" />
+        <module name="transaction-domain-core" />
         <module name="transaction-messaging" />
         <module name="transaction-application-service" />
         <module name="transaction-container" />
