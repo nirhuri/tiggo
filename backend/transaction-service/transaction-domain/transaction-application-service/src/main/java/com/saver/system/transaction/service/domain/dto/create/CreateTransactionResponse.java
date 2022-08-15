@@ -23,4 +23,8 @@ public class CreateTransactionResponse {
     private final TransactionAddress transactionAddress;
     @NotNull
     private final String message;
+    @NotNull
+    private final String transactionDataType;
+
+
 }

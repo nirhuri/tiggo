@@ -39,6 +39,7 @@
       <module name="transaction-application-service" options="-parameters" />
       <module name="transaction-container" options="-parameters" />
       <module name="transaction-dataaccess" options="-parameters" />
+      <module name="transaction-domain" options="-parameters" />
       <module name="transaction-domain-core" options="-parameters" />
       <module name="transaction-messaging" options="-parameters" />
     </option>
