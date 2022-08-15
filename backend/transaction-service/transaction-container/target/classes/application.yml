@@ -1,0 +1,27 @@
+server:
+  port: 8181
+
+logging:
+  level:
+    com.saver.system: DEBUG
+
+# kafka topics here
+transaction-service:
+  example-topic-name: topic-name
+
+spring:
+  jpa:
+    open-in-view: false
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQL9Dialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+  datasource:
+    url: ${postgres://quqbmcmrexuyun:443fb2119806be88e5796613044edffdd9bef9d8416b0ddd9b0f8e14d0528297@ec2-63-35-156-160.eu-west-1.compute.amazonaws.com:5432/debffeiq1u4b0d}
+    username: ${quqbmcmrexuyun}
+    password: ${443fb2119806be88e5796613044edffdd9bef9d8416b0ddd9b0f8e14d0528297}
+    driver-class-name: org.postgresql.Driver
+    platform: postgres
+    #schema: classpath:init-schema.sql
+    initialization-mode: always

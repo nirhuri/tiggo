@@ -7,7 +7,7 @@ public class TransactionDomainServiceImpl  implements  TransactionDomainService 
 
     public TransactionCreatedEvent validateAndInitiateTransaction(Transaction transaction) {
 
-         transaction.validate();
+        transaction.validate();
 
         return new TransactionCreatedEvent(transaction);
     }
