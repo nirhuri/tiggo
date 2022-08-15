@@ -6,7 +6,7 @@ import com.saver.system.transaction.service.domain.event.TransactionCreatedEvent
 public class TransactionDomainServiceImpl implements TransactionDomainService {
 
         public TransactionCreatedEvent validateAndInitiateTransaction(Transaction transaction) {
-                transaction.validateTransaction();
+                transaction.validate();
 
                 return new TransactionCreatedEvent(transaction);
         }
