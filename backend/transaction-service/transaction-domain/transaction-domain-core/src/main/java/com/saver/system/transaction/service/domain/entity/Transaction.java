@@ -10,7 +10,6 @@ import com.saver.system.transaction.service.domain.valueobject.TransactionAddres
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
 
 
-//fgfgf
 public  class Transaction extends AggregateRoot<TransactionId> {
     private final UserId userId;
     private final AccountId accountId;
