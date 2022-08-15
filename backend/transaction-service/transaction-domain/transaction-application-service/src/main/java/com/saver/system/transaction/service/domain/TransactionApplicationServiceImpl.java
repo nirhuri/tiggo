@@ -15,7 +15,7 @@ public class TransactionApplicationServiceImpl  implements TransactionApplicatio
     public TransactionApplicationServiceImpl(TransactionCreateCommandHandler transactionCreateCommandHandler) {
         this.transactionCreateCommandHandler = transactionCreateCommandHandler;
     }
-    public CreateTransactionResponse createTransaction( CreateTransactionCommand createTransactionCommand) {
+    public CreateTransactionResponse createTransaction(CreateTransactionCommand createTransactionCommand) {
         return transactionCreateCommandHandler.createTransaction(createTransactionCommand);
     }
 }

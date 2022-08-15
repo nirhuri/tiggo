@@ -14,7 +14,6 @@ public class CashTransaction extends Transaction {
        this.transactionType = TransactionType.CASH;
     }
 
-    @Override
     public TransactionType getTransactionType() {
         return TransactionType.CASH;
     }
