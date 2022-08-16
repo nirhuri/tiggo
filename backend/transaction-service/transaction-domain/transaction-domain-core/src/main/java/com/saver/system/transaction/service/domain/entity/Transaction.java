@@ -9,15 +9,14 @@ import com.saver.system.transaction.service.domain.exception.TransactionDomainEx
 import com.saver.system.transaction.service.domain.valueobject.TransactionAddress;
 import com.saver.system.transaction.service.domain.valueobject.TransactionType;
 
-
-public  class Transaction extends AggregateRoot<TransactionId> {
+public class Transaction extends AggregateRoot<TransactionId> {
     private final UserId userId;
     private final AccountId accountId;
     private final TransactionAddress transactionAddress;
     private final Money amount;
-    protected  TransactionType transactionType;
+    protected TransactionType transactionType;
 
-    private  final  String Category;
+    private final String Category;
 
     public Transaction(Builder builder) {
         super.setId(builder.transactionId);
@@ -28,7 +27,11 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         this.Category = builder.category;
         this.transactionType = builder.transactionType;
     }
-     public TransactionType getTransactionType(){return transactionType;};//need to be  method
+
+    public TransactionType getTransactionType() {
+        return transactionType;
+    };// need to be method
+
     public AccountId getAccountId() {
         return accountId;
     }
@@ -45,9 +48,6 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         return transactionAddress;
     }
 
-
-
-
     public String getCategory() {
         return Category;
     }
@@ -56,7 +56,8 @@ public  class Transaction extends AggregateRoot<TransactionId> {
 
         validateTotalAmount();
     }
-    private  void validateTotalAmount(){
+
+    private void validateTotalAmount() {
         if (amount == null || !amount.isGreaterThanZero()) {
             throw new TransactionDomainException("money amount must be greater than zero!");
         }
@@ -65,6 +66,7 @@ public  class Transaction extends AggregateRoot<TransactionId> {
     public static Builder builder() {
         return new Builder();
     }
+
     public static class Builder {
 
         private UserId userId;
@@ -76,10 +78,12 @@ public  class Transaction extends AggregateRoot<TransactionId> {
         private TransactionId transactionId;
 
         private String category;
+
         public Builder userId(UserId userId) {
             this.userId = userId;
             return this;
         }
+
         public Builder accountId(AccountId accountId) {
             this.accountId = accountId;
             return this;
@@ -89,10 +93,12 @@ public  class Transaction extends AggregateRoot<TransactionId> {
             this.transactionAddress = transactionAddress;
             return this;
         }
+
         public Builder amount(Money amount) {
             this.amount = amount;
             return this;
         }
+
         public Builder transactionType(TransactionType transactionType) {
             this.transactionType = transactionType;
             return this;
@@ -102,10 +108,12 @@ public  class Transaction extends AggregateRoot<TransactionId> {
             this.transactionId = transactionId;
             return this;
         }
+
         public Builder category(String category) {
             this.category = category;
             return this;
         }
+
         public Transaction build() {
             return new Transaction(this);
         }
