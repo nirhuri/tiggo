@@ -10,4 +10,9 @@ public class BeanConfiguration {
     public TransactionDomainService transactionDomainService() {
         return new TransactionDomainServiceImpl();
     }
+
+    @Bean
+    public TransactionCreateCommandHandler transactionCreateCommandHandler() {
+        return new TransactionCreateCommandHandler(transactionDomainService());
+    }
 }

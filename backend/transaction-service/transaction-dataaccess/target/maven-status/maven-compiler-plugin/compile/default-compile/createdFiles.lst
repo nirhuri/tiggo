@@ -1,7 +1,5 @@
-com\saver\system\transaction\service\dataaccess\transaction\cash\entity\CashTransactionEntity$CashTransactionEntityBuilder.class
-com\saver\system\transaction\service\dataaccess\transaction\cash\entity\TransactionAddressEntity$TransactionAddressEntityBuilder.class
-com\saver\system\transaction\service\dataaccess\transaction\cash\entity\TransactionAddressEntity.class
 com\saver\system\transaction\service\dataaccess\transaction\cash\adapter\CashTransactionRepositoryImpl.class
+com\saver\system\transaction\service\dataaccess\transaction\cash\entity\CashTransactionEntity$CashTransactionEntityBuilder.class
 com\saver\system\transaction\service\dataaccess\transaction\cash\mapper\CashTransactionAccessMapper.class
 com\saver\system\transaction\service\dataaccess\transaction\cash\entity\CashTransactionEntity.class
 com\saver\system\transaction\service\dataaccess\transaction\cash\repository\CashTransactionJpaRepository.class

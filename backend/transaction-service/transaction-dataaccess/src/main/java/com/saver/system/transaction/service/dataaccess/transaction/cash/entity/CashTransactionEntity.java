@@ -26,15 +26,16 @@ public class CashTransactionEntity {
     private String failureMessages;
 
     @Id
-    @ManyToOne()
-    @JoinColumn(name = "TRANSACTION_ID")
-    private TransactionAddressEntity transactionAddress;
-
+    // @ManyToOne()
+    // @JoinColumn(name = "TRANSACTION_ID")
+    // private TransactionAddressEntity transactionAddress;
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o)
+            return true;
+        if (o == null || getClass() != o.getClass())
+            return false;
         CashTransactionEntity that = (CashTransactionEntity) o;
         return id.equals(that.id);
     }
