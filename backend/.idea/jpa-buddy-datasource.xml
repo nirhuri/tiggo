@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project version="4">
-  <component name="JpbDataSourceConfig">
-    <data-sources>
-      <data-source id="2154d6f3-5511-443d-b23a-dcd25ab7d41a" name="backend" url="jdbc:postgresql://quqbmcmrexuyun:443fb2119806be88e5796613044edffdd9bef9d8416b0ddd9b0f8e14d0528297@ec2-63-35-156-160.eu-west-1.compute.amazonaws.com:5432/debffeiq1u4b0d" driverClass="org.postgresql.Driver" />
-    </data-sources>
-  </component>
-</project>
