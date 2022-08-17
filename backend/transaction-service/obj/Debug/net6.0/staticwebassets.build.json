@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "iev/owbXToYqDY7Y8oos8YL6UDz60A1lJHbG6swNjos=",
+  "Source": "transaction-service",
+  "BasePath": "_content/transaction-service",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

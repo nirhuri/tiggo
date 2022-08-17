@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\backend",
-    "\\backend\\transaction-service",
-    "\\backend\\transaction-service\\transaction-domain"
+    ""
   ],
-  "SelectedNode": "\\backend\\transaction-service\\transaction-messaging",
+  "SelectedNode": "\\backend.sln",
   "PreviewInSolutionExplorer": false
 }
