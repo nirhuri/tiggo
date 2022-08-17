@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "T0VshcZbo9nttAze/8Z5XrKnzqHjP7qa/S9yMu018QUVj6dRBaetOy0xDAOZEy+DhNoND4aTvGq6Wh4Zdy4kVQ==",
+  "dgSpecHash": "AAXsAhJjlyZk5Sobz4aarRcBh/wzl/6K/RGwYQdAmJ6Lc+pFTjLzstmYjVImmIWlHEbSCPHk7d4ZvYkV2Ru+UQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-service.csproj",
+  "projectFilePath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ronza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\ronza\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",

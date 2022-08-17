@@ -229,9 +229,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-service.csproj",
-      "projectName": "transaction-service",
-      "projectPath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-service.csproj",
+      "projectUniqueName": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-application.csproj",
+      "projectName": "transaction-application",
+      "projectPath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-application.csproj",
       "packagesPath": "C:\\Users\\ronza\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\obj\\",
       "projectStyle": "PackageReference",

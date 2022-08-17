@@ -1,0 +1,12 @@
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\bin\Debug\net6.0\transaction-dataaccess.deps.json
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\bin\Debug\net6.0\transaction-dataaccess.dll
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\bin\Debug\net6.0\transaction-dataaccess.pdb
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.csproj.AssemblyReference.cache
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.AssemblyInfoInputs.cache
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.AssemblyInfo.cs
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.csproj.CoreCompileInputs.cache
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.dll
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\refint\transaction-dataaccess.dll
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\transaction-dataaccess.pdb
+C:\Users\ronza\Desktop\git\tiggo\backend\transaction-dataaccess\obj\Debug\net6.0\ref\transaction-dataaccess.dll
