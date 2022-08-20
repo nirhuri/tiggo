@@ -7,4 +7,14 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Exception\" />
+    <None Remove="Event\" />
+    <None Remove="ValueObject\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exception\" />
+    <Folder Include="Event\" />
+    <Folder Include="ValueObject\" />
+  </ItemGroup>
 </Project>
