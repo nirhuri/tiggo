@@ -19,12 +19,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dto\" />
-    <Folder Include="mapper\" />
-    <Folder Include="ports\" />
-    <Folder Include="ports\input\" />
-    <Folder Include="ports\output\" />
-    <Folder Include="ports\output\Repository\" />
-    <Folder Include="ports\input\Service\" />
+    <Folder Include="Mapper\" />
+    <Folder Include="port\" />
+    <Folder Include="port\input\" />
+    <Folder Include="port\output\" />
+    <Folder Include="port\output\Repository\" />
+    <Folder Include="port\input\Service\" />
     <Folder Include="Dto\Create\" />
   </ItemGroup>
 </Project>
