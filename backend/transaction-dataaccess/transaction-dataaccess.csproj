@@ -7,4 +7,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Entity\" />
+    <None Remove="Adapter\" />
+    <None Remove="Mapper\" />
+    <None Remove="Repository\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Entity\" />
+    <Folder Include="Adapter\" />
+    <Folder Include="Mapper\" />
+    <Folder Include="Repository\" />
+  </ItemGroup>
 </Project>

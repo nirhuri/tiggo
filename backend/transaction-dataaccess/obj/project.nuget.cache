@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "LWBO5yS9IYDOOPlmSOqqPWS7m6iIdMBEtaMrkYrhV02i0SS6I0UhFR5a/BMpkhxXPubAsAA818alZ1r2zdGa9g==",
+  "dgSpecHash": "e4lhkixgzMDpA7qMVv+xAWN/rVE9ij3lCyTF23cTGJtsZo03V+CpODwnpK7eQlp9d8uKGdKNpl1ueuVxo1dJlQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-dataaccess\\transaction-dataaccess.csproj",
+  "projectFilePath": "/Users/nirhuri/Sites/tiggo/backend/transaction-dataaccess/transaction-dataaccess.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

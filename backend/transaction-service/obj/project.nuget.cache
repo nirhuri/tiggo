@@ -1,15 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "AAXsAhJjlyZk5Sobz4aarRcBh/wzl/6K/RGwYQdAmJ6Lc+pFTjLzstmYjVImmIWlHEbSCPHk7d4ZvYkV2Ru+UQ==",
+  "dgSpecHash": "2xO0XWJXp73X2cRI1SzjTKehXLRHvieKENBMsr9qh6VgsCJtao9YJ/un+tKEAWlzPpG4t8Pl4WrdHNO/ANUa4w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-service\\transaction-application.csproj",
+  "projectFilePath": "/Users/nirhuri/Sites/tiggo/backend/transaction-service/transaction-application.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\ronza\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
-    "C:\\Users\\ronza\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
-    "C:\\Users\\ronza\\.nuget\\packages\\swashbuckle.aspnetcore\\6.2.3\\swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
-    "C:\\Users\\ronza\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.2.3\\swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
-    "C:\\Users\\ronza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.2.3\\swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
-    "C:\\Users\\ronza\\.nuget\\packages\\swashbuckle.aspnetcore.swaggerui\\6.2.3\\swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
+    "/Users/nirhuri/.nuget/packages/microsoft.extensions.apidescription.server/3.0.0/microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
+    "/Users/nirhuri/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/Users/nirhuri/.nuget/packages/swashbuckle.aspnetcore/6.2.3/swashbuckle.aspnetcore.6.2.3.nupkg.sha512",
+    "/Users/nirhuri/.nuget/packages/swashbuckle.aspnetcore.swagger/6.2.3/swashbuckle.aspnetcore.swagger.6.2.3.nupkg.sha512",
+    "/Users/nirhuri/.nuget/packages/swashbuckle.aspnetcore.swaggergen/6.2.3/swashbuckle.aspnetcore.swaggergen.6.2.3.nupkg.sha512",
+    "/Users/nirhuri/.nuget/packages/swashbuckle.aspnetcore.swaggerui/6.2.3/swashbuckle.aspnetcore.swaggerui.6.2.3.nupkg.sha512"
   ],
   "logs": []
 }

@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "common", "common\common.csp
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{AD7BF5BD-5138-401C-8927-55B7E5131173}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "transaction-service", "transaction-service", "{2B35ED98-B602-4A2A-82BD-7160C5AE40FB}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "transaction", "transaction", "{2B35ED98-B602-4A2A-82BD-7160C5AE40FB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "transaction-dataaccess", "transaction-dataaccess\transaction-dataaccess.csproj", "{23725EF8-1E63-4DBE-B766-FEB37ED5E3EE}"
 EndProject

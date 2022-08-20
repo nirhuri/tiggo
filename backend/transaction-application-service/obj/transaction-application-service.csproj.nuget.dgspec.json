@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-application-service\\transaction-application-service.csproj": {}
+    "/Users/nirhuri/Sites/tiggo/backend/transaction-application-service/transaction-application-service.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-application-service\\transaction-application-service.csproj": {
+    "/Users/nirhuri/Sites/tiggo/backend/transaction-application-service/transaction-application-service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-application-service\\transaction-application-service.csproj",
+        "projectUniqueName": "/Users/nirhuri/Sites/tiggo/backend/transaction-application-service/transaction-application-service.csproj",
         "projectName": "transaction-application-service",
-        "projectPath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-application-service\\transaction-application-service.csproj",
-        "packagesPath": "C:\\Users\\ronza\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-application-service\\obj\\",
+        "projectPath": "/Users/nirhuri/Sites/tiggo/backend/transaction-application-service/transaction-application-service.csproj",
+        "packagesPath": "/Users/nirhuri/.nuget/packages/",
+        "outputPath": "/Users/nirhuri/Sites/tiggo/backend/transaction-application-service/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\ronza\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/nirhuri/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -55,7 +53,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.400/RuntimeIdentifierGraph.json"
         }
       }
     }

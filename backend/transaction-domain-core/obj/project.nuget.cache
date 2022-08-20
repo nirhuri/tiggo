@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NJpQ8CaCWgiZyaFqMy/OgELarfPG6tm+xzmkMpH/zLe+JjcW/DdSL1VimOfwtrUrK7aVVA4u9IYQ1dzWnfgdBg==",
+  "dgSpecHash": "t/TZLyzpPGT2C3jFY2kpOboPBMz5zrajpt19xb/gdu1Ys4wgGEBuIEzWwNAeCvkbTbwE6raCmX5soh7i1gG+Uw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ronza\\Desktop\\git\\tiggo\\backend\\transaction-domain-core\\transaction-domain-core.csproj",
+  "projectFilePath": "/Users/nirhuri/Sites/tiggo/backend/transaction-domain-core/transaction-domain-core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
