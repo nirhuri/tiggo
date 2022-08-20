@@ -7,4 +7,24 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Dto\" />
+    <None Remove="mapper\" />
+    <None Remove="ports\" />
+    <None Remove="ports\input\" />
+    <None Remove="ports\output\" />
+    <None Remove="ports\output\Repository\" />
+    <None Remove="ports\input\Service\" />
+    <None Remove="Dto\Create\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dto\" />
+    <Folder Include="mapper\" />
+    <Folder Include="ports\" />
+    <Folder Include="ports\input\" />
+    <Folder Include="ports\output\" />
+    <Folder Include="ports\output\Repository\" />
+    <Folder Include="ports\input\Service\" />
+    <Folder Include="Dto\Create\" />
+  </ItemGroup>
 </Project>
