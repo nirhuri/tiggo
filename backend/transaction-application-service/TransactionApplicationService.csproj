@@ -5,6 +5,7 @@
     <RootNamespace>transaction_application_service</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>transaction-application-service</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,11 +21,8 @@
   <ItemGroup>
     <Folder Include="Dto\" />
     <Folder Include="Mapper\" />
-    <Folder Include="port\" />
-    <Folder Include="port\input\" />
-    <Folder Include="port\output\" />
-    <Folder Include="port\output\Repository\" />
-    <Folder Include="port\input\Service\" />
+    <Folder Include="Ports\" />
+    <Folder Include="Ports\Input\Service\" />
     <Folder Include="Dto\Create\" />
   </ItemGroup>
 </Project>

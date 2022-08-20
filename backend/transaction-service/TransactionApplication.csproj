@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <RootNamespace>transaction_service</RootNamespace>
+    <AssemblyName>transaction-application</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -13,8 +14,10 @@
 
   <ItemGroup>
     <None Remove="Exceptions\" />
+    <None Remove="Exceptions\Handler\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Exceptions\" />
+    <Folder Include="Exceptions\Handler\" />
   </ItemGroup>
 </Project>

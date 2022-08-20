@@ -5,6 +5,7 @@
     <RootNamespace>transaction_domain_core</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <AssemblyName>transaction-domain-core</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
