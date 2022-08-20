@@ -14,8 +14,8 @@
     <None Remove="Repository\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entity\" />
     <Folder Include="Adapter\" />
+    <Folder Include="Entity\" />
     <Folder Include="Mapper\" />
     <Folder Include="Repository\" />
   </ItemGroup>
