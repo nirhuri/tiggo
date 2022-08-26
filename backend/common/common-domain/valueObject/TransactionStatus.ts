@@ -1,0 +1,4 @@
+enum TransactionStatus {
+  DEPOSITE,
+  WITHDRAW,
+}

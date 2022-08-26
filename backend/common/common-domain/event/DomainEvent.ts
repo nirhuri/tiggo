@@ -1,0 +1,1 @@
+interface DomainEvent<T> {}
