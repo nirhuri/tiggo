@@ -1,5 +1,6 @@
 import express, { NextFunction, Request, Response, Application } from "express";
 import { errorHandler, NotFoundError } from "@hurinir/common";
+import { createTypeORMConnection } from './config/typeorm.config';
 
 export class App {
   public app: Application;
@@ -64,12 +65,11 @@ export class App {
   }
 
   private async database() {
-    // try {
-    //   await mongoose.connect(String(process.env.MONGO_URI));
-    //   console.log("Connected to MongoDB");
-    // } catch (err: any) {
-    //   throw new Error(err);
-    // }
+    try {
+      await createTypeORMConnection();
+    } catch (err: any) {
+      throw new Error(err);
+    }
   }
 
   public listen() {
