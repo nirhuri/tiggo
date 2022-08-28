@@ -1,0 +1,45 @@
+[
+  {
+    "name": "production",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "transactions",
+    "synchronize": true,
+    "logging": false,
+    "entities": ["src/data-access/entity/**/*.ts"],
+    "migrations": ["src/data-access/migration/**/*.ts"],
+    "subscribers": ["src/data-access/subscriber/**/*.ts"],
+    "repositories": ["src/data-access/repository/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/data-access/entity",
+      "migrationsDir": "src/data-access/migration",
+      "subscribersDir": "src/data-access/subscriber",
+      "repositoryDir": "src/data-access/repository"
+    }
+  },
+  {
+    "name": "test",
+    "type": "postgres",
+    "host": "localhost",
+    "port": 5432,
+    "username": "postgres",
+    "password": "",
+    "database": "transactions_test",
+    "synchronize": true,
+    "logging": false,
+    "dropSchema": true,
+    "entities": ["src/data-access/entity/**/*.ts"],
+    "migrations": ["src/data-access/migration/**/*.ts"],
+    "subscribers": ["src/data-access/subscriber/**/*.ts"],
+    "repositories": ["src/data-access/repository/**/*.ts"],
+    "cli": {
+      "entitiesDir": "src/data-access/entity",
+      "migrationsDir": "src/data-access/migration",
+      "subscribersDir": "src/data-access/subscriber",
+      "repositoryDir": "src/data-access/repository"
+    }
+  }
+]
