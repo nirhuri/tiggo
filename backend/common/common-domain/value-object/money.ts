@@ -1,4 +1,4 @@
-class Money {
+export class Money {
   private readonly amount: number;
 
   constructor(amount: number) {
