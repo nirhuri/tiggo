@@ -1,4 +1,4 @@
-import { UUID } from "../types/UUID";
+import { UUID } from "../types/uuid";
 
 export class UserId extends BaseId<UUID> {
   constructor(value: UUID) {
