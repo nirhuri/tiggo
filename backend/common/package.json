@@ -1,6 +1,6 @@
 {
-  "name": "@machsan/common",
-  "version": "1.0.30",
+  "name": "@nirhuri/tiggo",
+  "version": "1.0.31",
   "description": "common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
