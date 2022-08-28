@@ -15,12 +15,13 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AggregateRoot = void 0;
-var AggregateRoot = /** @class */ (function (_super) {
-    __extends(AggregateRoot, _super);
-    function AggregateRoot() {
+exports.CashTransaction = void 0;
+var transaction_1 = require("./transaction");
+var CashTransaction = /** @class */ (function (_super) {
+    __extends(CashTransaction, _super);
+    function CashTransaction() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    return AggregateRoot;
-}(BaseEntity));
-exports.AggregateRoot = AggregateRoot;
+    return CashTransaction;
+}(transaction_1.Transaction));
+exports.CashTransaction = CashTransaction;
