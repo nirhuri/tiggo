@@ -1,6 +1,6 @@
 {
   "name": "@machsan/common",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -10,7 +10,7 @@
   "scripts": {
     "clean": "del ./build/*",
     "build": "npm run clean && tsc",
-    "publish": "git add . && git commit -m \"Updated\" && npm version patch && npm publish"
+    "publish": "git add . && git commit -m \"Updated\" && npm version patch && npm publish --access=public"
   },
   "author": "Ron & Nir",
   "license": "ISC",
