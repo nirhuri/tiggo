@@ -1,6 +1,6 @@
 {
-  "name": "machsan",
-  "version": "1.0.13",
+  "name": "@machsan/common",
+  "version": "1.0.1",
   "description": "common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
