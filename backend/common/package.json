@@ -1,6 +1,6 @@
 {
   "name": "@nirhuri/tiggo",
-  "version": "1.0.33",
+  "version": "1.0.34",
   "description": "common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
