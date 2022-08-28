@@ -1,18 +1,22 @@
 import express, { NextFunction, Request, Response, Application } from "express";
 import { errorHandler, NotFoundError } from "@hurinir/common";
-import { createTypeORMConnection } from './config/typeorm.config';
+import { useExpressServer } from "routing-controllers";
+import { TransactionController } from "../application/controllers/transaction-controller";
 
 export class App {
   public app: Application;
   public port: number;
 
-  constructor(appInit: { port: number; middleWares: any; }) {
+  constructor(appInit: { port: number; middleWares: any }) {
     this.app = express();
     this.app.use(this.headers);
     this.port = appInit.port;
+    this.controllers();
     this.middlewares(appInit.middleWares);
     this.assets();
-    this.database();
+    process.on("uncaughtException", function (err) {
+      console.log(err);
+    });
     this.app.all("*", async () => {
       throw new NotFoundError();
     });
@@ -22,7 +26,7 @@ export class App {
   headers(req: Request, res: Response, next: NextFunction) {
     // Website you wish to allow to connect
     res.setHeader("Access-Control-Allow-Origin", "*");
- 
+
     // Request methods you wish to allow
     res.setHeader(
       "Access-Control-Allow-Methods",
@@ -43,6 +47,12 @@ export class App {
     next();
   }
 
+  private controllers() {
+    useExpressServer(this.app, {
+      controllers: [TransactionController],
+    });
+  }
+
   private middlewares(middleWares: {
     forEach: (arg0: (middleWare: any) => void) => void;
   }) {
@@ -51,30 +61,18 @@ export class App {
     });
   }
 
-  private routes(controllers: {
-    forEach: (arg0: (controller: any) => void) => void;
-  }) {
-    controllers.forEach((controller) => {
-      this.app.use("/", controller.router);
-    });
-  }
-
   private assets() {
     this.app.use(express.static("public"));
     this.app.use(express.static("views"));
   }
 
-  private async database() {
-    try {
-      await createTypeORMConnection();
-    } catch (err: any) {
-      throw new Error(err);
-    }
-  }
-
   public listen() {
-    this.app.listen(this.port, () => {
+    this.app.listen(this.port, "0.0.0.0", () => {
       console.log(`App listening on PORT ${this.port}`);
     });
+  }
+
+  public getApp() {
+    return this.app;
   }
 }

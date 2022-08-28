@@ -11,10 +11,10 @@ export class TransactionController {
 
     constructor(
         @inject(TYPES.TransactionApplicationService) private transactionApplicationService: ITransactionApplicationService
-    ) {}
+    ) { }
 
     @Post('/cash')
     createCashTransaction(@Body() createTransactionCommand: CreateTransactionCommand) {
-        return createTransactionCommand;
+        return "Created";
     }
 }
