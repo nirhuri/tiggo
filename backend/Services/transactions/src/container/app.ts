@@ -1,5 +1,4 @@
 import express, { NextFunction, Request, Response, Application } from "express";
-import { errorHandler, NotFoundError } from "@hurinir/common";
 import { useExpressServer } from "routing-controllers";
 import { TransactionController } from "../application/controllers/transaction-controller";
 
@@ -18,9 +17,9 @@ export class App {
       console.log(err);
     });
     this.app.all("*", async () => {
-      throw new NotFoundError();
+      throw new Error("Not Found");
     });
-    this.app.use(errorHandler);
+    //this.app.use(errorHandler);
   }
 
   headers(req: Request, res: Response, next: NextFunction) {
