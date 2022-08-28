@@ -1,6 +1,6 @@
 {
-  "name": "@tigo/common",
-  "version": "1.0.37",
+  "name": "@hurinir/tiggo",
+  "version": "1.0.35",
   "description": "common",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
