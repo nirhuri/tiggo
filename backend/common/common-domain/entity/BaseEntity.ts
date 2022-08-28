@@ -1,4 +1,4 @@
-export abstract class BaseEntity<ID> {
+abstract class BaseEntity<ID> {
   protected readonly _id: ID;
 
   constructor(id: ID) {

@@ -1,0 +1,11 @@
+{
+  "name": "@machsan/common",
+  "version": "1.0.0",
+  "description": "common",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ron & Nir",
+  "license": "ISC"
+}
