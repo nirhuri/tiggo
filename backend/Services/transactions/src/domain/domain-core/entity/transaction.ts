@@ -16,8 +16,8 @@ export abstract class Transaction extends AggregateRoot<TransactionId> {
   protected readonly amount: Money;
   protected readonly transactionStatus: TransactionStatus;
   protected readonly Category: string;
-  protected readonly createdAt: Date;
-  protected readonly updatedAt: Date;
+  protected readonly createdAt: string;
+  protected readonly updatedAt: string;
   protected readonly transactionAddress: TransactionAddress;
 
   constructor(
@@ -27,8 +27,8 @@ export abstract class Transaction extends AggregateRoot<TransactionId> {
     amount: Money,
     transactionStatus: TransactionStatus,
     Category: string,
-    createdAt: Date,
-    updatedAt: Date,
+    createdAt: string,
+    updatedAt: string,
     transactionAddress: TransactionAddress
   ) {
     super(id);
@@ -72,10 +72,10 @@ export abstract class Transaction extends AggregateRoot<TransactionId> {
   getCategory(): string {
     return this.Category;
   }
-  getCreatedAt(): Date {
+  getCreatedAt(): string {
     return this.createdAt;
   }
-  getUpdatedAt(): Date {
+  getUpdatedAt(): string {
     return this.updatedAt;
   }
   getTransactionAddress(): TransactionAddress {
