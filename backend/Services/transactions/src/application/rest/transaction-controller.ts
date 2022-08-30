@@ -1,6 +1,6 @@
 import { inject, injectable } from "inversify";
 import { Body, Controller, Post } from "routing-controllers";
-import { TYPES } from "../../container/types/inversify.types";
+import { TYPES } from "../../container/types/inversify-types";
 import { CreateTransactionCommand } from "../../domain/domain-application-service/dto/create/create-transaction-command";
 import { ITransactionApplicationService } from "../../domain/domain-application-service/ports/input/itransaction-application-service";
 

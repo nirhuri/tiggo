@@ -1,10 +1,10 @@
 import express from "express";
 import { App } from "./app";
-import { createTypeORMConnection } from "./config/typeorm.config";
+import { createTypeORMConnection } from "./config/typeorm-config";
 
 require("dotenv").config();
 
-const PORT = Number(process.env.PORT) || 3000;
+const PORT = Number(process.env.PORT) || 3003;
 
 createTypeORMConnection();
 

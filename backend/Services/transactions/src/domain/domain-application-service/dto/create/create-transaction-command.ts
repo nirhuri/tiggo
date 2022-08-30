@@ -8,7 +8,7 @@ import {
 
 export class CreateTransactionCommand {
 //   @IsNotEmpty()
-  @IsInt()
+//   @IsInt()
 //   @MinLength(1, { message: "Invalid amount." })
 //   @MaxLength(20, { message: "Invalid amount." })
   amount: number;

@@ -6,7 +6,7 @@ enum TransactionType {
 }
 
 @Entity()
-@Index([])
+@Index(["transaction_type"])
 export class CashTransactionEntity {
     @PrimaryGeneratedColumn('uuid')
     _id: string;

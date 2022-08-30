@@ -1,6 +1,6 @@
 import { Container } from "inversify";
-import { TYPES } from "../types/inversify.types";
-import { TransactionController } from "../../application/controllers/transaction-controller";
+import { TYPES } from "../types/inversify-types";
+import { TransactionController } from "../../application/rest/transaction-controller";
 import { TransactionApplicationService } from "../../domain/domain-application-service/transaction-application-service";
 import { TransactionRepository } from "../../data-access/repository/transaction-repository";
 

@@ -1,6 +1,6 @@
 import express, { NextFunction, Request, Response, Application } from "express";
 import { useExpressServer } from "routing-controllers";
-import { TransactionController } from "../application/rest/transaction-controller";
+import { TransactionController } from "../rest/transaction-controller";
 
 export class App {
   public app: Application;
