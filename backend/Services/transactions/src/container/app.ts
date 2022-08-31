@@ -10,8 +10,8 @@ export class App {
     this.app = express();
     this.app.use(this.headers);
     this.port = appInit.port;
-    this.controllers();
     this.middlewares(appInit.middleWares);
+    this.controllers();
     this.assets();
     process.on("uncaughtException", function (err) {
       console.log(err);

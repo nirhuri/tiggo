@@ -1,16 +1,21 @@
-import { Body, Controller, JsonController, Post, UseBefore } from "routing-controllers";
+import { Request, Response, NextFunction } from 'express';
+import { Body, Controller, Post, UseBefore, Req, Res } from "routing-controllers";
 import { ICreateTransactionRequest } from "./input/create-transaction-request";
 import { CreateCashTransactionMiddleware } from "./middlwares/create-cash-transaction-middelware";
 
-@JsonController("/transaction")
+@Controller("/transaction")
 export class TransactionController {
   constructor() {}
 
   @Post("/cash")
-  @UseBefore(CreateCashTransactionMiddleware)
+  //@UseBefore(CreateCashTransactionMiddleware)
   createCashTransaction(
+    @Req() req: Request,
+    @Res() res: Response,
     @Body() createTransactionRequest: ICreateTransactionRequest
   ) {
-    return createTransactionRequest;
+    console.log("In controller")
+    console.log(createTransactionRequest)
+    return "OK"
   }
 }

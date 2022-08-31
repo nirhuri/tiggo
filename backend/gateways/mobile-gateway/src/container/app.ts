@@ -1,3 +1,4 @@
+import { RouteNotFoundMiddleware } from "@machsan-tiggo/common";
 import express, { NextFunction, Request, Response, Application } from "express";
 import { useExpressServer } from "routing-controllers";
 import { TransactionController } from "../rest/transaction-controller";
@@ -6,20 +7,12 @@ export class App {
   public app: Application;
   public port: number;
 
-  constructor(appInit: { port: number; middleWares: any }) {
+  constructor(port: number) {
+    this.port = port;
     this.app = express();
     this.app.use(this.headers);
-    this.port = appInit.port;
-    this.controllers();
-    this.middlewares(appInit.middleWares);
     this.assets();
-    process.on("uncaughtException", function (err) {
-      console.log(err);
-    });
-    this.app.all("*", async () => {
-      throw new Error("Not Found");
-    });
-    //this.app.use(errorHandler);
+    this.httpServcerConfig();
   }
 
   headers(req: Request, res: Response, next: NextFunction) {
@@ -46,17 +39,14 @@ export class App {
     next();
   }
 
-  private controllers() {
+  private httpServcerConfig() {
     useExpressServer(this.app, {
+      middlewares: [
+        express.json(),
+        express.urlencoded({ extended: true }),
+        RouteNotFoundMiddleware,
+      ],
       controllers: [TransactionController],
-    });
-  }
-
-  private middlewares(middleWares: {
-    forEach: (arg0: (middleWare: any) => void) => void;
-  }) {
-    middleWares.forEach((middleWare) => {
-      this.app.use(middleWare);
     });
   }
 
@@ -69,9 +59,5 @@ export class App {
     this.app.listen(this.port, "0.0.0.0", () => {
       console.log(`App listening on PORT ${this.port}`);
     });
-  }
-
-  public getApp() {
-    return this.app;
   }
 }

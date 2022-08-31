@@ -13,6 +13,7 @@
   "author": "Nir & Ron",
   "license": "ISC",
   "dependencies": {
+    "@machsan-tiggo/common": "^0.0.27",
     "axios": "^0.27.2",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
