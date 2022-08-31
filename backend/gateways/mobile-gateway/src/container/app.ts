@@ -12,7 +12,7 @@ export class App {
     this.app = express();
     this.app.use(this.headers);
     this.assets();
-    this.httpServcerConfig();
+    this.httpServerConfig();
   }
 
   headers(req: Request, res: Response, next: NextFunction) {
@@ -39,7 +39,7 @@ export class App {
     next();
   }
 
-  private httpServcerConfig() {
+  private httpServerConfig() {
     useExpressServer(this.app, {
       middlewares: [
         express.json(),

@@ -8,7 +8,4 @@ const PORT = Number(process.env.PORT) || 3003;
 
 createTypeORMConnection();
 
-new App({
-  port: PORT,
-  middleWares: [express.json(), express.urlencoded({ extended: true })],
-}).listen();
+new App(PORT).listen();
