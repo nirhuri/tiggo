@@ -14,8 +14,6 @@ export class TransactionController {
     @Res() res: Response,
     @Body() createTransactionRequest: ICreateTransactionRequest
   ) {
-    console.log("In controller")
-    console.log(createTransactionRequest)
     return "OK"
   }
 }

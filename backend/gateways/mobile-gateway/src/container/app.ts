@@ -1,4 +1,4 @@
-import { RouteNotFoundMiddleware } from "@machsan-tiggo/common";
+import { CustomErrorHandler, RouteNotFoundMiddleware } from "@machsan-tiggo/common";
 import express, { NextFunction, Request, Response, Application } from "express";
 import { useExpressServer } from "routing-controllers";
 import { TransactionController } from "../rest/transaction-controller";
@@ -45,6 +45,7 @@ export class App {
         express.json(),
         express.urlencoded({ extended: true }),
         RouteNotFoundMiddleware,
+        CustomErrorHandler
       ],
       controllers: [TransactionController],
     });
