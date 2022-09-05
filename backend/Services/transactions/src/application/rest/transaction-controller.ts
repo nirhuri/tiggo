@@ -16,6 +16,7 @@ export class TransactionController {
   createCashTransaction(
     @Body() createTransactionCommand: CreateTransactionCommand
   ) {
+    return createTransactionCommand;
     return this.transactionApplicationService.createCashTransaction(
       createTransactionCommand
     );

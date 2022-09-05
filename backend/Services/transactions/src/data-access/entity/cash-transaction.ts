@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, ManyToOne, JoinColumn, Index } from 'typeorm';
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, Index } from 'typeorm';
 
 enum TransactionType {
     WITHDRAW,
@@ -6,14 +6,26 @@ enum TransactionType {
 }
 
 @Entity()
-@Index(["transaction_type"])
+@Index(["transaction_type", "user_id"])
 export class CashTransactionEntity {
     @PrimaryGeneratedColumn('uuid')
     _id: string;
 
+    @CreateDateColumn()
+    created_at: Date;
+
+    @UpdateDateColumn()
+    updated_at: Date;
+
     @Column('int', { nullable: false })
     transaction_type: TransactionType
 
-    @Column({ nullable: false })
+    @Column({ nullable: false, type: 'real' })
     amount: number;
+
+    @Column({ nullable: false })
+    user_id: string;
+
+    @Column({ nullable: false })
+    title: string;
 }
