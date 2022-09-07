@@ -6,31 +6,14 @@ import {
   UserId,
 } from "@machsan-tiggo/common";
 
-
 export class CreateTransactionCommand {
-  protected readonly userId: UserId;
-  protected readonly accountId: AccountId;
-  protected readonly amount: Money;
-  protected readonly transactionStatus: TransactionStatus;
-  protected readonly category: string;
-  protected readonly transactionAddress: TransactionAddress;
-
-  public getUserId(): UserId {
-    return this.userId;
-  }
-  public getAccountId(): AccountId {
-    return this.accountId;
-  }
-  public getAmount(): Money {
-    return this.amount;
-  }
-  public getTransactionStatus(): TransactionStatus {
-    return this.transactionStatus;
-  }
-  public getCategory(): string {
-    return this.category;
-  }
-  public getTransactionAddress(): TransactionAddress {
-    return this.transactionAddress;
-  }
+  constructor(
+    public readonly userId: UserId,
+    public readonly accountId: AccountId,
+    public readonly amount: Money,
+    public readonly title: string,
+    public readonly transactionStatus: TransactionStatus,
+    public readonly category: string,
+    public readonly transactionAddress: TransactionAddress
+  ) {}
 }
