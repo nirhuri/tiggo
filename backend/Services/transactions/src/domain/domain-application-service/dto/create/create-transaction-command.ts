@@ -13,6 +13,8 @@ export class CreateTransactionCommand {
     public readonly amount: Money,
     public readonly title: string,
     public readonly transactionStatus: TransactionStatus,
+    public readonly created_at: Date,
+    public readonly updated_at: Date,
     public readonly category: string,
     public readonly transactionAddress: TransactionAddress
   ) {}

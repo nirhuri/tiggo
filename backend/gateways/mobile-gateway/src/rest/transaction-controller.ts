@@ -41,6 +41,8 @@ export class TransactionController {
       amount: new Money(49.9),
       title: "Test Transaction",
       transactionStatus: TransactionStatus.WITHDRAW,
+      created_at: new Date(),
+      updated_at: new Date(),
       category: "Supermarket",
       transactionAddress: new TransactionAddress("29394--fgtgg", "Shufersal"),
     };

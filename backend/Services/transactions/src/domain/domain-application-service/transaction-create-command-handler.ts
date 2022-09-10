@@ -3,39 +3,34 @@ import { TYPES } from "../../container/types/inversify-types";
 import { Transaction } from "../domain-core/entity/transaction";
 import { TransactionCreatedEvent } from "../domain-core/event/transaction-created-event";
 import { ITransactionDomainService } from "../domain-core/itransaction-domain-service";
-
 import { CreateTransactionCommand } from "./dto/create/create-transaction-command";
 import { CreateTransactionResponse } from "./dto/create/create-transaction-response";
 import { TransactionDataMapper } from "./mapper/transaction-data-mapper";
+import { ITransactionRepository } from "./ports/output/repository/itransaction-repository";
+
+
 @injectable()
-export class TransactionCreateCommandHandler {
+export class CreateTransactionCommandHandler {
   constructor(
     @inject(TYPES.TransactionDomainService)
-    private transactionDomainService: ITransactionDomainService
+    private transactionDomainService: ITransactionDomainService,
+    @inject(TYPES.CashTransactionRepository)
+    private cashTransactionRepository: ITransactionRepository
   ) {}
 
-  public createCashTransaction(
+  public async createCashTransaction(
     createTransactionCommand: CreateTransactionCommand
-  ): CreateTransactionResponse {
+  ): Promise<CreateTransactionResponse> {
     const transaction: Transaction =
-      TransactionDataMapper.createCashTransactionCommandToOrder(
+      TransactionDataMapper.createCashTransactionCommandToTransaction(
         createTransactionCommand
       );
     const orderCreatedEvent: TransactionCreatedEvent =
       this.transactionDomainService.validateAndInitiateTransaction(transaction);
-    // DOTO ADD saveTransaction(transaction);
+    await this.cashTransactionRepository.createCashTransaction(transaction);
     return TransactionDataMapper.cashTransactionToCreateTransactionResponse(
       orderCreatedEvent.getTransaction(),
-      "transaction created successfully"
+      "Transaction created successfully"
     );
-    //    private Transaction saveTransaction(Transaction transaction) {
-    //        Transaction transactionResult = transactionRepository.save(order);
-    //        if (transactionResult == null) {
-    //            log.error("Could not save order!");
-    //            throw new TransactionDomainException("Could not save order!");
-    //        }
-    //        log.info("Order is saved with id: {}", transactionResult.getId().getValue());
-    //        return transactionResult;
-    //    }
   }
 }

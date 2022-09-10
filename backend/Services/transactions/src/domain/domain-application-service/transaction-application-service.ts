@@ -3,24 +3,24 @@ import { TYPES } from "../../container/types/inversify-types";
 import { CreateTransactionCommand } from "./dto/create/create-transaction-command";
 import { CreateTransactionResponse } from "./dto/create/create-transaction-response";
 import { ITransactionApplicationService } from "./ports/input/itransaction-application-service";
-import { TransactionCreateCommandHandler } from "./transaction-create-command-handler";
+import { CreateTransactionCommandHandler } from "./transaction-create-command-handler";
 
 @injectable()
 export class TransactionApplicationService
   implements ITransactionApplicationService
 {
-  private transactionCreateCommandHandler: TransactionCreateCommandHandler;
+  private transactionCreateCommandHandler: CreateTransactionCommandHandler;
   constructor(
     @inject(TYPES.TransactionCreateCommandHandler)
-    transactionCreateCommandHandler: TransactionCreateCommandHandler
+    transactionCreateCommandHandler: CreateTransactionCommandHandler
   ) {
     this.transactionCreateCommandHandler = transactionCreateCommandHandler;
   }
 
-  public createCashTransaction(
+  public async createCashTransaction(
     transactionCommand: CreateTransactionCommand
-  ): CreateTransactionResponse {
-    return this.transactionCreateCommandHandler.createCashTransaction(
+  ): Promise<CreateTransactionResponse> {
+    return await this.transactionCreateCommandHandler.createCashTransaction(
       transactionCommand
     );
   }

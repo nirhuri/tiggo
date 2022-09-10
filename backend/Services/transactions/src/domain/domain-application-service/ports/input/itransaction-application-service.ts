@@ -4,5 +4,5 @@ import { CreateTransactionResponse } from "../../dto/create/create-transaction-r
 export interface ITransactionApplicationService {
   createCashTransaction(
     transactionCommand: CreateTransactionCommand
-  ): CreateTransactionResponse;
+  ): Promise<CreateTransactionResponse>;
 }

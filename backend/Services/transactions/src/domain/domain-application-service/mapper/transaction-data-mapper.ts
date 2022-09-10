@@ -5,19 +5,19 @@ import { CreateTransactionCommand } from "../dto/create/create-transaction-comma
 import { CreateTransactionResponse } from "../dto/create/create-transaction-response";
 
 export class TransactionDataMapper {
-  public static createCashTransactionCommandToOrder(
+  public static createCashTransactionCommandToTransaction(
     createTransactionCommand: CreateTransactionCommand
   ): CashTransaction {
     const transaction = new CashTransaction(
       new TransactionId("TODO:ADD ID" + Math.random()),
-      createTransactionCommand.getUserId(),
-      createTransactionCommand.getAccountId(),
-      new Money(createTransactionCommand.getAmount()),
-      createTransactionCommand.getTransactionStatus(),
-      createTransactionCommand.getCategory(),
-      createTransactionCommand.getCreatedAt(),
-      createTransactionCommand.getCreatedAt(),
-      createTransactionCommand.getTransactionAddress()
+      createTransactionCommand.userId,
+      createTransactionCommand.accountId,
+      createTransactionCommand.amount,
+      createTransactionCommand.transactionStatus,
+      createTransactionCommand.category,
+      createTransactionCommand.created_at,
+      createTransactionCommand.updated_at,
+      createTransactionCommand.transactionAddress
     );
 
     return transaction;
