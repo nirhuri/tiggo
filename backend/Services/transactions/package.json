@@ -4,13 +4,8 @@
   "description": "transaction microservice",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "start": "cross-env NODE_ENV=production ts-node-dev --poll src/container/index.ts",
     "test": "cross-env NODE_ENV=test jest --watchAll --no-cache",
-=======
-    "start": "SET NODE_ENV=production && ts-node-dev --poll src/container/index.ts",
-    "test": "NODE_ENV=test jest --watchAll --no-cache",
->>>>>>> e4a1f631db93419a47467cb92213e41e7bdb56eb
     "test:ci": "jest --forceExit --detectOpenHandles --maxWorkers=10",
     "build": "tsc && npx tsc-alias",
     "prod": "npm install --production && del dist && npm run build && cd dist && pm2 delete TRANSACTIONS || : && pm2 start NODE_ENV=production src/index.js --name TRANSACTIONS"
