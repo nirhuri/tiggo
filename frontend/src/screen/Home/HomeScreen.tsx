@@ -1,5 +1,6 @@
 import React, {useEffect} from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {useDispatch} from 'react-redux';
 import {getTransactions} from '../../api/transactions';
 import {COLORS} from '../../Colors';
@@ -45,12 +46,12 @@ export const HomeScreen = (Props: any) => {
     return res;
   };
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={{marginBottom: 60}}>
         <Transactions />
       </View>
       <AddTransaction />
-    </View>
+    </SafeAreaView>
   );
 };
 {

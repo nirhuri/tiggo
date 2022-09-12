@@ -20,6 +20,7 @@ export class TransactionApplicationService
   public async createCashTransaction(
     transactionCommand: CreateTransactionCommand
   ): Promise<CreateTransactionResponse> {
+    console.log("inside application service: ", transactionCommand)
     return await this.transactionCreateCommandHandler.createCashTransaction(
       transactionCommand
     );

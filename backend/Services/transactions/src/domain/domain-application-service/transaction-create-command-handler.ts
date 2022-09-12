@@ -21,6 +21,7 @@ export class CreateTransactionCommandHandler {
   public async createCashTransaction(
     createTransactionCommand: CreateTransactionCommand
   ): Promise<CreateTransactionResponse> {
+    console.log("transaction command: ", createTransactionCommand) 
     const transaction: Transaction =
       TransactionDataMapper.createCashTransactionCommandToTransaction(
         createTransactionCommand

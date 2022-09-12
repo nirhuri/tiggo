@@ -16,6 +16,7 @@ export class TransactionController {
   createCashTransaction(
     @Body() createTransactionCommand: CreateTransactionCommand
   ) {
+    console.log("controller: ", createTransactionCommand.accountId.getValue())
     return this.transactionApplicationService.createCashTransaction(
       createTransactionCommand
     );
