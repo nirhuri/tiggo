@@ -34,7 +34,6 @@ export class TransactionController {
     // so we need to send http request to users service to validate the user
     // const user = await axios....
 
-    console.log("Amount: ", createTransactionRequest.amount);
     const transaction = {
       userId: new UserId("12345"),
       accountId: new AccountId("24j4j232"),

@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "SET NODE_ENV=production && ts-node-dev --poll src/container/index.ts",
-    "test": "NODE_ENV=test jest --watchAll --no-cache",
+    "start": "cross-env NODE_ENV=production ts-node-dev --poll src/container/index.ts",
+    "test": "cross-env NODE_ENV=test jest --watchAll --no-cache",
     "test:ci": "jest --forceExit --detectOpenHandles --maxWorkers=10",
     "build": "tsc && npx tsc-alias",
     "prod": "npm install --production && del dist && npm run build && cd dist && pm2 delete MOBILE_GATEWAY || : && pm2 start NODE_ENV=production src/index.js --name MOBILE_GATEWAY"
@@ -26,6 +26,7 @@
     "@types/jest": "^29.0.0",
     "@types/node": "^18.7.14",
     "@types/supertest": "^2.0.12",
+    "cross-env": "^7.0.3",
     "jest": "^28.1.3",
     "supertest": "^6.2.4",
     "ts-jest": "^28.0.8",

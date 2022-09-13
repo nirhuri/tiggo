@@ -1,3 +1,4 @@
+import { Money } from "@machsan-tiggo/common";
 import { inject, injectable } from "inversify";
 import { Body, JsonController, Post } from "routing-controllers";
 import { TYPES } from "../../container/types/inversify-types";
@@ -16,7 +17,7 @@ export class TransactionController {
   createCashTransaction(
     @Body() createTransactionCommand: CreateTransactionCommand
   ) {
-    console.log("controller: ", createTransactionCommand.accountId.getValue())
+    console.log("controller: ", createTransactionCommand);
     return this.transactionApplicationService.createCashTransaction(
       createTransactionCommand
     );
