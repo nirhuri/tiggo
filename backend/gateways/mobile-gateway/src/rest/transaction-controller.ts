@@ -34,16 +34,31 @@ export class TransactionController {
     // so we need to send http request to users service to validate the user
     // const user = await axios....
 
+    // const transaction = {
+    //   userId: new UserId("12345"),
+    //   accountId: new AccountId("24j4j232"),
+    //   amount: new Money(49.9),
+    //   title: "Test Transaction",
+    //   transactionStatus: TransactionStatus.WITHDRAW,
+    //   created_at: new Date(),
+    //   updated_at: new Date(),
+    //   category: "Supermarket",
+    //   transactionAddress: new TransactionAddress("29394--fgtgg", "Shufersal"),
+    // };
+
     const transaction = {
-      userId: new UserId("12345"),
-      accountId: new AccountId("24j4j232"),
-      amount: new Money(49.9),
+      userId: "12345",
+      accountId: "24j4j232",
+      amount: 49.9,
       title: "Test Transaction",
       transactionStatus: TransactionStatus.WITHDRAW,
       created_at: new Date(),
       updated_at: new Date(),
       category: "Supermarket",
-      transactionAddress: new TransactionAddress("29394--fgtgg", "Shufersal"),
+      transactionAddress: {
+        id: "29394--fgtgg",
+        businessName: "Shufersal",
+      },
     };
 
     try {
