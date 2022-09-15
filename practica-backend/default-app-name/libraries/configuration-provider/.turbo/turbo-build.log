@@ -1,0 +1,5 @@
+@practica/configuration-provider:build: cache hit, replaying output 523017a7be8fe2a4
+@practica/configuration-provider:build: 
+@practica/configuration-provider:build: > @practica/configuration-provider@0.0.1-alpha.3 build
+@practica/configuration-provider:build: > tsc
+@practica/configuration-provider:build: 

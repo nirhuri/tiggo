@@ -1,0 +1,12 @@
+@practica/error-handling:installDependencies: cache hit, replaying output 587068ea54284712
+@practica/error-handling:installDependencies: 
+@practica/error-handling:installDependencies: > @practica/error-handling@0.0.2 installDependencies
+@practica/error-handling:installDependencies: > npm install
+@practica/error-handling:installDependencies: 
+@practica/error-handling:installDependencies: 
+@practica/error-handling:installDependencies: up to date, audited 1022 packages in 2s
+@practica/error-handling:installDependencies: 
+@practica/error-handling:installDependencies: 128 packages are looking for funding
+@practica/error-handling:installDependencies:   run `npm fund` for details
+@practica/error-handling:installDependencies: 
+@practica/error-handling:installDependencies: found 0 vulnerabilities

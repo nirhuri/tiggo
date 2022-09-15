@@ -1,0 +1,12 @@
+@practica/validation:installDependencies: cache hit, replaying output 72bb89d339f43c2b
+@practica/validation:installDependencies: 
+@practica/validation:installDependencies: > @practica/validation@0.0.1-alpha.1 installDependencies
+@practica/validation:installDependencies: > npm install
+@practica/validation:installDependencies: 
+@practica/validation:installDependencies: 
+@practica/validation:installDependencies: up to date, audited 1022 packages in 2s
+@practica/validation:installDependencies: 
+@practica/validation:installDependencies: 128 packages are looking for funding
+@practica/validation:installDependencies:   run `npm fund` for details
+@practica/validation:installDependencies: 
+@practica/validation:installDependencies: found 0 vulnerabilities

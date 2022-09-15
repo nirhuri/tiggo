@@ -1,0 +1,17 @@
+order-service:installDependencies: cache hit, replaying output 91da7cee30bd28fd
+order-service:installDependencies: 
+order-service:installDependencies: > order-service@0.0.2 installDependencies
+order-service:installDependencies: > npm install
+order-service:installDependencies: 
+order-service:installDependencies: 
+order-service:installDependencies: up to date, audited 1022 packages in 2s
+order-service:installDependencies: 
+order-service:installDependencies: 128 packages are looking for funding
+order-service:installDependencies:   run `npm fund` for details
+order-service:installDependencies: 
+order-service:installDependencies: 1 moderate severity vulnerability
+order-service:installDependencies: 
+order-service:installDependencies: To address all issues, run:
+order-service:installDependencies:   npm audit fix
+order-service:installDependencies: 
+order-service:installDependencies: Run `npm audit` for details.

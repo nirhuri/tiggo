@@ -1,0 +1,5 @@
+@practica/jwt-token-verifier:build: cache hit, replaying output f3ee7b28707cce64
+@practica/jwt-token-verifier:build: 
+@practica/jwt-token-verifier:build: > @practica/jwt-token-verifier@0.0.1-alpha.5 build
+@practica/jwt-token-verifier:build: > tsc
+@practica/jwt-token-verifier:build: 

@@ -1,0 +1,5 @@
+@practica/logger:build: cache hit, replaying output a781d9544f16f8df
+@practica/logger:build: 
+@practica/logger:build: > @practica/logger@0.0.1-alpha.4 build
+@practica/logger:build: > tsc
+@practica/logger:build: 
