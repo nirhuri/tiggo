@@ -8,6 +8,7 @@ const TYPES = {
     "TransactionCreateCommandHandler"
   ),
   TransactionDomainService: Symbol.for("TransactionDomainService"),
+  CashTransactionEntity: Symbol.for("CashTransactionEntity")
 };
 
 export { TYPES };

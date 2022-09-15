@@ -1,18 +1,21 @@
 import { RouteNotFoundMiddleware } from "@machsan-tiggo/common";
 import express, { NextFunction, Request, Response, Application } from "express";
-import { useExpressServer } from "routing-controllers";
 import { TransactionController } from "../application/rest/transaction-controller";
 
 export class App {
   public app: Application;
   public port: number;
 
-  constructor(port: number) {
-    this.port = port;
+  constructor(appInit: { port: number; middleWares: any; controllers: any }) {
+    this.port = appInit.port;
     this.app = express();
     this.app.use(this.headers);
+    this.middlewares(appInit.middleWares);
+    this.routes(appInit.controllers);
     this.assets();
-    this.httpServerConfig();
+    this.app.all("*", async () => {
+      //throw new NotFoundError();
+    });
   }
 
   headers(req: Request, res: Response, next: NextFunction) {
@@ -39,14 +42,19 @@ export class App {
     next();
   }
 
-  private httpServerConfig() {
-    useExpressServer(this.app, {
-      middlewares: [
-        express.json(),
-        express.urlencoded({ extended: true }),
-        RouteNotFoundMiddleware,
-      ],
-      controllers: [TransactionController],
+  private middlewares(middleWares: {
+    forEach: (arg0: (middleWare: any) => void) => void;
+  }) {
+    middleWares.forEach((middleWare) => {
+      this.app.use(middleWare);
+    });
+  }
+
+  private routes(controllers: {
+    forEach: (arg0: (controller: any) => void) => void;
+  }) {
+    controllers.forEach((controller) => {
+      this.app.use("/", controller.router);
     });
   }
 

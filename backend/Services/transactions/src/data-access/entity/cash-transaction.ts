@@ -1,3 +1,4 @@
+import { injectable } from 'inversify';
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn, Index } from 'typeorm';
 
 enum TransactionType {
@@ -5,6 +6,7 @@ enum TransactionType {
     DEPOSITE
 }
 
+@injectable()
 @Entity()
 @Index(["transaction_type", "user_id"])
 export class CashTransactionEntity {
