@@ -8,10 +8,10 @@ import { addTransactionDTO, getNewTransactionValidator } from './order-schema';
 export async function addTransaction(newOrder: addTransactionDTO) {
   validateNewTransactionRequest(newOrder);
   const userWhoOrdered = await getUserOrThrowIfNotExist(newOrder.userId);
-  paymentTermsService.determinePaymentTerms(
-    newOrder.paymentTermsInDays,
-    userWhoOrdered.terms
-  );
+  // paymentTermsService.determinePaymentTerms(
+  //   newOrder.paymentTermsInDays,
+  //   userWhoOrdered.terms
+  // );
 
   const response = await orderRepository.addOrder(newOrder);
 
