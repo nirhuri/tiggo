@@ -4,7 +4,6 @@ import * as orderRepository from '../data-access/repositories/order-repository';
 import paymentTermsService from './payment-terms-service';
 import { addTransactionDTO, getNewTransactionValidator } from './order-schema';
 
-
 export async function addTransaction(newOrder: addTransactionDTO) {
   validateNewTransactionRequest(newOrder);
   const userWhoOrdered = await getUserOrThrowIfNotExist(newOrder.userId);
@@ -37,10 +36,12 @@ async function getUserOrThrowIfNotExist(userId: number) {
   return userVerificationRequest.data;
 }
 
-function validateNewTransactionRequest(newOrderRequest: addTransactionDTO) {
+function validateNewTransactionRequest(
+  newTransactionRequest: addTransactionDTO
+) {
   const AjvSchemaValidator = getNewTransactionValidator();
   // @ts-expect-error TODO: fix this type error
-  const isValid = AjvSchemaValidator(newOrderRequest);
+  const isValid = AjvSchemaValidator(newTransactionRequest);
   if (!isValid) {
     throw new AppError('invalid-order', `Validation failed`, 400, true);
   }
