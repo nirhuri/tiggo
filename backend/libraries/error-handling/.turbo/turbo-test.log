@@ -1,0 +1,168 @@
+[36m@practica/error-handling:test[0m: cache hit, replaying output [2m3f43de03cbea4066[0m
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m> @practica/error-handling@0.0.2 test
+[36m@practica/error-handling:test: [0m> jest --runInBand
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0mPASS .dist/test/index.test.js
+[36m@practica/error-handling:test: [0m{"level":50,"time":1663329734935,"pid":61787,"hostname":"MacBook-Pro.lan","msg":"mocking pre-known error"}
+[36m@practica/error-handling:test: [0m  ● Console
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'Error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'Error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'invalid-input' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (.dist/index.js:96:17)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m{"level":50,"time":1663329735562,"pid":61787,"hostname":"MacBook-Pro.lan","msg":"mocking pre-known error"}
+[36m@practica/error-handling:test: [0mPASS test/index.test.ts
+[36m@practica/error-handling:test: [0m  ● Console
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'Error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'Error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'invalid-input' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m    console.log
+[36m@practica/error-handling:test: [0m      In real production code I will really fire metrics { name: 'error', labels: { errorName: 'general-error' } }
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m      at Object.fireMetric (index.ts:100:13)
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0m----------------------|---------|----------|---------|---------|-------------------------------------------
+[36m@practica/error-handling:test: [0mFile                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s                         
+[36m@practica/error-handling:test: [0m----------------------|---------|----------|---------|---------|-------------------------------------------
+[36m@practica/error-handling:test: [0mAll files             |    79.9 |    72.97 |   81.25 |    79.9 |                                           
+[36m@practica/error-handling:test: [0m error-handling       |   77.57 |    83.33 |   83.33 |   77.57 |                                           
+[36m@practica/error-handling:test: [0m  index.ts            |   77.57 |    83.33 |   83.33 |   77.57 | 16,20-23,27-30,41-42,44-50,55-60          
+[36m@practica/error-handling:test: [0m error-handling/.dist |   82.35 |       68 |      80 |   82.35 |                                           
+[36m@practica/error-handling:test: [0m  index.js            |   82.35 |       68 |      80 |   82.35 | 10-11,16,37,40-41,44-45,54-55,58-61,66-69 
+[36m@practica/error-handling:test: [0m----------------------|---------|----------|---------|---------|-------------------------------------------
+[36m@practica/error-handling:test: [0m
+[36m@practica/error-handling:test: [0mTest Suites: 2 passed, 2 total
+[36m@practica/error-handling:test: [0mTests:       28 passed, 28 total
+[36m@practica/error-handling:test: [0mSnapshots:   0 total
+[36m@practica/error-handling:test: [0mTime:        3.744 s
+[36m@practica/error-handling:test: [0mRan all test suites.

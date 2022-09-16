@@ -1,0 +1,118 @@
+[33morder-service:test[0m: cache hit, replaying output [2mb253e2306dab040a[0m
+[33morder-service:test: [0m
+[33morder-service:test: [0m> order-service@0.0.2 test
+[33morder-service:test: [0m> PRETTY_PRINT=true jest --forceExit --verbose=true --runInBand
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 426, in _make_request
+[33morder-service:test: [0m  File "<string>", line 3, in raise_from
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 421, in _make_request
+[33morder-service:test: [0m  File "http/client.py", line 1347, in getresponse
+[33morder-service:test: [0m  File "http/client.py", line 307, in begin
+[33morder-service:test: [0m  File "http/client.py", line 268, in _read_status
+[33morder-service:test: [0m  File "socket.py", line 704, in readinto
+[33morder-service:test: [0msocket.timeout: timed out
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File "requests/adapters.py", line 439, in send
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 726, in urlopen
+[33morder-service:test: [0m  File "urllib3/util/retry.py", line 410, in increment
+[33morder-service:test: [0m  File "urllib3/packages/six.py", line 735, in reraise
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 670, in urlopen
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 428, in _make_request
+[33morder-service:test: [0m  File "urllib3/connectionpool.py", line 335, in _raise_timeout
+[33morder-service:test: [0murllib3.exceptions.ReadTimeoutError: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File "docker/api/client.py", line 214, in _retrieve_server_version
+[33morder-service:test: [0m  File "docker/api/daemon.py", line 181, in version
+[33morder-service:test: [0m  File "docker/utils/decorators.py", line 46, in inner
+[33morder-service:test: [0m  File "docker/api/client.py", line 237, in _get
+[33morder-service:test: [0m  File "requests/sessions.py", line 543, in get
+[33morder-service:test: [0m  File "requests/sessions.py", line 530, in request
+[33morder-service:test: [0m  File "requests/sessions.py", line 643, in send
+[33morder-service:test: [0m  File "requests/adapters.py", line 529, in send
+[33morder-service:test: [0mrequests.exceptions.ReadTimeout: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File "docker-compose", line 3, in <module>
+[33morder-service:test: [0m  File "compose/cli/main.py", line 81, in main
+[33morder-service:test: [0m  File "compose/cli/main.py", line 200, in perform_command
+[33morder-service:test: [0m  File "compose/cli/command.py", line 60, in project_from_options
+[33morder-service:test: [0m  File "compose/cli/command.py", line 152, in get_project
+[33morder-service:test: [0m  File "compose/cli/docker_client.py", line 41, in get_client
+[33morder-service:test: [0m  File "compose/cli/docker_client.py", line 170, in docker_client
+[33morder-service:test: [0m  File "docker/api/client.py", line 197, in __init__
+[33morder-service:test: [0m  File "docker/api/client.py", line 221, in _retrieve_server_version
+[33morder-service:test: [0mdocker.errors.DockerException: Error while fetching server API version: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m[61859] Failed to execute script docker-compose
+[33morder-service:test: [0mError: Jest: Got error running globalSetup - /Users/nirhuri/Programming/tiggo/backend/services/order-service/test/global-setup.ts, reason: Object {
+[33morder-service:test: [0m  "err": "Traceback (most recent call last):
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 426, in _make_request
+[33morder-service:test: [0m  File \"<string>\", line 3, in raise_from
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 421, in _make_request
+[33morder-service:test: [0m  File \"http/client.py\", line 1347, in getresponse
+[33morder-service:test: [0m  File \"http/client.py\", line 307, in begin
+[33morder-service:test: [0m  File \"http/client.py\", line 268, in _read_status
+[33morder-service:test: [0m  File \"socket.py\", line 704, in readinto
+[33morder-service:test: [0msocket.timeout: timed out
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File \"requests/adapters.py\", line 439, in send
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 726, in urlopen
+[33morder-service:test: [0m  File \"urllib3/util/retry.py\", line 410, in increment
+[33morder-service:test: [0m  File \"urllib3/packages/six.py\", line 735, in reraise
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 670, in urlopen
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 428, in _make_request
+[33morder-service:test: [0m  File \"urllib3/connectionpool.py\", line 335, in _raise_timeout
+[33morder-service:test: [0murllib3.exceptions.ReadTimeoutError: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File \"docker/api/client.py\", line 214, in _retrieve_server_version
+[33morder-service:test: [0m  File \"docker/api/daemon.py\", line 181, in version
+[33morder-service:test: [0m  File \"docker/utils/decorators.py\", line 46, in inner
+[33morder-service:test: [0m  File \"docker/api/client.py\", line 237, in _get
+[33morder-service:test: [0m  File \"requests/sessions.py\", line 543, in get
+[33morder-service:test: [0m  File \"requests/sessions.py\", line 530, in request
+[33morder-service:test: [0m  File \"requests/sessions.py\", line 643, in send
+[33morder-service:test: [0m  File \"requests/adapters.py\", line 529, in send
+[33morder-service:test: [0mrequests.exceptions.ReadTimeout: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m
+[33morder-service:test: [0mDuring handling of the above exception, another exception occurred:
+[33morder-service:test: [0m
+[33morder-service:test: [0mTraceback (most recent call last):
+[33morder-service:test: [0m  File \"docker-compose\", line 3, in <module>
+[33morder-service:test: [0m  File \"compose/cli/main.py\", line 81, in main
+[33morder-service:test: [0m  File \"compose/cli/main.py\", line 200, in perform_command
+[33morder-service:test: [0m  File \"compose/cli/command.py\", line 60, in project_from_options
+[33morder-service:test: [0m  File \"compose/cli/command.py\", line 152, in get_project
+[33morder-service:test: [0m  File \"compose/cli/docker_client.py\", line 41, in get_client
+[33morder-service:test: [0m  File \"compose/cli/docker_client.py\", line 170, in docker_client
+[33morder-service:test: [0m  File \"docker/api/client.py\", line 197, in __init__
+[33morder-service:test: [0m  File \"docker/api/client.py\", line 221, in _retrieve_server_version
+[33morder-service:test: [0mdocker.errors.DockerException: Error while fetching server API version: UnixHTTPConnectionPool(host='localhost', port=None): Read timed out. (read timeout=60)
+[33morder-service:test: [0m[61859] Failed to execute script docker-compose
+[33morder-service:test: [0m",
+[33morder-service:test: [0m  "exitCode": 255,
+[33morder-service:test: [0m  "out": "",
+[33morder-service:test: [0m}
+[33morder-service:test: [0m    at runGlobalHook (/Users/nirhuri/Programming/tiggo/backend/node_modules/jest/node_modules/@jest/core/build/runGlobalHook.js:134:15)
+[33morder-service:test: [0m    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[33morder-service:test: [0m    at async runJest (/Users/nirhuri/Programming/tiggo/backend/node_modules/jest/node_modules/@jest/core/build/runJest.js:369:5)
+[33morder-service:test: [0m    at async _run10000 (/Users/nirhuri/Programming/tiggo/backend/node_modules/jest/node_modules/@jest/core/build/cli/index.js:320:7)
+[33morder-service:test: [0m    at async runCLI (/Users/nirhuri/Programming/tiggo/backend/node_modules/jest/node_modules/@jest/core/build/cli/index.js:173:3)
+[33morder-service:test: [0m    at async Object.run (/Users/nirhuri/Programming/tiggo/backend/node_modules/jest/node_modules/jest-cli/build/cli/index.js:155:37)
+[33morder-service:test: [0mnpm ERR! Lifecycle script `test` failed with error: 
+[33morder-service:test: [0mnpm ERR! Error: command failed 
+[33morder-service:test: [0mnpm ERR!   in workspace: order-service@0.0.2 
+[33morder-service:test: [0mnpm ERR!   at location: /Users/nirhuri/Programming/tiggo/backend/services/order-service 
