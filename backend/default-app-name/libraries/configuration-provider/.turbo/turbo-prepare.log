@@ -1,0 +1,9 @@
+[34m@practica/configuration-provider:prepare[0m: cache hit, replaying output [2m1da361f88c5780bf[0m
+[34m@practica/configuration-provider:prepare: [0m
+[34m@practica/configuration-provider:prepare: [0m> @practica/configuration-provider@0.0.1-alpha.3 prepare
+[34m@practica/configuration-provider:prepare: [0m> npm run build
+[34m@practica/configuration-provider:prepare: [0m
+[34m@practica/configuration-provider:prepare: [0m
+[34m@practica/configuration-provider:prepare: [0m> @practica/configuration-provider@0.0.1-alpha.3 build
+[34m@practica/configuration-provider:prepare: [0m> tsc
+[34m@practica/configuration-provider:prepare: [0m

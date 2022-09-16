@@ -1,0 +1,9 @@
+[36m@practica/validation:prepare[0m: cache hit, replaying output [2m9cc66964f3778966[0m
+[36m@practica/validation:prepare: [0m
+[36m@practica/validation:prepare: [0m> @practica/validation@0.0.1-alpha.1 prepare
+[36m@practica/validation:prepare: [0m> npm run build
+[36m@practica/validation:prepare: [0m
+[36m@practica/validation:prepare: [0m
+[36m@practica/validation:prepare: [0m> @practica/validation@0.0.1-alpha.1 build
+[36m@practica/validation:prepare: [0m> tsc
+[36m@practica/validation:prepare: [0m

@@ -1,0 +1,43 @@
+[34m@practica/jwt-token-verifier:test[0m: cache hit, replaying output [2m8c59dca178b0b13c[0m
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m> @practica/jwt-token-verifier@0.0.2 test
+[34m@practica/jwt-token-verifier:test: [0m> jest --forceExit
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0mPASS test/jwt.test.ts (8.867 s)
+[34m@practica/jwt-token-verifier:test: [0mPASS package/test/jwt.test.ts (8.913 s)
+[34m@practica/jwt-token-verifier:test: [0m  ● Console
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m    console.log
+[34m@practica/jwt-token-verifier:test: [0m      null
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m      at package/lib/jwt-verifier-middleware.ts:42:17
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m    console.log
+[34m@practica/jwt-token-verifier:test: [0m      null
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m      at package/lib/jwt-verifier-middleware.ts:42:17
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m    console.log
+[34m@practica/jwt-token-verifier:test: [0m      JsonWebTokenError {
+[34m@practica/jwt-token-verifier:test: [0m        name: 'JsonWebTokenError',
+[34m@practica/jwt-token-verifier:test: [0m        message: 'jwt malformed'
+[34m@practica/jwt-token-verifier:test: [0m      }
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m      at package/lib/jwt-verifier-middleware.ts:42:17
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m    console.log
+[34m@practica/jwt-token-verifier:test: [0m      TokenExpiredError {
+[34m@practica/jwt-token-verifier:test: [0m        name: 'TokenExpiredError',
+[34m@practica/jwt-token-verifier:test: [0m        message: 'jwt expired',
+[34m@practica/jwt-token-verifier:test: [0m        expiredAt: 1970-01-01T00:00:00.000Z
+[34m@practica/jwt-token-verifier:test: [0m      }
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m      at package/lib/jwt-verifier-middleware.ts:42:17
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0m
+[34m@practica/jwt-token-verifier:test: [0mTest Suites: 2 passed, 2 total
+[34m@practica/jwt-token-verifier:test: [0mTests:       12 passed, 12 total
+[34m@practica/jwt-token-verifier:test: [0mSnapshots:   0 total
+[34m@practica/jwt-token-verifier:test: [0mTime:        9.704 s
+[34m@practica/jwt-token-verifier:test: [0mRan all test suites.
+[34m@practica/jwt-token-verifier:test: [0mForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

@@ -1,0 +1,10 @@
+[35m@practica/logger:prepare[0m: cache hit, replaying output [2md7a2c23d4fc22292[0m
+[35m@practica/logger:prepare: [0m
+[35m@practica/logger:prepare: [0m> @practica/logger@0.0.1-alpha.4 prepare
+[35m@practica/logger:prepare: [0m> npm i && npm run build
+[35m@practica/logger:prepare: [0m
+[35m@practica/logger:prepare: [0mnpm ERR! process terminated
+[35m@practica/logger:prepare: [0mnpm ERR! signal SIGINT
+[35m@practica/logger:prepare: [0m
+[35m@practica/logger:prepare: [0mnpm ERR! A complete log of this run can be found in:
+[35m@practica/logger:prepare: [0mnpm ERR!     /Users/yonigoldberg/.npm/_logs/2022-07-20T07_47_22_500Z-debug-0.log
