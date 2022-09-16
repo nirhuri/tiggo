@@ -1,5 +1,6 @@
-order-service:build: cache hit, replaying output afe45b4d6ce6f3d2
+order-service:build: cache hit, replaying output 07cead627cfb1923
+order-service:build: npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 order-service:build: 
-order-service:build: > order-service@0.0.2 build
+order-service:build: > order-service@0.0.3 build
 order-service:build: > tsc
 order-service:build: 

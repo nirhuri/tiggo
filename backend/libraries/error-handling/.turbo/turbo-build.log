@@ -1,5 +1,6 @@
-@practica/error-handling:build: cache hit, replaying output 350518c30ab5f934
+@practica/error-handling:build: cache hit, replaying output 7b352bd8e1b7308e
+@practica/error-handling:build: npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 @practica/error-handling:build: 
-@practica/error-handling:build: > @practica/error-handling@0.0.2 build
+@practica/error-handling:build: > @practica/error-handling@0.0.3 build
 @practica/error-handling:build: > tsc
 @practica/error-handling:build: 

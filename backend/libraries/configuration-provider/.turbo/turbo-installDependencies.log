@@ -1,12 +1,12 @@
-@practica/configuration-provider:installDependencies: cache hit, replaying output 49815323e64c330e
-@practica/configuration-provider:installDependencies: 
-@practica/configuration-provider:installDependencies: > @practica/configuration-provider@0.0.1-alpha.3 installDependencies
-@practica/configuration-provider:installDependencies: > npm install
-@practica/configuration-provider:installDependencies: 
-@practica/configuration-provider:installDependencies: 
-@practica/configuration-provider:installDependencies: up to date, audited 1022 packages in 2s
-@practica/configuration-provider:installDependencies: 
-@practica/configuration-provider:installDependencies: 128 packages are looking for funding
-@practica/configuration-provider:installDependencies:   run `npm fund` for details
-@practica/configuration-provider:installDependencies: 
-@practica/configuration-provider:installDependencies: found 0 vulnerabilities
+[36m@practica/configuration-provider:installDependencies[0m: cache hit, replaying output [2me8077992c58783b9[0m
+[36m@practica/configuration-provider:installDependencies: [0m
+[36m@practica/configuration-provider:installDependencies: [0m> @practica/configuration-provider@0.0.1-alpha.3 installDependencies
+[36m@practica/configuration-provider:installDependencies: [0m> npm install
+[36m@practica/configuration-provider:installDependencies: [0m
+[36m@practica/configuration-provider:installDependencies: [0m
+[36m@practica/configuration-provider:installDependencies: [0mup to date, audited 1026 packages in 5s
+[36m@practica/configuration-provider:installDependencies: [0m
+[36m@practica/configuration-provider:installDependencies: [0m128 packages are looking for funding
+[36m@practica/configuration-provider:installDependencies: [0m  run `npm fund` for details
+[36m@practica/configuration-provider:installDependencies: [0m
+[36m@practica/configuration-provider:installDependencies: [0mfound 0 vulnerabilities

@@ -1,6 +1,0 @@
-@practica/jwt-token-verifier:build: cache hit, replaying output 6abc26bbb89d880d
-@practica/jwt-token-verifier:build: npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-@practica/jwt-token-verifier:build: 
-@practica/jwt-token-verifier:build: > @practica/jwt-token-verifier@0.0.2 build
-@practica/jwt-token-verifier:build: > tsc
-@practica/jwt-token-verifier:build: 

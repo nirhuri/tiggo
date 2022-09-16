@@ -1,12 +1,12 @@
-@practica/logger:installDependencies: cache hit, replaying output 96ff6d5356832d91
-@practica/logger:installDependencies: 
-@practica/logger:installDependencies: > @practica/logger@0.0.1-alpha.4 installDependencies
-@practica/logger:installDependencies: > npm install
-@practica/logger:installDependencies: 
-@practica/logger:installDependencies: 
-@practica/logger:installDependencies: up to date, audited 1022 packages in 2s
-@practica/logger:installDependencies: 
-@practica/logger:installDependencies: 128 packages are looking for funding
-@practica/logger:installDependencies:   run `npm fund` for details
-@practica/logger:installDependencies: 
-@practica/logger:installDependencies: found 0 vulnerabilities
+[33m@practica/logger:installDependencies[0m: cache hit, replaying output [2mfe23daa813bd9917[0m
+[33m@practica/logger:installDependencies: [0m
+[33m@practica/logger:installDependencies: [0m> @practica/logger@0.0.1-alpha.4 installDependencies
+[33m@practica/logger:installDependencies: [0m> npm install
+[33m@practica/logger:installDependencies: [0m
+[33m@practica/logger:installDependencies: [0m
+[33m@practica/logger:installDependencies: [0mup to date, audited 1026 packages in 4s
+[33m@practica/logger:installDependencies: [0m
+[33m@practica/logger:installDependencies: [0m128 packages are looking for funding
+[33m@practica/logger:installDependencies: [0m  run `npm fund` for details
+[33m@practica/logger:installDependencies: [0m
+[33m@practica/logger:installDependencies: [0mfound 0 vulnerabilities

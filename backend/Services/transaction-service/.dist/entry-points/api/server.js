@@ -40,7 +40,8 @@ async function startWebServer() {
     // ️️️✅ Best Practice: Declare a strict configuration schema and fail fast if the configuration is invalid
     configurationProvider.initialize(config_1.default);
     logger_1.logger.configureLogger(
-    // @ts-expect-error TODO: fix this
+    // eslint-disable-next-line
+    // @ts-ignore TODO: fix this
     { prettyPrint: configurationProvider.getValue('logger.prettyPrint') }, true);
     const expressApp = (0, express_1.default)();
     expressApp.use(express_1.default.urlencoded({ extended: true }));

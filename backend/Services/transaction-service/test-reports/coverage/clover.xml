@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1660823262156" clover="3.2.0">
-  <project timestamp="1660823262156" name="All files">
-    <metrics statements="402" coveredstatements="381" conditionals="37" coveredconditionals="34" methods="24" coveredmethods="20" elements="463" coveredelements="435" complexity="0" loc="402" ncloc="402" packages="7" files="11" classes="11"/>
+<coverage generated="1661945533088" clover="3.2.0">
+  <project timestamp="1661945533088" name="All files">
+    <metrics statements="417" coveredstatements="389" conditionals="36" coveredconditionals="32" methods="23" coveredmethods="19" elements="476" coveredelements="440" complexity="0" loc="417" ncloc="417" packages="7" files="13" classes="13"/>
     <package name="order-service">
       <metrics statements="64" coveredstatements="64" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="config.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/config.ts">
+      <file name="config.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/config.ts">
         <metrics statements="64" coveredstatements="64" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -74,7 +74,7 @@
     </package>
     <package name="order-service.data-access">
       <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-      <file name="db-connection.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/data-access/db-connection.ts">
+      <file name="db-connection.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/data-access/db-connection.ts">
         <metrics statements="19" coveredstatements="19" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -99,7 +99,7 @@
     </package>
     <package name="order-service.data-access.config">
       <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <file name="config.js" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/data-access/config/config.js">
+      <file name="config.js" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/data-access/config/config.js">
         <metrics statements="15" coveredstatements="15" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -120,7 +120,7 @@
     </package>
     <package name="order-service.data-access.repositories">
       <metrics statements="49" coveredstatements="47" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="4"/>
-      <file name="order-model.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/data-access/repositories/order-model.ts">
+      <file name="order-model.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/data-access/repositories/order-model.ts">
         <metrics statements="29" coveredstatements="29" conditionals="1" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -152,7 +152,7 @@
         <line num="28" count="9" type="stmt"/>
         <line num="29" count="9" type="stmt"/>
       </file>
-      <file name="order-repository.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/data-access/repositories/order-repository.ts">
+      <file name="order-repository.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/data-access/repositories/order-repository.ts">
         <metrics statements="20" coveredstatements="18" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -177,68 +177,9 @@
       </file>
     </package>
     <package name="order-service.domain">
-      <metrics statements="83" coveredstatements="83" conditionals="13" coveredconditionals="12" methods="8" coveredmethods="8"/>
-      <file name="new-order-use-case.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/domain/new-order-use-case.ts">
-        <metrics statements="56" coveredstatements="56" conditionals="9" coveredconditionals="9" methods="6" coveredmethods="6"/>
-        <line num="1" count="1" type="stmt"/>
-        <line num="2" count="1" type="stmt"/>
-        <line num="3" count="1" type="stmt"/>
-        <line num="4" count="1" type="stmt"/>
-        <line num="5" count="1" type="stmt"/>
-        <line num="6" count="1" type="stmt"/>
-        <line num="7" count="1" type="stmt"/>
-        <line num="8" count="1" type="stmt"/>
-        <line num="9" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="10" count="6" type="stmt"/>
-        <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="stmt"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="17" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
-        <line num="19" count="6" type="stmt"/>
-        <line num="20" count="6" type="stmt"/>
-        <line num="21" count="1" type="stmt"/>
-        <line num="22" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="23" count="5" type="stmt"/>
-        <line num="24" count="5" type="stmt"/>
-        <line num="25" count="5" type="stmt"/>
-        <line num="26" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="27" count="5" type="stmt"/>
-        <line num="28" count="5" type="stmt"/>
-        <line num="29" count="5" type="cond" truecount="1" falsecount="0"/>
-        <line num="30" count="1" type="stmt"/>
-        <line num="31" count="1" type="stmt"/>
-        <line num="32" count="1" type="stmt"/>
-        <line num="33" count="1" type="stmt"/>
-        <line num="34" count="1" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="1" type="stmt"/>
-        <line num="37" count="4" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="4" type="stmt"/>
-        <line num="39" count="4" type="stmt"/>
-        <line num="40" count="1" type="stmt"/>
-        <line num="41" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="42" count="6" type="stmt"/>
-        <line num="43" count="6" type="stmt"/>
-        <line num="44" count="6" type="stmt"/>
-        <line num="45" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="47" count="1" type="stmt"/>
-        <line num="48" count="6" type="stmt"/>
-        <line num="49" count="1" type="stmt"/>
-        <line num="50" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="51" count="1" type="stmt"/>
-        <line num="52" count="1" type="stmt"/>
-        <line num="53" count="1" type="stmt"/>
-        <line num="54" count="1" type="cond" truecount="1" falsecount="0"/>
-        <line num="55" count="4" type="stmt"/>
-        <line num="56" count="4" type="stmt"/>
-      </file>
-      <file name="order-schema.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/domain/order-schema.ts">
-        <metrics statements="20" coveredstatements="20" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="97" coveredstatements="90" conditionals="12" coveredconditionals="10" methods="7" coveredmethods="7"/>
+      <file name="new-order-use-case.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/domain/new-order-use-case.ts">
+        <metrics statements="32" coveredstatements="32" conditionals="3" coveredconditionals="3" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -249,18 +190,73 @@
         <line num="8" count="1" type="stmt"/>
         <line num="9" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
-        <line num="11" count="1" type="stmt"/>
-        <line num="12" count="1" type="stmt"/>
-        <line num="13" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="6" type="stmt"/>
+        <line num="13" count="6" type="stmt"/>
         <line num="14" count="6" type="stmt"/>
-        <line num="15" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="16" count="3" type="stmt"/>
-        <line num="17" count="3" type="stmt"/>
+        <line num="15" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+        <line num="17" count="6" type="stmt"/>
         <line num="18" count="6" type="stmt"/>
         <line num="19" count="6" type="stmt"/>
         <line num="20" count="6" type="stmt"/>
+        <line num="21" count="6" type="stmt"/>
+        <line num="22" count="6" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="27" count="1" type="stmt"/>
+        <line num="28" count="1" type="stmt"/>
+        <line num="29" count="1" type="stmt"/>
+        <line num="30" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="31" count="4" type="stmt"/>
+        <line num="32" count="4" type="stmt"/>
       </file>
-      <file name="payment-terms-service.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/domain/payment-terms-service.ts">
+      <file name="order-schema.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/domain/order-schema.ts">
+        <metrics statements="10" coveredstatements="10" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="1" type="stmt"/>
+        <line num="10" count="1" type="stmt"/>
+      </file>
+      <file name="order-validators.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/domain/order-validators.ts">
+        <metrics statements="27" coveredstatements="20" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="7" count="6" type="stmt"/>
+        <line num="8" count="6" type="stmt"/>
+        <line num="9" count="6" type="stmt"/>
+        <line num="10" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="6" type="stmt"/>
+        <line num="15" count="6" type="cond" truecount="0" falsecount="1"/>
+        <line num="16" count="0" type="stmt"/>
+        <line num="17" count="0" type="stmt"/>
+        <line num="18" count="0" type="stmt"/>
+        <line num="19" count="0" type="stmt"/>
+        <line num="20" count="0" type="stmt"/>
+        <line num="21" count="0" type="stmt"/>
+        <line num="22" count="0" type="stmt"/>
+        <line num="23" count="6" type="stmt"/>
+        <line num="24" count="6" type="cond" truecount="1" falsecount="0"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="26" count="1" type="stmt"/>
+        <line num="27" count="6" type="stmt"/>
+      </file>
+      <file name="payment-terms-service.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/domain/payment-terms-service.ts">
         <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="4" type="cond" truecount="1" falsecount="0"/>
@@ -270,10 +266,34 @@
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="1" type="stmt"/>
       </file>
+      <file name="user-service-client.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/domain/user-service-client.ts">
+        <metrics statements="21" coveredstatements="21" conditionals="3" coveredconditionals="3" methods="2" coveredmethods="2"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="cond" truecount="1" falsecount="0"/>
+        <line num="5" count="5" type="stmt"/>
+        <line num="6" count="5" type="stmt"/>
+        <line num="7" count="5" type="stmt"/>
+        <line num="8" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="9" count="5" type="stmt"/>
+        <line num="10" count="5" type="stmt"/>
+        <line num="11" count="5" type="cond" truecount="1" falsecount="0"/>
+        <line num="12" count="1" type="stmt"/>
+        <line num="13" count="1" type="stmt"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="15" count="1" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="17" count="1" type="stmt"/>
+        <line num="18" count="1" type="stmt"/>
+        <line num="19" count="5" type="stmt"/>
+        <line num="20" count="5" type="stmt"/>
+        <line num="21" count="5" type="stmt"/>
+      </file>
     </package>
     <package name="order-service.entry-points.api">
-      <metrics statements="129" coveredstatements="126" conditionals="16" coveredconditionals="14" methods="5" coveredmethods="5"/>
-      <file name="routes.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/entry-points/api/routes.ts">
+      <metrics statements="130" coveredstatements="127" conditionals="16" coveredconditionals="14" methods="5" coveredmethods="5"/>
+      <file name="routes.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/entry-points/api/routes.ts">
         <metrics statements="44" coveredstatements="44" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
@@ -320,8 +340,8 @@
         <line num="43" count="3" type="stmt"/>
         <line num="44" count="3" type="stmt"/>
       </file>
-      <file name="server.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/entry-points/api/server.ts">
-        <metrics statements="85" coveredstatements="82" conditionals="10" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <file name="server.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/entry-points/api/server.ts">
+        <metrics statements="86" coveredstatements="83" conditionals="10" coveredconditionals="8" methods="4" coveredmethods="4"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -356,36 +376,36 @@
         <line num="32" count="3" type="stmt"/>
         <line num="33" count="3" type="stmt"/>
         <line num="34" count="3" type="stmt"/>
-        <line num="35" count="1" type="stmt"/>
-        <line num="36" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="35" count="3" type="stmt"/>
+        <line num="36" count="1" type="stmt"/>
         <line num="37" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="38" count="3" type="stmt"/>
+        <line num="38" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="39" count="3" type="stmt"/>
-        <line num="40" count="0" type="stmt"/>
-        <line num="41" count="3" type="stmt"/>
+        <line num="40" count="3" type="stmt"/>
+        <line num="41" count="0" type="stmt"/>
         <line num="42" count="3" type="stmt"/>
         <line num="43" count="3" type="stmt"/>
         <line num="44" count="3" type="stmt"/>
-        <line num="45" count="1" type="stmt"/>
-        <line num="46" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="47" count="3" type="stmt"/>
+        <line num="45" count="3" type="stmt"/>
+        <line num="46" count="1" type="stmt"/>
+        <line num="47" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="48" count="3" type="stmt"/>
-        <line num="49" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="50" count="3" type="stmt"/>
+        <line num="49" count="3" type="stmt"/>
+        <line num="50" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="51" count="3" type="stmt"/>
         <line num="52" count="3" type="stmt"/>
         <line num="53" count="3" type="stmt"/>
-        <line num="54" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="55" count="3" type="stmt"/>
+        <line num="54" count="3" type="stmt"/>
+        <line num="55" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="56" count="3" type="stmt"/>
         <line num="57" count="3" type="stmt"/>
         <line num="58" count="3" type="stmt"/>
         <line num="59" count="3" type="stmt"/>
-        <line num="60" count="1" type="stmt"/>
-        <line num="61" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="62" count="3" type="stmt"/>
-        <line num="63" count="3" type="cond" truecount="1" falsecount="0"/>
-        <line num="64" count="2" type="stmt"/>
+        <line num="60" count="3" type="stmt"/>
+        <line num="61" count="1" type="stmt"/>
+        <line num="62" count="3" type="cond" truecount="1" falsecount="0"/>
+        <line num="63" count="3" type="stmt"/>
+        <line num="64" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="65" count="2" type="stmt"/>
         <line num="66" count="2" type="stmt"/>
         <line num="67" count="2" type="stmt"/>
@@ -394,24 +414,25 @@
         <line num="70" count="2" type="stmt"/>
         <line num="71" count="2" type="stmt"/>
         <line num="72" count="2" type="stmt"/>
-        <line num="73" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="74" count="0" type="stmt"/>
+        <line num="73" count="2" type="stmt"/>
+        <line num="74" count="2" type="cond" truecount="0" falsecount="1"/>
         <line num="75" count="0" type="stmt"/>
-        <line num="76" count="2" type="stmt"/>
+        <line num="76" count="0" type="stmt"/>
         <line num="77" count="2" type="stmt"/>
         <line num="78" count="2" type="stmt"/>
         <line num="79" count="2" type="stmt"/>
-        <line num="80" count="2" type="cond" truecount="0" falsecount="1"/>
-        <line num="81" count="2" type="stmt"/>
-        <line num="82" count="3" type="stmt"/>
+        <line num="80" count="2" type="stmt"/>
+        <line num="81" count="2" type="cond" truecount="0" falsecount="1"/>
+        <line num="82" count="2" type="stmt"/>
         <line num="83" count="3" type="stmt"/>
-        <line num="84" count="1" type="stmt"/>
+        <line num="84" count="3" type="stmt"/>
         <line num="85" count="1" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
       </file>
     </package>
     <package name="order-service.test">
       <metrics statements="43" coveredstatements="27" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2"/>
-      <file name="test-helpers.ts" path="/Users/yonigoldberg/Solutions/temp/practica/src/code-templates/services/order-service/test/test-helpers.ts">
+      <file name="test-helpers.ts" path="/Users/yonigoldberg/Solutions/practica/src/code-templates/services/order-service/test/test-helpers.ts">
         <metrics statements="43" coveredstatements="27" conditionals="2" coveredconditionals="2" methods="5" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

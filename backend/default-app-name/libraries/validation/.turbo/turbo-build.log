@@ -1,6 +1,0 @@
-@practica/validation:build: cache hit, replaying output 21e1c8ada76abe92
-@practica/validation:build: npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-@practica/validation:build: 
-@practica/validation:build: > @practica/validation@0.0.3 build
-@practica/validation:build: > tsc
-@practica/validation:build: 

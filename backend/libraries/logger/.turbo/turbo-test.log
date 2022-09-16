@@ -1,19 +1,19 @@
-[32m@practica/logger:test[0m: cache hit, replaying output [2mfb20ff56e46a44b5[0m
+[32m@practica/logger:test[0m: cache hit, replaying output [2m09382121a990faf6[0m
 [32m@practica/logger:test: [0m
-[32m@practica/logger:test: [0m> @practica/logger@0.0.1-alpha.4 test
+[32m@practica/logger:test: [0m> @practica/logger@0.0.3 test
 [32m@practica/logger:test: [0m> jest --forceExit
 [32m@practica/logger:test: [0m
-[32m@practica/logger:test: [0mPASS test/index.test.ts
+[32m@practica/logger:test: [0mPASS test/index.test.ts (8.203 s)
 [32m@practica/logger:test: [0m  logger
-[32m@practica/logger:test: [0m    ✓ When no explicit configuration is set, info logs are written (4 ms)
+[32m@practica/logger:test: [0m    ✓ When no explicit configuration is set, info logs are written (9 ms)
 [32m@practica/logger:test: [0m    ✓ When log level is DEBUG and logger emits INFO statement, then stdout contains the entry (1 ms)
 [32m@practica/logger:test: [0m    ✓ When logger is configured and then re-configured, then the new config applies (1 ms)
-[32m@practica/logger:test: [0m    ✓ When log level is ERROR and logger emits INFO statement, then nothing is written
-[32m@practica/logger:test: [0m    ✓ When configuring for pretty-print, then its written to stdout
+[32m@practica/logger:test: [0m    ✓ When log level is ERROR and logger emits INFO statement, then nothing is written (2 ms)
+[32m@practica/logger:test: [0m    ✓ When configuring for pretty-print, then its written to stdout (1 ms)
 [32m@practica/logger:test: [0m
 [32m@practica/logger:test: [0mTest Suites: 1 passed, 1 total
 [32m@practica/logger:test: [0mTests:       5 passed, 5 total
 [32m@practica/logger:test: [0mSnapshots:   0 total
-[32m@practica/logger:test: [0mTime:        3.29 s
+[32m@practica/logger:test: [0mTime:        8.396 s
 [32m@practica/logger:test: [0mRan all test suites.
 [32m@practica/logger:test: [0mForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?

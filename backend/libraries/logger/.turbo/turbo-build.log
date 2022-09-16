@@ -1,5 +1,6 @@
-@practica/logger:build: cache hit, replaying output a781d9544f16f8df
+@practica/logger:build: cache hit, replaying output 8881f45bc6aa2746
+@practica/logger:build: npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
 @practica/logger:build: 
-@practica/logger:build: > @practica/logger@0.0.1-alpha.4 build
+@practica/logger:build: > @practica/logger@0.0.3 build
 @practica/logger:build: > tsc
 @practica/logger:build: 

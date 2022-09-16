@@ -27,38 +27,24 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getOrder = exports.deleteOrder = exports.addOrder = void 0;
-const axios_1 = __importDefault(require("axios"));
-const error_handling_1 = require("@practica/error-handling");
 const orderRepository = __importStar(require("../data-access/repositories/order-repository"));
 const payment_terms_service_1 = __importDefault(require("./payment-terms-service"));
-const order_schema_1 = require("./order-schema");
+const order_validators_1 = require("./order-validators");
+const user_service_client_1 = require("./user-service-client");
+// new-order-use-case.ts
 // ️️️✅ Best Practice: Start a flow with a 'use case' function that summarizes the flow in high-level
-// This function should orchestrate multiple services and repositories
+// It should merely tell the feature story without too much information. Kind of a yellow pages of the module
+// This kind of function typically  orchestrates multiple services and repositories
 async function addOrder(newOrder) {
-    validateNewOrderRequest(newOrder);
-    const userWhoOrdered = await getUserOrThrowIfNotExist(newOrder.userId);
-    payment_terms_service_1.default.determinePaymentTerms(newOrder.paymentTermsInDays, userWhoOrdered.terms);
-    const response = await orderRepository.addOrder(newOrder);
+    (0, order_validators_1.assertNewOrderIsValid)(newOrder);
+    const userWhoOrdered = await (0, user_service_client_1.assertUserExists)(newOrder.userId);
+    const finalOrderToSave = { ...newOrder };
+    const approvedPaymentTerms = payment_terms_service_1.default.determinePaymentTerms(finalOrderToSave.paymentTermsInDays, userWhoOrdered.terms);
+    finalOrderToSave.paymentTermsInDays = approvedPaymentTerms;
+    const response = await orderRepository.addOrder(finalOrderToSave);
     return response;
 }
 exports.addOrder = addOrder;
-async function getUserOrThrowIfNotExist(userId) {
-    const userVerificationRequest = await axios_1.default.get(`http://localhost/user/${userId}`, {
-        validateStatus: () => true,
-    });
-    if (userVerificationRequest.status !== 200) {
-        throw new error_handling_1.AppError('user-doesnt-exist', `The user ${userId} doesnt exist`, userVerificationRequest.status, true);
-    }
-    return userVerificationRequest.data;
-}
-function validateNewOrderRequest(newOrderRequest) {
-    const AjvSchemaValidator = (0, order_schema_1.getNewOrderValidator)();
-    // @ts-expect-error TODO: fix this type error
-    const isValid = AjvSchemaValidator(newOrderRequest);
-    if (!isValid) {
-        throw new error_handling_1.AppError('invalid-order', `Validation failed`, 400, true);
-    }
-}
 async function deleteOrder(userId) {
     return await orderRepository.deleteOrder(userId);
 }
