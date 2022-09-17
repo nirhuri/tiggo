@@ -6,7 +6,7 @@ import { addTransactionDTO, getNewTransactionValidator } from './transaction-sch
 
 export async function addTransaction(newTransaction: addTransactionDTO) {
   validateNewTransactionRequest(newTransaction);
-  const userWhoOrdered = await getUserOrThrowIfNotExist(newTransaction.userId);
+  // const userWhoOrdered = await getUserOrThrowIfNotExist(newTransaction.userId);
   const response = await transactionRepository.addTransaction(newTransaction);
 
   return response;

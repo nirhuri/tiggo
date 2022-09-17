@@ -8,10 +8,18 @@ let dbConnection: Sequelize;
 export default function getDbConnection() {
   if (!dbConnection) {
     dbConnection = new Sequelize(
-      configurationProvider.getValue('DB.dbName'),
-      configurationProvider.getValue('DB.userName'),
-      configurationProvider.getValue('DB.password'),
-      sequelizeConfig as Options
+      {
+        dialect: 'postgres',
+        database: 'transactions',
+        username: 'postgres',
+        password: '',
+        host: '0.0.0.0',
+        port: 5432,
+      }
+      // configurationProvider.getValue('DB.dbName'),
+      // configurationProvider.getValue('DB.userName'),
+      // configurationProvider.getValue('DB.password'),
+      // sequelizeConfig as Options
     );
   }
 

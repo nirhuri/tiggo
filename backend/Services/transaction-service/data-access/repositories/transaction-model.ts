@@ -9,10 +9,16 @@ export default function getTransactionModel() {
       unique: true,
       autoIncrement: true,
     },
-    businessName: {
+    created_at: {
+      type: DataTypes.DATE,
+    },
+    updated_at: {
+      type: DataTypes.DATE
+    },
+    business_name: {
       type: DataTypes.STRING,
     },
-    userId: {
+    user_id: {
       type: DataTypes.UUID,
       unique: true,
     },
