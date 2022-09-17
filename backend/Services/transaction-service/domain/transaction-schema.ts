@@ -1,16 +1,17 @@
 import ajv from '@practica/validation';
 import { Static, Type } from '@sinclair/typebox';
 
-enum TransactionType {
-  'DEPOSITE' = 0,
-  'WITHDRAW' = 1,
+export enum TransactionType {
+  'WITHDRAW' = 0,
+  'DEPOSITE' = 1,
 }
 
 export const addTransactionSchema = Type.Object({
   businessName: Type.String(),
   amount: Type.Number(),
   type: Type.Enum(TransactionType),
-  userId: Type.Integer(),
+  userId: Type.String(),
+  title: Type.String()
 });
 
 export type addTransactionDTO = Static<typeof addTransactionSchema>;
