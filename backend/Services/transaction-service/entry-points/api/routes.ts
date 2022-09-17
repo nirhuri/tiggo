@@ -6,7 +6,8 @@ import * as newOrderUseCase from '../../domain/new-transaction-use-case';
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 
-  router.post('/cash', async (req, res, next) => {
+  router.post('', async (req, res, next) => {
+    console.log("TEST")
     try {
       logger.info(
         `Order API was called to add new Order ${util.inspect(req.body)}`
