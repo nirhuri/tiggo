@@ -2,23 +2,23 @@ import { DataTypes } from 'sequelize';
 import getDbConnection from '../db-connection';
 
 export default function getTransactionModel() {
-  return getDbConnection().define('Transactions', {
+  return getDbConnection().define('cash_transaction', {
     id: {
       type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      unique: true,
-      autoIncrement: true,
     },
-    created_at: {
+    createdAt: {
       type: DataTypes.DATE,
     },
-    updated_at: {
+    updatedAt: {
       type: DataTypes.DATE
     },
-    business_name: {
+    businessName:  {
       type: DataTypes.STRING,
+      
     },
-    user_id: {
+    userId: {
       type: DataTypes.UUID,
       unique: true,
     },
