@@ -9,9 +9,13 @@ export enum TransactionType {
 export const addTransactionSchema = Type.Object({
   businessName: Type.String(),
   amount: Type.Number(),
-  type: Type.Enum(TransactionType),
+  //TransactionType.WITHDRAW, TransactionType.DEPOSITE valitet as string
+  type: Type.KeyOf(
+    Type.Object({ WITHDRAW: Type.String(), DEPOSITE: Type.String() })
+  ),
+
   //userId: Type.String(),
-  title: Type.String()
+  title: Type.String(),
 });
 
 export type addTransactionDTO = Static<typeof addTransactionSchema>;

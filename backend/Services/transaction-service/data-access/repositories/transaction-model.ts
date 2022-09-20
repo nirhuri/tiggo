@@ -8,6 +8,7 @@ export default function getTransactionModel() {
       id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
+
         primaryKey: true,
       },
       createdAt: {
