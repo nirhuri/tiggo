@@ -12,9 +12,11 @@ export default function getTransactionModel() {
       },
       createdAt: {
         type: DataTypes.DATE,
+        allowNull: false
       },
       updatedAt: {
         type: DataTypes.DATE,
+        allowNull: false
       },
       businessName: {
         type: DataTypes.STRING,
@@ -22,15 +24,18 @@ export default function getTransactionModel() {
       userId: {
         type: DataTypes.UUID,
         unique: true,
+        allowNull: false
       },
       amount: {
         type: DataTypes.INTEGER,
+        allowNull: false
       },
       title: {
         type: DataTypes.STRING,
       },
       type: {
         type: DataTypes.ENUM('WITHDRAW', 'DEPOSITE'),
+        allowNull: false
       },
     },
     {
