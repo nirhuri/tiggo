@@ -1,4 +1,4 @@
-import getTransactionModel from './transaction-model';
+import getTransactionModel from './cash-transaction-model';
 
 // ️️️✅ Best Practice: The repository pattern - Wrap the entire DB layer with a simple interface that returns plain JS objects
 export async function getOrderById(id: number) {

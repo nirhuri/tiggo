@@ -3,7 +3,8 @@ import { Static, Type } from '@sinclair/typebox';
 
 export enum TransactionType {
   'WITHDRAW',
-  'DEPOSITE',
+  'DEPOSITE'
+  ,
 }
 
 export const addTransactionSchema = Type.Object({
