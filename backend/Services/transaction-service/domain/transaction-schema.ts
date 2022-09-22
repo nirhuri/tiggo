@@ -10,8 +10,8 @@ export enum TransactionType {
 export const addTransactionSchema = Type.Object({
   businessName: Type.String(),
   amount: Type.Number(),
-  type: Type.Enum(TransactionType),
-  //userId: Type.String(),
+  action: Type.Enum(TransactionType),
+  userId: Type.String(),
   title: Type.String()
 });
 

@@ -6,12 +6,11 @@ import * as newTransactionUseCase from '../../domain/new-transaction-use-case';
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 
-  router.post('', async (req, res, next) => {
+  router.post('/', async (req, res, next) => {
     try {
       logger.info(
-        `Order API was called to add new Order ${util.inspect(req.body)}`
+        `transaction API was called to add new Order ${util.inspect(req.body)}`
       );
-      // ✅ Best Practice: Using the 3-tier architecture, routes/controller are kept thin, logic is encapsulated in a dedicated domain folder
       const addTransactionResponse = await newTransactionUseCase.addTransaction(
         req.body
       );
