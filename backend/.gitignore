@@ -1,2 +1,3 @@
 node_modules/
 Services/*/node_modules
+Gateways/*/node_modules
