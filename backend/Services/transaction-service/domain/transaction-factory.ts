@@ -1,25 +1,55 @@
 import { AppError } from '@practica/error-handling';
+import {
+  addCashTransactionDTO,
+  addCreditCardTransactionDTO,
+  getNewCashTransactionValidator,
+  getNewCreditCardTransactionValidator,
+} from './transaction-schema';
+import * as transactionRepository from '../data-access/repositories/transaction-repository';
 
 export interface AbstractTransaction {
-  create(transaction: any);
-  save();
+  validateTransactionRequest(): void;
+  save(): any;
 }
 
 export class CashTransaction implements AbstractTransaction {
-  create(transaction: any) {}
-  save() {}
+  constructor(private transactionDTO: addCashTransactionDTO) {}
+  validateTransactionRequest() {
+    const AjvSchemaValidator = getNewCashTransactionValidator();
+    // @ts-expect-error TODO: fix this type error
+    const isValid = AjvSchemaValidator(this.transactionDTO);
+    if (!isValid) {
+      throw new AppError('invalid-transaction', `Validation failed`, 400, true);
+    }
+  }
+  async save() {
+    const response = await transactionRepository.addTransaction(
+      this.transactionDTO
+    );
+  }
 }
 
 export class CreditCardTransaction implements AbstractTransaction {
-  create(transaction: any) {}
-  save() {}
+  constructor(private transactionDTO: addCreditCardTransactionDTO) {}
+  validateTransactionRequest() {
+    const AjvSchemaValidator = getNewCreditCardTransactionValidator();
+    // @ts-expect-error TODO: fix this type error
+    const isValid = AjvSchemaValidator(this.transactionDTO);
+    if (!isValid) {
+      throw new AppError('invalid-transaction', `Validation failed`, 400, true);
+    }
+  }
+  async save() {}
 }
 
-export function transactionFactory(type: string): AbstractTransaction {
+export function transactionFactory(
+  type: string,
+  transactionRequest
+): AbstractTransaction {
   if (type === 'cash') {
-    return new CashTransaction();
+    return new CashTransaction(transactionRequest);
   } else if (type === 'credit-card') {
-    return new CreditCardTransaction();
+    return new CreditCardTransaction(transactionRequest);
   } else {
     throw new AppError(
       'transaction-factory',

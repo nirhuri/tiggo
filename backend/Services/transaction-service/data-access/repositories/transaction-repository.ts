@@ -1,20 +1,22 @@
-import getTransactionModel from './cash-transaction-model';
+import getCashTransactionModel from './cash-transaction-model';
 
 // ️️️✅ Best Practice: The repository pattern - Wrap the entire DB layer with a simple interface that returns plain JS objects
 export async function getOrderById(id: number) {
-  return await getTransactionModel().findOne({ where: { id } });
+  return await getCashTransactionModel().findOne({ where: { id } });
 }
 
 export async function addTransaction(transactionDetails) {
-  const addingResponse = await getTransactionModel().create(transactionDetails);
+  const addingResponse = await getCashTransactionModel().create(
+    transactionDetails
+  );
 
   return addingResponse;
 }
 
 export async function deleteTransaction(orderIdToDelete: number) {
-  await getTransactionModel().destroy({ where: { id: orderIdToDelete } });
+  await getCashTransactionModel().destroy({ where: { id: orderIdToDelete } });
 }
 
 export async function cleanupData() {
-  await getTransactionModel().truncate();
+  await getCashTransactionModel().truncate();
 }

@@ -1,7 +1,7 @@
 import { DataTypes } from 'sequelize';
 import getDbConnection from '../db-connection';
 
-export default function getTransactionModel() {
+export default function getCashTransactionModel() {
   return getDbConnection().define(
     'cash_transaction',
     {
