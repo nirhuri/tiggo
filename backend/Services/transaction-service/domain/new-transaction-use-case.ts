@@ -1,27 +1,18 @@
-import { AppError } from '@practica/error-handling';
-import * as transactionRepository from '../data-access/repositories/transaction-repository';
-import paymentTermsService from './payment-terms-service';
-import {
-  addTransactionDTO,
-  getNewTransactionValidator,
-} from './transaction-schema';
+import { addCashTransactionDTO } from './transaction-schema';
+import { transactionFactory } from './transaction-factory';
+import { TransactionKind } from './transactionsKind';
 
 export async function addCashTransaction(
   newTransaction: addCashTransactionDTO
 ) {
-  validateNewTransactionRequest(newTransaction);
-  const cashTransaction = transactionFactory('cash', newTransaction);
-  cashTransaction.validateTransactionRequest();
-  return cashTransaction.save();
+  return await addTransaction(newTransaction, TransactionKind.cash);
 }
 
-function validateNewTransactionRequest(
-  newTransactionRequest: addCashTransactionDTO
+async function addTransaction(
+  newTransaction: addCashTransactionDTO,
+  transactionKind: TransactionKind
 ) {
-  const AjvSchemaValidator = getNewCashTransactionValidator();
-  // @ts-expect-error TODO: fix this type error
-  const isValid = AjvSchemaValidator(newTransactionRequest);
-  if (!isValid) {
-    throw new AppError('invalid-transaction', `Validation failed`, 400, true);
-  }
+  const transaction = transactionFactory(transactionKind, newTransaction);
+  transaction.validateTransactionRequest();
+  return transaction.save();
 }
