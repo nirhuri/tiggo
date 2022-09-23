@@ -1,0 +1,114 @@
+[33morder-service:test[0m: cache hit, replaying output [2mbc9d55e16b1c1d71[0m
+[33morder-service:test: [0m
+[33morder-service:test: [0m> order-service@0.0.3 test
+[33morder-service:test: [0m> PRETTY_PRINT=true jest --forceExit --verbose=true --runInBand
+[33morder-service:test: [0m
+[33morder-service:test: [0mglobal-setup: 11.334ms
+[33morder-service:test: [0m[1661945529650] [32mINFO[39m (80944 on MadHatter.local): [36mServer is about to listen to port 0[39m
+[33morder-service:test: [0m[1661945529698] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 1,
+[33morder-service:test: [0m  productId: 2,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0m{"level":50,"time":1661945529969,"pid":80944,"hostname":"MadHatter.local","msg":"Validation failed"}
+[33morder-service:test: [0m  console.log
+[33morder-service:test: [0m    In real production code I will really fire metrics { name: 'error', labels: { errorName: 'invalid-order' } }
+[33morder-service:test: [0m
+[33morder-service:test: [0m      at Object.fireMetric (../../libraries/error-handling/.dist/index.js:96:17)
+[33morder-service:test: [0m
+[33morder-service:test: [0m{"level":50,"time":1661945530010,"pid":80944,"hostname":"MadHatter.local","msg":"The user 7 doesnt exist"}
+[33morder-service:test: [0m  console.log
+[33morder-service:test: [0m    In real production code I will really fire metrics { name: 'error', labels: { errorName: 'user-doesnt-exist' } }
+[33morder-service:test: [0m
+[33morder-service:test: [0m      at Object.fireMetric (../../libraries/error-handling/.dist/index.js:96:17)
+[33morder-service:test: [0m
+[33morder-service:test: [0m[1661945529939] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 1,
+[33morder-service:test: [0m  productId: 2,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0m[1661945529953] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to get user by id 66[39m
+[33morder-service:test: [0m[1661945529968] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 1,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0m[1661945530006] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 7,
+[33morder-service:test: [0m  productId: 1,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0mPASS test/add-order.test.ts (5.996 s)
+[33morder-service:test: [0m  /api
+[33morder-service:test: [0m    POST /orders
+[33morder-service:test: [0m      ✓ When adding a new valid order, Then should get back approval with 200 response (277 ms)
+[33morder-service:test: [0m      ✓ When adding a new valid order, Then should be able to retrieve it (30 ms)
+[33morder-service:test: [0m      ✓ When adding an order without specifying product, stop and return 400 (38 ms)
+[33morder-service:test: [0m      ✓ When the user does not exist, return 404 response (14 ms)
+[33morder-service:test: [0m      ✎ todo When a new order failed, an invalid-order error was handled
+[33morder-service:test: [0m      ✎ todo When a new valid order was added, then order-added metric was fired
+[33morder-service:test: [0m      ✎ todo When the user service is down, then order is still added successfully
+[33morder-service:test: [0m
+[33morder-service:test: [0m[1661945531201] [32mINFO[39m (80944 on MadHatter.local): [36mServer is about to listen to port 0[39m
+[33morder-service:test: [0m[1661945531226] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 1,
+[33morder-service:test: [0m  productId: 2,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0m[1661945531410] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to get user by id 67[39m
+[33morder-service:test: [0m[1661945531427] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to get user by id -1[39m
+[33morder-service:test: [0mPASS test/get-order.test.ts (1.359 s)
+[33morder-service:test: [0m  /api
+[33morder-service:test: [0m    GET /order
+[33morder-service:test: [0m      ✓ When asked for an existing order, Then should retrieve it and receive 200 response (219 ms)
+[33morder-service:test: [0m      ✓ When asked for an non-existing order, Then should receive 404 response (7 ms)
+[33morder-service:test: [0m
+[33morder-service:test: [0m[1661945532578] [32mINFO[39m (80944 on MadHatter.local): [36mServer is about to listen to port 0[39m
+[33morder-service:test: [0m[1661945532602] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to add new Order {
+[33morder-service:test: [0m  userId: 1,
+[33morder-service:test: [0m  productId: 2,
+[33morder-service:test: [0m  deliveryAddress: '123 Main St, New York, NY 10001',
+[33morder-service:test: [0m  paymentTermsInDays: 30
+[33morder-service:test: [0m}[39m
+[33morder-service:test: [0m[1661945532773] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to delete order 68[39m
+[33morder-service:test: [0m[1661945532781] [32mINFO[39m (80944 on MadHatter.local): [36mOrder API was called to get user by id 68[39m
+[33morder-service:test: [0mPASS test/delete-order.test.ts (1.353 s)
+[33morder-service:test: [0m  /api
+[33morder-service:test: [0m    DELETE /order
+[33morder-service:test: [0m      ✓ When deleting an existing order, Then it should NOT be retrievable (210 ms)
+[33morder-service:test: [0m
+[33morder-service:test: [0m----------------------------------------|---------|----------|---------|---------|-------------------
+[33morder-service:test: [0mFile                                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+[33morder-service:test: [0m----------------------------------------|---------|----------|---------|---------|-------------------
+[33morder-service:test: [0mAll files                               |   93.28 |    88.88 |    82.6 |   93.28 |                   
+[33morder-service:test: [0m order-service                          |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  config.ts                             |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m order-service/data-access              |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  db-connection.ts                      |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m order-service/data-access/config       |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  config.js                             |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m order-service/data-access/repositories |   95.91 |      100 |      80 |   95.91 |                   
+[33morder-service:test: [0m  order-model.ts                        |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  order-repository.ts                   |      90 |      100 |      75 |      90 | 19-20             
+[33morder-service:test: [0m order-service/domain                   |   92.78 |    83.33 |     100 |   92.78 |                   
+[33morder-service:test: [0m  new-order-use-case.ts                 |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  order-schema.ts                       |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  order-validators.ts                   |   74.07 |       75 |     100 |   74.07 | 16-22             
+[33morder-service:test: [0m  payment-terms-service.ts              |     100 |       50 |     100 |     100 | 4                 
+[33morder-service:test: [0m  user-service-client.ts                |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m order-service/entry-points/api         |   97.69 |     87.5 |     100 |   97.69 |                   
+[33morder-service:test: [0m  routes.ts                             |     100 |      100 |     100 |     100 |                   
+[33morder-service:test: [0m  server.ts                             |   96.51 |       80 |     100 |   96.51 | 41,75-76          
+[33morder-service:test: [0m order-service/test                     |   62.79 |      100 |      40 |   62.79 |                   
+[33morder-service:test: [0m  test-helpers.ts                       |   62.79 |      100 |      40 |   62.79 | 5-14,20-22,24-26  
+[33morder-service:test: [0m----------------------------------------|---------|----------|---------|---------|-------------------
+[33morder-service:test: [0mTest Suites: 3 passed, 3 total
+[33morder-service:test: [0mTests:       3 todo, 7 passed, 10 total
+[33morder-service:test: [0mSnapshots:   0 total
+[33morder-service:test: [0mTime:        8.928 s
+[33morder-service:test: [0mRan all test suites.
+[33morder-service:test: [0mForce exiting Jest: Have you considered using `--detectOpenHandles` to detect async operations that kept running after all tests finished?
