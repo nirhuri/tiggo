@@ -13,11 +13,11 @@ export default function getCashTransactionModel() {
       },
       createdAt: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
       },
       updatedAt: {
         type: DataTypes.DATE,
-        allowNull: false
+        allowNull: false,
       },
       businessName: {
         type: DataTypes.STRING,
@@ -25,18 +25,18 @@ export default function getCashTransactionModel() {
       userId: {
         type: DataTypes.UUID,
         unique: true,
-        allowNull: false
+        allowNull: false,
       },
       amount: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
       },
       title: {
         type: DataTypes.STRING,
       },
-      type: {
+      action: {
         type: DataTypes.ENUM('WITHDRAW', 'DEPOSITE'),
-        allowNull: false
+        allowNull: false,
       },
     },
     {

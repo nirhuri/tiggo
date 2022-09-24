@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env PORT=3000 PRETTY_PRINT=false node .dist/start.js",
     "start:dev": "cross-env PORT=3000 && PRETTY_PRINT=true && nodemon start.ts",
+    "start-win:dev": "cross-env PORT=3000 && SET PRETTY_PRINT=true && nodemon start.ts",
     "test": "PRETTY_PRINT=true jest --forceExit --verbose=true --runInBand",
     "test:dev": "jest --watch --silent --runInBand --coverage=false --reporters='default'",
     "test:dev:verbose": "jest --watch --verbose=true",

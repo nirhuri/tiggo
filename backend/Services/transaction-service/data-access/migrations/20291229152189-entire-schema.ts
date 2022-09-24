@@ -29,7 +29,7 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      type: {
+      action: {
         allowNull: false,
         type: Sequelize.ENUM('WITHDRAW', 'DEPOSITE'),
       },
