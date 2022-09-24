@@ -6,7 +6,7 @@ import { errorHandler } from '@practica/error-handling';
 import * as configurationProvider from '@practica/configuration-provider';
 import { jwtVerifierMiddleware } from '@practica/jwt-token-verifier';
 import configurationSchema from '../../config';
-import defineRoutes from './routes';
+import defineRoutes from './transaction-routes';
 
 let connection: Server;
 
@@ -22,11 +22,6 @@ async function startWebServer(): Promise<AddressInfo> {
   const expressApp = express();
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());
-  expressApp.use(
-    jwtVerifierMiddleware({
-      secret: configurationProvider.getValue('jwtTokenSecret'),
-    })
-  );
   defineRoutes(expressApp);
   handleRouteErrors(expressApp);
   const APIAddress = await openConnection(expressApp);

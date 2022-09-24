@@ -2,11 +2,12 @@ import util from 'util';
 import express from 'express';
 import { logger } from '@practica/logger';
 import axios from 'axios';
+import { verifyJwt } from './jwt-middleware';
 
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 
-  router.post('', async (req, res, next) => {
+  router.post('/', verifyJwt, async (req, res, next) => {
     try {
       logger.info(
         `Gateway API was called to add new Transaction ${util.inspect(

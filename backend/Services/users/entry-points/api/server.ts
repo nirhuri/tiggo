@@ -15,18 +15,12 @@ async function startWebServer(): Promise<AddressInfo> {
   // ️️️✅ Best Practice: Declare a strict configuration schema and fail fast if the configuration is invalid
   configurationProvider.initialize(configurationSchema);
   logger.configureLogger(
-    // @ts-expect-error TODO: fix this
     { prettyPrint: configurationProvider.getValue('logger.prettyPrint') },
     true
   );
   const expressApp = express();
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());
-  expressApp.use(
-    jwtVerifierMiddleware({
-      secret: configurationProvider.getValue('jwtTokenSecret'),
-    })
-  );
   defineRoutes(expressApp);
   handleRouteErrors(expressApp);
   const APIAddress = await openConnection(expressApp);

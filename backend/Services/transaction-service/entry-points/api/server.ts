@@ -22,11 +22,6 @@ async function startWebServer(): Promise<AddressInfo> {
   const expressApp = express();
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());
-  expressApp.use(
-    jwtVerifierMiddleware({
-      secret: configurationProvider.getValue('jwtTokenSecret'),
-    })
-  );
   defineRoutes(expressApp);
   handleRouteErrors(expressApp);
   const APIAddress = await openConnection(expressApp);
