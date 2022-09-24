@@ -6,6 +6,7 @@ import {
   getNewCreditCardTransactionValidator,
 } from './transaction-schema';
 import * as transactionRepository from '../data-access/repositories/transaction-repository';
+
 export enum TransactionKind {
   cash = 'cash',
   credit = 'credit',
@@ -27,9 +28,7 @@ export class CashTransaction implements AbstractTransaction {
     }
   }
   async save() {
-    const response = await transactionRepository.addTransaction(
-      this.transactionDTO
-    );
+    return await transactionRepository.addTransaction(this.transactionDTO);
   }
 }
 
