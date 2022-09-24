@@ -1,4 +1,3 @@
-// ✅ Best Practice: Manage DB schemas explicitly using migrations
 module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('Users', {
@@ -31,6 +30,10 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
+      password: {
+        type: Sequelize.STRING,
+        allowNull: false
+      }
     });
 
     await queryInterface.createTable('Roles', {

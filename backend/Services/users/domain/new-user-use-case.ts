@@ -1,8 +1,7 @@
 import axios from 'axios';
 import { AppError } from '@practica/error-handling';
-import * as transactionRepository from '../data-access/repositories/transaction-repository';
-import paymentTermsService from './payment-terms-service';
-import { addTransactionDTO, getNewTransactionValidator } from './transaction-schema';
+import * as transactionRepository from '../data-access/repositories/users-repository';
+import { addTransactionDTO, getNewTransactionValidator } from './user-schema';
 
 export async function addTransaction(newTransaction: addTransactionDTO) {
   validateNewTransactionRequest(newTransaction);

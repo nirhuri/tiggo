@@ -34,6 +34,10 @@ export default function getUserModel() {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      password: {
+        type: DataTypes.STRING,
+        allowNull: false
+      }
     },
     {
       indexes: [
