@@ -1,5 +1,5 @@
 {
-  "name": "order-service",
+  "name": "mobile-gateway",
   "version": "0.0.3",
   "description": "An example Node.js app that is packed with best practices",
   "main": "./.dist/start.js",

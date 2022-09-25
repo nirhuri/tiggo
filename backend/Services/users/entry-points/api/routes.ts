@@ -1,7 +1,7 @@
 import util from 'util';
 import express from 'express';
 import { logger } from '@practica/logger';
-import * as newOrderUseCase from '../../domain/new-transaction-use-case';
+import * as newOrderUseCase from '../../domain/new-user-use-case';
 
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
