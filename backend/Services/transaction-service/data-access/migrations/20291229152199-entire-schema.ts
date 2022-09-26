@@ -34,49 +34,28 @@ module.exports = {
         type: Sequelize.ENUM('WITHDRAW', 'DEPOSITE'),
       },
     });
-    await queryInterface.createTable('Orders', {
+
+    await queryInterface.createTable('categories', {
       id: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER,
+        type: Sequelize.UUID,
       },
-      externalIdentifier: {
-        type: Sequelize.STRING,
-        unique: true,
-        allowNull: true,
+      accountId: {
+        type: Sequelize.UUID,
       },
-      userId: {
-        type: Sequelize.INTEGER,
-      },
-      productId: {
-        type: Sequelize.INTEGER,
-      },
-      paymentTermsInDays: {
-        type: Sequelize.INTEGER,
-      },
-      deliveryAddress: {
+      name: {
+        allowNull: false,
         type: Sequelize.STRING,
       },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
+
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
-      },
-    });
-
-    await queryInterface.createTable('Countries', {
-      id: {
-        allowNull: false,
-        autoIncrement: true,
-        primaryKey: true,
-        type: Sequelize.INTEGER,
-      },
-      name: {
-        type: Sequelize.STRING,
       },
     });
   },

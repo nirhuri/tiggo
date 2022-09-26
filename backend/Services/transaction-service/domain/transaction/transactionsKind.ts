@@ -5,7 +5,7 @@ import {
   getNewCashTransactionValidator,
   getNewCreditCardTransactionValidator,
 } from './transaction-schema';
-import * as transactionRepository from '../data-access/repositories/transaction-repository';
+import * as transactionRepository from '../../data-access/repositories/transaction-repository';
 
 export enum TransactionKind {
   cash = 'cash',
