@@ -1,7 +1,7 @@
-import getCashTransactionModel from './cash-transaction-model';
+import getTransactionCategoriesModel from '../models/transaction-categories-model';
 
-export async function getOrderById(id: number) {
-  return await getCashTransactionModel().findOne({ where: { id } });
+export async function getCategoriesById(id: number) {
+  return await getTransactionCategoriesModel().findOne({ where: { id } });
 }
 
 export async function addTransaction(transactionDetails) {
