@@ -8,7 +8,7 @@ import {
 import * as categoryRepository from '../../data-access/repositories/category-repository';
 
 export async function updateCategory(updateCategory: updataCategoryDTO) {
-  // validateUpdateCategoryRequest(updateCategory);
+  validateUpdateCategoryRequest(updateCategory);
   const response = await categoryRepository.updateCategory(updateCategory);
   return response;
 }
