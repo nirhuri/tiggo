@@ -7,7 +7,7 @@ export default function getUserModel() {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUID,
         primaryKey: true,
       },
       createdAt: {
@@ -56,7 +56,7 @@ function getRoleModel() {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUID,
         primaryKey: true,
       },
       createdAt: {

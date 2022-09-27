@@ -29,10 +29,6 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      action: {
-        allowNull: false,
-        type: Sequelize.ENUM('WITHDRAW', 'DEPOSITE'),
-      },
     });
 
     await queryInterface.createTable('categories', {
@@ -52,13 +48,58 @@ module.exports = {
         allowNull: false,
         type: Sequelize.DATE,
       },
-
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE,
       },
     });
+
+    await queryInterface.createTable('transaction_action', {
+      id: {
+        allowNull: false,
+        primaryKey: true,
+        type: Sequelize.UUID,
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      type: {
+        allowNull: false,
+        type: Sequelize.ENUM('WITHDRAW', 'DEPOSITE'),
+      },
+    });
+
+    await queryInterface.addColumn('cash_transactions', 'action', {
+      type: Sequelize.UUID,
+      reference: {
+        model: 'transaction_action',
+        key: 'id',
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
+    });
+
+    await queryInterface.addColumn('cash_transactions', 'category', {
+      type: Sequelize.UUID,
+      reference: {
+        model: 'categories',
+        key: 'id',
+      },
+      onUpdate: 'CASCADE',
+      onDelete: 'SET NULL',
+    });
   },
 
-  down: (queryInterface) => queryInterface.dropTable('Orders'),
+  down: (queryInterface) => {
+    return (
+      queryInterface.dropTable('cash_transactions'),
+      queryInterface.dropTable('categories'),
+      queryInterface.dropTable('transaction_action')
+    );
+  },
 };

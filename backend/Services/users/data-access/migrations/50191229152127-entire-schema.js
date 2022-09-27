@@ -1,12 +1,12 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('Users', {
+    await queryInterface.createTable('users', {
       id: {
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        defaultValue: Sequelize.UUID,
         primaryKey: true,
       },
-      createdAt: {
+      createdAt: { 
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -36,10 +36,10 @@ module.exports = {
       }
     });
 
-    await queryInterface.createTable('Roles', {
+    await queryInterface.createTable('roles', {
       id: {
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        defaultValue: Sequelize.UUID,
         primaryKey: true,
       },
       createdAt: {
@@ -60,7 +60,7 @@ module.exports = {
       },
     });
 
-    await queryInterface.addColumn('Users', 'roleId', {
+    await queryInterface.addColumn('users', 'roleId', {
       type: Sequelize.UUID,
       reference: {
         model: 'roles',
@@ -73,9 +73,9 @@ module.exports = {
 
   down: (queryInterface) => {
     return (
-      queryInterface.dropTable('Users'),
-      queryInterface.dropTable('Roles'),
-      queryInterface.removeColumn('Users', 'roleId')
+      queryInterface.dropTable('users'),
+      queryInterface.dropTable('roles'),
+      queryInterface.removeColumn('users', 'roleId')
     );
   },
 };

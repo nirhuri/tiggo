@@ -1,13 +1,14 @@
 import { DataTypes } from 'sequelize';
 import getDbConnection from '../db-connection';
+import { getCashTransactionModel } from './cash-transaction-model';
 
 export default function getCategoriesModel() {
-  return getDbConnection().define(
+  const CategoryModel = getDbConnection().define(
     'categories',
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        defaultValue: DataTypes.UUID,
         primaryKey: true,
       },
       name: {
@@ -36,4 +37,8 @@ export default function getCategoriesModel() {
       ],
     }
   );
+
+  CategoryModel.belongsTo(getCashTransactionModel());
+
+  return CategoryModel;
 }
