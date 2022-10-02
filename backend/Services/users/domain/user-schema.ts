@@ -5,13 +5,14 @@ export const addUserSchema = Type.Object({
   email: Type.String(),
   firstName: Type.String(),
   lastName: Type.String(),
-  title: Type.String(),
+  fullName: Type.String(),
+  phoneNumber: Type.String(),
   password: Type.String()
 });
 
 export type addUserDTO = Static<typeof addUserSchema>;
 
-export function getNewTransactionValidator() {
+export function getNewUserValidator() {
   const validator = ajv.getSchema<addUserDTO>('new-transaction');
   if (!validator) {
     ajv.addSchema(addUserSchema, 'new-transaction');

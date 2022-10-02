@@ -1,27 +1,18 @@
 import util from 'util';
 import express from 'express';
 import { logger } from '@practica/logger';
-import * as newOrderUseCase from '../../domain/new-user-use-case';
+import * as newUserUseCase from '../../domain/new-user-use-case';
 
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
-
-  router.get('/validate', async (req, res, next) => {
-    try {
-      
-    } catch (error) {
-      next(error);
-      return undefined;
-    }
-  })
 
   router.post('/signup', async (req, res, next) => {
     try {
       logger.info(
         `User API was called to add new user ${util.inspect(req.body)}`
       );
-      // create new user here
-      return res.json();
+      const newUserResponse = await newUserUseCase.createNewUser(req.body);
+      return res.json(newUserResponse);
     } catch (error) {
       next(error);
       return undefined;
@@ -37,5 +28,5 @@ export default function defineRoutes(expressApp: express.Application) {
     }
   })
 
-  expressApp.use('/user', router);
+  expressApp.use('/users', router);
 }

@@ -32,6 +32,7 @@
     "ajv": "^8.11.0",
     "amqplib": "^0.8.0",
     "axios": "^0.26.1",
+    "bcrypt": "^5.0.1",
     "cross-env": "^7.0.3",
     "express": "^4.17.3",
     "node-notifier": "^10.0.1",
@@ -42,6 +43,7 @@
   },
   "devDependencies": {
     "@jest-performance-reporter/core": "^2.1.2",
+    "@types/bcrypt": "^5.0.0",
     "@types/is-ci": "^3.0.0",
     "@types/jest": "^27.4.1",
     "@types/nock": "^11.1.0",

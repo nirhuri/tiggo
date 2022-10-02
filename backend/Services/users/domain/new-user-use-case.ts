@@ -1,13 +1,27 @@
 import axios from 'axios';
 import { AppError } from '@practica/error-handling';
-import * as transactionRepository from '../data-access/repositories/users-repository';
-import { addTransactionDTO, getNewTransactionValidator } from './user-schema';
+import * as userRepository from '../data-access/repositories/users-repository';
+import { addUserDTO, getNewUserValidator } from './user-schema';
+import { hashPassword } from './encryption-service';
 
-export async function addTransaction(newTransaction: addTransactionDTO) {
-  validateNewTransactionRequest(newTransaction);
-  const response = await transactionRepository.addTransaction(newTransaction);
+export async function createNewUser(newUser: addUserDTO) {
+  newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
+  validateNewUserRequest(newUser);
+  // console.log("Before user check")
+  // const isUserExist = await userRepository.getUserByEmail(newUser.email);
+  // console.log("After user check")
+  // if (isUserExist) {
+  //   throw new AppError('user-create-error', 'User with this email already exist', 409, true);
+  // }
 
-  return response;
+  console.log("Before Encryption")
+  const encryptedPassword = await hashPassword(newUser.password);
+  console.log("After Encryption")
+  newUser.password = String(encryptedPassword);
+  const savedUser = await userRepository.addUser(newUser)
+  console.log(savedUser)
+  // send verification email
+  return savedUser;
 }
 
 async function getUserOrThrowIfNotExist(userId: string) {
@@ -29,21 +43,21 @@ async function getUserOrThrowIfNotExist(userId: string) {
   return userVerificationRequest.data;
 }
 
-function validateNewTransactionRequest(
-  newTransactionRequest: addTransactionDTO
+function validateNewUserRequest(
+  newUserRequest: addUserDTO
 ) {
-  const AjvSchemaValidator = getNewTransactionValidator();
+  const AjvSchemaValidator = getNewUserValidator();
   // @ts-expect-error TODO: fix this type error
-  const isValid = AjvSchemaValidator(newTransactionRequest);
+  const isValid = AjvSchemaValidator(newUserRequest);
   if (!isValid) {
-    throw new AppError('invalid-transaction', `Validation failed`, 400, true);
+    throw new AppError('invalid-user', `Validation failed`, 400, true);
   }
 }
 
-export async function deleteTransaction(userId) {
-  return await transactionRepository.deleteTransaction(userId);
+export async function deleteUser(userId) {
+  return await userRepository.deleteUser(userId);
 }
 
-export async function getTransaction(userId) {
-  return await transactionRepository.getOrderById(userId);
+export async function getUser(userId) {
+  return await userRepository.getUserById(userId);
 }

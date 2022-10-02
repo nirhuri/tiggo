@@ -15,6 +15,7 @@ async function startWebServer(): Promise<AddressInfo> {
   // ️️️✅ Best Practice: Declare a strict configuration schema and fail fast if the configuration is invalid
   configurationProvider.initialize(configurationSchema);
   logger.configureLogger(
+    // @ts-ignore
     { prettyPrint: configurationProvider.getValue('logger.prettyPrint') },
     true
   );

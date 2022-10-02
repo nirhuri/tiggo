@@ -5,7 +5,7 @@ import {
   CashTransaction,
   CreditCardTransaction,
   TransactionKind,
-} from './transactionsKind';
+} from './transactions-kind';
 
 export function transactionFactory(
   type: TransactionKind,
