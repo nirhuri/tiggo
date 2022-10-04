@@ -6,6 +6,7 @@ import { hashPassword } from './encryption-service';
 
 export async function createNewUser(newUser: addUserDTO) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
+  newUser.roleId = '2c389a72-038c-48fa-be73-1b28cda61b29';
   validateNewUserRequest(newUser);
   // console.log("Before user check")
   // const isUserExist = await userRepository.getUserByEmail(newUser.email);

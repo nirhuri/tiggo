@@ -6,8 +6,8 @@ export const addUserSchema = Type.Object({
   firstName: Type.String(),
   lastName: Type.String(),
   fullName: Type.String(),
-  phoneNumber: Type.String(),
-  password: Type.String()
+  password: Type.String(),
+  roleId: Type.String()
 });
 
 export type addUserDTO = Static<typeof addUserSchema>;
