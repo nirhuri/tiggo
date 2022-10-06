@@ -1,4 +1,4 @@
-import getCashTransactionModel from '../models/cash-transaction-model';
+import { getCashTransactionModel } from '../models/cash-transaction-model';
 
 export async function getOrderById(id: number) {
   return await getCashTransactionModel().findOne({ where: { id } });

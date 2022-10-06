@@ -47,7 +47,7 @@ export function getCashTransactionModel() {
         ],
       }
     )
-  CashTransaction.hasOne(getCategoriesModel());
-  CashTransaction.hasOne(getTransactionActionModel());
+  // CashTransaction.hasOne(getCategoriesModel());
+  // CashTransaction.hasOne(getTransactionActionModel());
   return CashTransaction;
 }

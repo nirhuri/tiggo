@@ -1,12 +1,36 @@
 module.exports = {
   up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('roles', {
+      id: {
+        type: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
+        primaryKey: true,
+      },
+      createdAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      updatedAt: {
+        type: Sequelize.DATE,
+        allowNull: false,
+      },
+      title: {
+        type: Sequelize.STRING,
+        allowNull: false,
+      },
+      type: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+      },
+    });
+
     await queryInterface.createTable('users', {
       id: {
         type: Sequelize.UUID,
-        defaultValue: Sequelize.UUID,
+        defaultValue: Sequelize.UUIDV4,
         primaryKey: true,
       },
-      createdAt: { 
+      createdAt: {
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -32,38 +56,14 @@ module.exports = {
       },
       password: {
         type: Sequelize.STRING,
-        allowNull: false
-      }
-    });
-
-    await queryInterface.createTable('roles', {
-      id: {
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUID,
-        primaryKey: true,
-      },
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      title: {
-        type: Sequelize.STRING,
-        allowNull: false,
-      },
-      type: {
-        type: Sequelize.INTEGER,
         allowNull: false,
       },
     });
 
     await queryInterface.addColumn('users', 'roleId', {
       type: Sequelize.UUID,
-      reference: {
-        model: 'roles',
+      references: {
+        model: { tableName: 'roles' },
         key: 'id',
       },
       onUpdate: 'CASCADE',

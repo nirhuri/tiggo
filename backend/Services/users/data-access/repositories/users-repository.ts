@@ -1,4 +1,4 @@
-import UserModel from './users-model';
+import UserModel from '../models/users-model';
 
 // ️️️✅ Best Practice: The repository pattern - Wrap the entire DB layer with a simple interface that returns plain JS objects
 export async function getUserById(id: number) {

@@ -10,7 +10,7 @@ export default function getDbConnection() {
     dbConnection = new Sequelize(
       {
         dialect: 'postgres',
-        database: 'transactions',
+        database: 'users',
         username: 'postgres',
         password: '',
         host: '0.0.0.0',

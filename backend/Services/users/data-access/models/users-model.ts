@@ -7,7 +7,8 @@ export default function getUserModel() {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
         primaryKey: true,
       },
       createdAt: {
@@ -21,6 +22,7 @@ export default function getUserModel() {
       email: {
         type: DataTypes.STRING,
         allowNull: false,
+        unique: true,
       },
       firstName: {
         type: DataTypes.STRING,
@@ -36,7 +38,14 @@ export default function getUserModel() {
       },
       password: {
         type: DataTypes.STRING,
-        allowNull: false
+        allowNull: false,
+      },
+      roleId: {
+        type: DataTypes.UUID,
+        references: {
+          model: { tableName: 'roles' },
+          key: 'id'
+        }
       }
     },
     {
@@ -47,7 +56,7 @@ export default function getUserModel() {
         },
       ],
     }
-  ).hasOne(getRoleModel());
+  );
 }
 
 function getRoleModel() {
@@ -56,7 +65,8 @@ function getRoleModel() {
     {
       id: {
         type: DataTypes.UUID,
-        defaultValue: DataTypes.UUID,
+        defaultValue: DataTypes.UUIDV4,
+        allowNull: false,
         primaryKey: true,
       },
       createdAt: {
@@ -84,6 +94,11 @@ function getRoleModel() {
         },
       ],
     }
-  ).belongsTo(getUserModel());
+  );
 }
 
+const Users = getUserModel();
+const Roles = getRoleModel();
+
+Users.belongsTo(Roles, { foreignKey: 'roleId', as: 'user_role'});
+Roles.hasMany(Users);
