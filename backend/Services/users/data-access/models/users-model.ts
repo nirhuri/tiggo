@@ -51,7 +51,7 @@ export default function getUserModel() {
     {
       indexes: [
         {
-          unique: false,
+          unique: true,
           fields: ['email'],
         },
       ],
