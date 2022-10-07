@@ -1,0 +1,12 @@
+[35morder-service:installDependencies[0m: cache hit, replaying output [2m32e0ff2471426547[0m
+[35morder-service:installDependencies: [0m
+[35morder-service:installDependencies: [0m> order-service@0.0.2 installDependencies
+[35morder-service:installDependencies: [0m> npm install
+[35morder-service:installDependencies: [0m
+[35morder-service:installDependencies: [0m
+[35morder-service:installDependencies: [0mup to date, audited 1026 packages in 4s
+[35morder-service:installDependencies: [0m
+[35morder-service:installDependencies: [0m128 packages are looking for funding
+[35morder-service:installDependencies: [0m  run `npm fund` for details
+[35morder-service:installDependencies: [0m
+[35morder-service:installDependencies: [0mfound 0 vulnerabilities
