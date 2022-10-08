@@ -7,6 +7,8 @@ import * as configurationProvider from '@practica/configuration-provider';
 import { jwtVerifierMiddleware } from '@practica/jwt-token-verifier';
 import configurationSchema from '../../config';
 import defineRoutes from './routes';
+import { UserCreatedListener } from '../events/listeners/user-created-listener';
+import { natsWrapper } from '../events/nats-wrapper';
 
 let connection: Server;
 
@@ -19,6 +21,12 @@ async function startWebServer(): Promise<AddressInfo> {
     { prettyPrint: configurationProvider.getValue('logger.prettyPrint') },
     true
   );
+  await natsWrapper.connect('accounts', 'ffewwgg', '127.0.0.1:4222');
+  natsWrapper.client.on('close', () => {
+    console.log('NATS connection closed');
+  });
+  process.on('SIGINT', () => natsWrapper.client.close());
+  process.on('SIGTERM', () => natsWrapper.client.close());
   const expressApp = express();
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());

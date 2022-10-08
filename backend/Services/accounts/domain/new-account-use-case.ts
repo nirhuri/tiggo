@@ -3,25 +3,13 @@ import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/repositories/accounts-repository';
 import { addUserDTO, getNewUserValidator } from './account-schema';
 import { hashPassword } from './encryption-service';
+import { AccountCreatedPublisher } from '../entry-points/events/publishers/account-created-publisher';
+import { natsWrapper } from '../entry-points/events/nats-wrapper';
 
 export async function createNewUser(newUser: addUserDTO) {
-  newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
-  newUser.roleId = '2c389a72-038c-48fa-be73-1b28cda61b29';
-  validateNewUserRequest(newUser);
-  console.log("Before user check")
-  const isUserExist = await userRepository.getUserByEmail(newUser.email);
-  console.log("After user check")
-  if (isUserExist) {
-    throw new AppError('user-create-error', 'User with this email already exist', 409, true);
-  }
-
-  console.log(newUser)
-  const encryptedPassword = await hashPassword(newUser.password);
-  newUser.password = String(encryptedPassword);
-  const savedUser = await userRepository.addUser(newUser)
-  console.log(savedUser)
-  // send verification email
-  return savedUser;
+  await new AccountCreatedPublisher(natsWrapper.client).publish({
+    accountId: 'Account id',
+  });
 }
 
 async function getUserOrThrowIfNotExist(userId: string) {
