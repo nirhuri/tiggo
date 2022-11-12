@@ -1,1 +1,1 @@
-export const baseAuthDomain = 'http://10.0.2.2:3000';
+export const baseAuthDomain = 'http://0.0.0.0:3000';

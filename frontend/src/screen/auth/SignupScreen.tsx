@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {
   Alert,
   Keyboard,
@@ -16,20 +16,26 @@ import {
 import {Controller, useForm} from 'react-hook-form';
 import {ButtonPrim} from '../../Components/Buttons';
 import {useDispatch} from 'react-redux';
-import {loginUser} from '../../store/slices/authSlice';
+import {signupUser} from '../../store/slices/authSlice';
 import {signup} from '../../api/auth';
+import {useFetch} from '../../hooks/useFetch';
+import {baseServerUrl} from '../../api/urls';
+
 interface FormData {
   email: string;
   password: string;
   firstName: string;
   lastName: string;
 }
+
 const SignupScreen = (props: any) => {
   const dispatch = useDispatch();
+  const styles = useStyles();
   const emailInput = React.useRef<TextInput>(null);
   const passwordInput = React.useRef<TextInput>(null);
   const firstNameInput = React.useRef<TextInput>(null);
   const lastNameInput = React.useRef<TextInput>(null);
+
   const {
     control,
     handleSubmit,
@@ -44,19 +50,22 @@ const SignupScreen = (props: any) => {
   });
 
   const onSubmit = handleSubmit(async data => {
-    console.log('click Sub');
-    const res = await signup(data);
-    Alert.alert(JSON.stringify(res));
-    console.log('data', data);
-    dispatch(loginUser(data));
+    console.log('click submit ', data);
+    const response = await signup(data);
+    Alert.alert(String(response));
+    if (response) {
+      const {token} = response?.data;
+      dispatch(
+        signupUser({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          password: '',
+          token: token,
+        }),
+      );
+    }
   });
-
-  const onChange = (arg: any) => {
-    return {
-      value: arg.nativeEvent.text,
-    };
-  };
-  const styles = useStyles();
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -64,11 +73,11 @@ const SignupScreen = (props: any) => {
         <KeyboardAvoidingView
           behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
           style={styles.content}>
-          <Text style={styles.title}>JOIN DRIVE THROUGH</Text>
-          <Text style={styles.subtitle}>Get fast orders</Text>
+          <Text style={styles.title}>JOIN TIGGO</Text>
+          <Text style={styles.subtitle}>Take Control of Your Money</Text>
           <Pressable onPress={() => firstNameInput.current?.focus()}>
             <View style={styles.fromItem}>
-              <Text style={styles.label}>first name</Text>
+              <Text style={styles.label}>First Name</Text>
 
               <Controller
                 rules={{
@@ -181,23 +190,26 @@ const SignupScreen = (props: any) => {
             </View>
           </Pressable>
           {errors.firstName && <Text>This is required.</Text>}
+          <View style={styles.fromButton}>
+            <ButtonPrim disabled={false} text={'Sign Up'} onPress={onSubmit} />
+          </View>
           <TouchableOpacity
+            style={styles.bottomContainer}
             onPress={() => {
               props.gotToSingIn();
             }}>
             <Text style={styles.textButton}>Allready have account?</Text>
           </TouchableOpacity>
-          <View style={styles.fromButton}>
-            <ButtonPrim />
-          </View>
         </KeyboardAvoidingView>
       </View>
     </TouchableWithoutFeedback>
   );
 };
+
 const SizedBox: React.FC<any> = ({height, width}) => {
   return <View style={{height, width}} />;
 };
+
 function useStyles() {
   return StyleSheet.create({
     fromButton: {
@@ -235,7 +247,9 @@ function useStyles() {
       backgroundColor: '#000000',
       flex: 1,
     },
-
+    bottomContainer: {
+      marginTop: 150,
+    },
     subtitle: {
       color: 'rgba(235, 235, 245, 0.6)',
       fontSize: 18,
@@ -248,6 +262,7 @@ function useStyles() {
       fontSize: 18,
       fontWeight: '400',
       lineHeight: 20,
+      height: 100,
     },
     textInput: {
       color: '#FFFFFF',

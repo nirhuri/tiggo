@@ -7,17 +7,12 @@ import { verifyJwt } from './jwt-middleware';
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 
-  router.post('/', async (req, res, next) => {
+  router.post('/signup', async (req, res, next) => {
     try {
       logger.info(
-        `Gateway API was called to add new User ${util.inspect(
-          req.body
-        )}`
+        `Gateway API was called to add new User ${util.inspect(req.body)}`
       );
-      const addUserResponse = await axios.post(
-        'localhost:3002',
-        req.body
-      );
+      const addUserResponse = await axios.post('localhost:3002', req.body);
 
       return res.send(addUserResponse);
     } catch (error) {
@@ -26,5 +21,5 @@ export default function defineRoutes(expressApp: express.Application) {
     }
   });
 
-  expressApp.use('/user', router);
+  expressApp.use('/users', router);
 }

@@ -14,7 +14,7 @@ export default function Auth() {
         />
       )}
       {isHaveAccuont && (
-        <SignupScreen gotToSingIn={() => setIsHaveAccuont(false)} />
+        <SignupScreen goToSingIn={() => setIsHaveAccuont(false)} />
       )}
     </>
   );

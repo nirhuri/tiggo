@@ -3,13 +3,7 @@ import {Formik} from 'formik';
 import React from 'react';
 import {ScrollView, StyleSheet, Text, View} from 'react-native';
 
-import {
-  Keyboard,
-  Modal,
-  RadioButton,
-  RadioGroup,
-  Picker,
-} from 'react-native-ui-lib';
+import {Modal, RadioButton, RadioGroup, Picker} from 'react-native-ui-lib';
 import {TextField} from 'react-native-ui-lib/src/incubator';
 import {ValidationMessagePosition} from 'react-native-ui-lib/src/incubator/TextField/types';
 import {useSelector} from 'react-redux';
@@ -24,7 +18,6 @@ function AddTransactionModal(props: any) {
   const [isFormValid, setIsFormValid] = React.useState(false);
   const [fieldValidation, setFieldValidation] = React.useState({
     title: false,
-
     transactionAmount: false,
   });
   const submit = (values: any) => {

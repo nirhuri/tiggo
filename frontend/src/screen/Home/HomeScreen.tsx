@@ -1,6 +1,6 @@
-import React, {useEffect} from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import React, {useCallback, useEffect} from 'react';
+import {StyleSheet, View} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 import {useDispatch} from 'react-redux';
 import {getTransactions} from '../../api/transactions';
 import {COLORS} from '../../Colors';
@@ -12,9 +12,35 @@ import {
 } from '../../store/slices/transactionSlice';
 import {TransactionTypeEnum} from './type';
 
-const styles = useStyles();
-export const HomeScreen = (Props: any) => {
+export const HomeScreen = () => {
   const dispatch = useDispatch();
+  const styles = useStyles();
+
+  const initTransactionsCatagory = useCallback(
+    (transactions: any) => {
+      let res = {};
+      if (transactions) {
+        res = transactions.reduce((acc: any, curr: any) => {
+          if (!acc[curr.Catagory]) {
+            acc[curr.Catagory] = {
+              Catagory: curr.Catagory,
+              Amount: 0,
+            };
+          }
+          acc[curr.Catagory].Amount +=
+            curr.TransactionType === TransactionTypeEnum.Income
+              ? curr.TransactionAmount
+              : -curr.TransactionAmount;
+          return acc;
+        }, {});
+      }
+      dispatch(setCategories(res));
+
+      return res;
+    },
+    [dispatch],
+  );
+
   useEffect(() => {
     async function fetchData() {
       const res = await getTransactions();
@@ -23,43 +49,18 @@ export const HomeScreen = (Props: any) => {
       initTransactionsCatagory(res);
     }
     fetchData();
-  }, []);
-  const initTransactionsCatagory = (transactions: any) => {
-    let res = {};
-    if (transactions) {
-      res = transactions.reduce((acc, curr) => {
-        if (!acc[curr.Catagory]) {
-          acc[curr.Catagory] = {
-            Catagory: curr.Catagory,
-            Amount: 0,
-          };
-        }
-        acc[curr.Catagory].Amount +=
-          curr.TransactionType === TransactionTypeEnum.Income
-            ? curr.TransactionAmount
-            : -curr.TransactionAmount;
-        return acc;
-      }, {});
-    }
-    dispatch(setCategories(res));
+  }, [dispatch, initTransactionsCatagory]);
 
-    return res;
-  };
   return (
     <SafeAreaView style={styles.container}>
-      <View style={{marginBottom: 60}}>
+      <View style={styles.transactionView}>
         <Transactions />
       </View>
       <AddTransaction />
     </SafeAreaView>
   );
 };
-{
-  /* <View style={styles.button}>
-<Transactions/>
-<Text style={styles.buttonTitle}>Continue</Text>
-</View> */
-}
+
 function useStyles() {
   return StyleSheet.create({
     container: {
@@ -67,7 +68,6 @@ function useStyles() {
       flexDirection: 'column',
       backgroundColor: COLORS.white,
     },
-
     button: {
       alignItems: 'center',
       backgroundColor: COLORS.Primary,
@@ -80,6 +80,9 @@ function useStyles() {
       fontSize: 19,
       fontWeight: '600',
       lineHeight: 22,
+    },
+    transactionView: {
+      marginBottom: 60,
     },
   });
 }

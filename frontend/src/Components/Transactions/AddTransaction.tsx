@@ -6,7 +6,7 @@ import AddTransactionModal from './AddTransactionModal';
 //this function is used to open the modal
 // this componet is a button with position absolute left down side with circle style.
 
-function AddTransaction(props: any) {
+function AddTransaction() {
   const [modalVisible, setModalVisible] = useState(false);
 
   const styles = useStyle();
@@ -31,7 +31,6 @@ function useStyle() {
       position: 'absolute',
       bottom: 10,
       left: '10%',
-
       backgroundColor: COLORS.Primary,
       borderRadius: 8,
       height: 48,
@@ -52,4 +51,5 @@ function useStyle() {
     },
   });
 }
+
 export default AddTransaction;

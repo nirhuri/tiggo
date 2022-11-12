@@ -2,10 +2,8 @@ import {baseAuthDomain} from './domains';
 import {post} from './httpProvider';
 
 export async function signin(data: any) {
-  let res = await post(baseAuthDomain + '/signin', data);
-  return res;
+  return await post(`${baseAuthDomain}/users/signin`, data);
 }
 export async function signup(data: any) {
-  let res = await post(baseAuthDomain + '/signup', data);
-  return res;
+  return await post(`${baseAuthDomain}/users/signup`, data);
 }

@@ -11,7 +11,7 @@ function Navigator() {
   const user = useSelector(selectUser);
   return (
     <NavigationContainer>
-      {user ? <MainNavigator /> : <Auth />}
+      {user.token ? <MainNavigator /> : <Auth />}
     </NavigationContainer>
   );
 }
