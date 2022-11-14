@@ -52,7 +52,8 @@ const SignupScreen = (props: any) => {
   const onSubmit = handleSubmit(async data => {
     console.log('click submit ', data);
     const response = await signup(data);
-    Alert.alert(String(response));
+    console.log("\n\n\n\n\n\n\n\n\nresdponse from serverrrrrrrrrrrr:::::::: ", response.data, "\n\n\n\n\n\n\n\n\n\n")
+    Alert.alert(String(response.data));
     if (response) {
       const {token} = response?.data;
       dispatch(

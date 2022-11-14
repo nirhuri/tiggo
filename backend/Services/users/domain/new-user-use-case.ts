@@ -8,20 +8,19 @@ export async function createNewUser(newUser: addUserDTO) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
   newUser.roleId = '2c389a72-038c-48fa-be73-1b28cda61b29';
   validateNewUserRequest(newUser);
-  console.log("Before user check")
   const isUserExist = await userRepository.getUserByEmail(newUser.email);
-  console.log("After user check")
   if (isUserExist) {
-    throw new AppError('user-create-error', 'User with this email already exist', 409, true);
+    throw new AppError(
+      'user-create-error',
+      'User with this email already exist',
+      409,
+      true
+    );
   }
-
-  console.log(newUser)
   const encryptedPassword = await hashPassword(newUser.password);
   newUser.password = String(encryptedPassword);
-  const savedUser = await userRepository.addUser(newUser)
-  console.log(savedUser)
-  // send verification email
-  return savedUser;
+  const savedUser = await userRepository.addUser(newUser);
+  return savedUser.toJSON();
 }
 
 async function getUserOrThrowIfNotExist(userId: string) {
@@ -43,9 +42,7 @@ async function getUserOrThrowIfNotExist(userId: string) {
   return userVerificationRequest.data;
 }
 
-function validateNewUserRequest(
-  newUserRequest: addUserDTO
-) {
+function validateNewUserRequest(newUserRequest: addUserDTO) {
   const AjvSchemaValidator = getNewUserValidator();
   // @ts-expect-error TODO: fix this type error
   const isValid = AjvSchemaValidator(newUserRequest);

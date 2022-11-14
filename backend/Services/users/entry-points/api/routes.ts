@@ -13,7 +13,7 @@ export default function defineRoutes(expressApp: express.Application) {
       );
       const newUserResponse = await newUserUseCase.createNewUser(req.body);
       return res.json(newUserResponse);
-    } catch (error) {
+    } catch (error: unknown) {
       next(error);
       return undefined;
     }
@@ -22,11 +22,12 @@ export default function defineRoutes(expressApp: express.Application) {
   router.get('/signin', async (req, res, next) => {
     try {
       // signin user heres
+      return undefined;
     } catch (error) {
       next(error);
       return undefined;
     }
-  })
+  });
 
   expressApp.use('/users', router);
 }

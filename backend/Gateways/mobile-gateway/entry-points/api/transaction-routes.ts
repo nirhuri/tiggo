@@ -4,7 +4,7 @@ import { logger } from '@practica/logger';
 import axios from 'axios';
 import { verifyJwt } from './jwt-middleware';
 
-export default function defineRoutes(expressApp: express.Application) {
+export function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 
   router.post('/', verifyJwt, async (req, res, next) => {

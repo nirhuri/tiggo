@@ -6,7 +6,8 @@ import { errorHandler } from '@practica/error-handling';
 import * as configurationProvider from '@practica/configuration-provider';
 import { jwtVerifierMiddleware } from '@practica/jwt-token-verifier';
 import configurationSchema from '../../config';
-import defineRoutes from './transaction-routes';
+import { defineRoutes as defineTransactionRoutes } from './transaction-routes';
+import { defineRoutes as defineUserRoutes } from './user-routes';
 
 let connection: Server;
 
@@ -22,7 +23,8 @@ async function startWebServer(): Promise<AddressInfo> {
   const expressApp = express();
   expressApp.use(express.urlencoded({ extended: true }));
   expressApp.use(express.json());
-  defineRoutes(expressApp);
+  defineTransactionRoutes(expressApp);
+  defineUserRoutes(expressApp);
   handleRouteErrors(expressApp);
   const APIAddress = await openConnection(expressApp);
   return APIAddress;
@@ -44,7 +46,7 @@ async function openConnection(
   return new Promise((resolve) => {
     // ️️️✅ Best Practice: Allow a dynamic port (port 0 = ephemeral) so multiple webservers can be used in multi-process testing
     const portToListenTo = configurationProvider.getValue('port');
-    const webServerPort = portToListenTo || 3000;
+    const webServerPort = portToListenTo || 0;
     logger.info(`Server is about to listen to port ${webServerPort}`);
     connection = expressApp.listen(webServerPort, () => {
       errorHandler.listenToErrorEvents(connection);
@@ -72,7 +74,7 @@ function handleRouteErrors(expressApp: express.Application) {
       // ✅ Best Practice: Pass all error to a centralized error handler so they get treated equally
       errorHandler.handleError(error);
 
-      res.status(error?.HTTPStatus || 500).end();
+      res.status(error?.HTTPStatus || 500).send(error?.message);
     }
   );
 }
