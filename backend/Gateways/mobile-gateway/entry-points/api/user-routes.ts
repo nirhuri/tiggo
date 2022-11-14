@@ -25,7 +25,6 @@ export function defineRoutes(expressApp: express.Application) {
           );
         });
 
-      console.log(addUserResponse)
       return res.send(addUserResponse.data);
     } catch (error: unknown) {
       next(error);
