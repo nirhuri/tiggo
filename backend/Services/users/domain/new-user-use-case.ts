@@ -3,6 +3,7 @@ import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/repositories/users-repository';
 import { addUserDTO, getNewUserValidator } from './user-schema';
 import { hashPassword } from './encryption-service';
+import { CreateUserDto } from './dto/create-user-dto';
 
 export async function createNewUser(newUser: addUserDTO) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
@@ -20,26 +21,8 @@ export async function createNewUser(newUser: addUserDTO) {
   const encryptedPassword = await hashPassword(newUser.password);
   newUser.password = String(encryptedPassword);
   const savedUser = await userRepository.addUser(newUser);
-  return savedUser.toJSON();
-}
-
-async function getUserOrThrowIfNotExist(userId: string) {
-  const userVerificationRequest = await axios.get(
-    `http://localhost/user/${userId}`,
-    {
-      validateStatus: () => true,
-    }
-  );
-  if (userVerificationRequest.status !== 200) {
-    throw new AppError(
-      'user-doesnt-exist',
-      `The user ${userId} doesnt exist`,
-      userVerificationRequest.status,
-      true
-    );
-  }
-
-  return userVerificationRequest.data;
+  const { firstName, lastName, email, id } = savedUser.toJSON();
+  return new CreateUserDto(id, firstName, lastName, email);
 }
 
 function validateNewUserRequest(newUserRequest: addUserDTO) {
