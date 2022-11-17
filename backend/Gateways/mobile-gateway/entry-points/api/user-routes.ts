@@ -25,10 +25,9 @@ export function defineRoutes(expressApp: express.Application) {
           );
         });
 
-      return res.send(addUserResponse.data);
+      return res.status(201).send(addUserResponse.data);
     } catch (error: unknown) {
-      next(error);
-      return undefined;
+      return next(error);
     }
   });
 

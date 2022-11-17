@@ -55,8 +55,8 @@ const SigninScreen = (props: any) => {
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.root}>
         <View style={styles.content}>
-          <Text style={styles.title}>DRIVE THROUGH</Text>
-          <Text style={styles.subtitle}>Get fast orders</Text>
+          <Text style={styles.title}>TIGGO</Text>
+          <Text style={styles.subtitle}>Take Control of Your Money</Text>
 
           <View style={styles.fromItem}>
             <Text style={styles.label}>Email:</Text>

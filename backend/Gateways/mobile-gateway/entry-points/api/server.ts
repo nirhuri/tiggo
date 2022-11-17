@@ -73,8 +73,7 @@ function handleRouteErrors(expressApp: express.Application) {
       }
       // ✅ Best Practice: Pass all error to a centralized error handler so they get treated equally
       errorHandler.handleError(error);
-
-      res.status(error?.HTTPStatus || 500).send(error?.message);
+      res.status(error?.HTTPStatus || 500).send(error?.name);
     }
   );
 }

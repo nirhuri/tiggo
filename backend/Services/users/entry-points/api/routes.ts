@@ -12,10 +12,9 @@ export default function defineRoutes(expressApp: express.Application) {
         `User API was called to add new user ${util.inspect(req.body)}`
       );
       const newUserResponse = await newUserUseCase.createNewUser(req.body);
-      return res.json(newUserResponse);
+      return res.status(201).json(newUserResponse);
     } catch (error: unknown) {
-      next(error);
-      return undefined;
+      return next(error);
     }
   });
 

@@ -1,6 +1,6 @@
-import React, {useEffect, useState} from 'react';
+/* eslint-disable @typescript-eslint/no-shadow */
+import React, {useState} from 'react';
 import {
-  Alert,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -12,14 +12,10 @@ import {
   TouchableWithoutFeedback,
   View,
 } from 'react-native';
-
 import {Controller, useForm} from 'react-hook-form';
 import {ButtonPrim} from '../../Components/Buttons';
-import {useDispatch} from 'react-redux';
-import {signupUser} from '../../store/slices/authSlice';
 import {signup} from '../../api/auth';
-import {useFetch} from '../../hooks/useFetch';
-import {baseServerUrl} from '../../api/urls';
+import {HttpStatusCodes} from '../../api/httpStatusCodes';
 
 interface FormData {
   email: string;
@@ -28,8 +24,16 @@ interface FormData {
   lastName: string;
 }
 
-const SignupScreen = (props: any) => {
-  const dispatch = useDispatch();
+interface SingupProp {
+  signedupUser: (newUser: any) => void;
+  goToSignIn: () => any;
+}
+
+const SignupScreen: React.FC<SingupProp> = (props: SingupProp) => {
+  const [error, setError] = useState(false);
+  const [emailErrorMessage, setEmailErrorMessage] = useState('');
+  const [passwordErrorMessage, setPasswordErrorMessage] = useState('');
+  const [generalErrorMessage, setGeneralErrorMessage] = useState('');
   const styles = useStyles();
   const emailInput = React.useRef<TextInput>(null);
   const passwordInput = React.useRef<TextInput>(null);
@@ -40,7 +44,7 @@ const SignupScreen = (props: any) => {
     control,
     handleSubmit,
     formState: {errors},
-  } = useForm({
+  } = useForm<FormData>({
     defaultValues: {
       firstName: '',
       lastName: '',
@@ -50,21 +54,35 @@ const SignupScreen = (props: any) => {
   });
 
   const onSubmit = handleSubmit(async data => {
-    console.log('click submit ', data);
-    const response = await signup(data);
-    console.log("\n\n\n\n\n\n\n\n\nresdponse from serverrrrrrrrrrrr:::::::: ", response.data, "\n\n\n\n\n\n\n\n\n\n")
-    Alert.alert(String(response.data));
-    if (response) {
-      const {token} = response?.data;
-      dispatch(
-        signupUser({
+    setError(false);
+    setGeneralErrorMessage('');
+    setEmailErrorMessage('');
+    setPasswordErrorMessage('');
+    try {
+      const response: any = await signup(data);
+      if (response.status === HttpStatusCodes.CREATED) {
+        const {token} = response.data;
+        props.signedupUser({
           firstName: data.firstName,
           lastName: data.lastName,
           email: data.email,
           password: '',
           token: token,
-        }),
-      );
+        });
+      } else if (response.status === HttpStatusCodes.CONFLICT) {
+        setError(true);
+        setEmailErrorMessage('Email already in use');
+      } else if (response.status === HttpStatusCodes.BAD_REQUEST) {
+        setError(true);
+        setPasswordErrorMessage('Invalid password');
+      } else {
+        setError(true);
+        setGeneralErrorMessage('Something went wrong');
+      }
+      // eslint-disable-next-line no-catch-shadow
+    } catch (error) {
+      setError(true);
+      setGeneralErrorMessage('Something went wrong.');
     }
   });
 
@@ -79,7 +97,6 @@ const SignupScreen = (props: any) => {
           <Pressable onPress={() => firstNameInput.current?.focus()}>
             <View style={styles.fromItem}>
               <Text style={styles.label}>First Name</Text>
-
               <Controller
                 rules={{
                   required: true,
@@ -108,7 +125,6 @@ const SignupScreen = (props: any) => {
           <Pressable onPress={() => lastNameInput.current?.focus()}>
             <View style={styles.fromItem}>
               <Text style={styles.label}>last name</Text>
-
               <Controller
                 rules={{
                   required: true,
@@ -133,7 +149,6 @@ const SignupScreen = (props: any) => {
               />
             </View>
           </Pressable>
-
           <Pressable onPress={() => emailInput.current?.focus()}>
             <View style={styles.fromItem}>
               <Text style={styles.label}>Email</Text>
@@ -161,11 +176,15 @@ const SignupScreen = (props: any) => {
                 )}
               />
             </View>
+            <View>
+              {error && (
+                <Text style={styles.textError}>{emailErrorMessage}</Text>
+              )}
+            </View>
           </Pressable>
           <Pressable onPress={() => passwordInput.current?.focus()}>
             <View style={styles.fromItem}>
               <Text style={styles.label}>Password</Text>
-
               <Controller
                 rules={{
                   required: true,
@@ -189,15 +208,38 @@ const SignupScreen = (props: any) => {
                 )}
               />
             </View>
+            <View>
+              {error && (
+                <Text style={styles.textError}>{passwordErrorMessage}</Text>
+              )}
+            </View>
           </Pressable>
-          {errors.firstName && <Text>This is required.</Text>}
-          <View style={styles.fromButton}>
+          <View>
+            {errors.firstName && (
+              <Text style={styles.validationError}>First name required.</Text>
+            )}
+            {errors.lastName && (
+              <Text style={styles.validationError}>Last name required.</Text>
+            )}
+            {errors.email && (
+              <Text style={styles.validationError}>Email required.</Text>
+            )}
+            {errors.password && (
+              <Text style={styles.validationError}>Password required.</Text>
+            )}
+          </View>
+          <View style={styles.formButton}>
             <ButtonPrim disabled={false} text={'Sign Up'} onPress={onSubmit} />
+          </View>
+          <View>
+            {error && (
+              <Text style={styles.textError}>{generalErrorMessage}</Text>
+            )}
           </View>
           <TouchableOpacity
             style={styles.bottomContainer}
             onPress={() => {
-              props.gotToSingIn();
+              props.goToSignIn();
             }}>
             <Text style={styles.textButton}>Allready have account?</Text>
           </TouchableOpacity>
@@ -207,25 +249,28 @@ const SignupScreen = (props: any) => {
   );
 };
 
-const SizedBox: React.FC<any> = ({height, width}) => {
-  return <View style={{height, width}} />;
-};
-
 function useStyles() {
   return StyleSheet.create({
-    fromButton: {
-      margin: 10,
+    formButton: {
+      marginTop: 50,
       padding: 10,
       width: '80%',
     },
     fromItem: {
-      margin: 10,
+      marginTop: 30,
       padding: 10,
       width: '80%',
       borderRadius: 8,
       flexDirection: 'row',
       height: 48,
       paddingHorizontal: 16,
+    },
+    textError: {
+      marginLeft: 17,
+      color: 'red',
+    },
+    validationError: {
+      color: 'red',
     },
     content: {
       flex: 1,
@@ -245,7 +290,7 @@ function useStyles() {
       width: 80,
     },
     root: {
-      backgroundColor: '#000000',
+      backgroundColor: '#120005',
       flex: 1,
     },
     bottomContainer: {
@@ -268,6 +313,7 @@ function useStyles() {
     textInput: {
       color: '#FFFFFF',
       flex: 1,
+      marginBottom: 8,
     },
     title: {
       color: '#FFFFFF',
@@ -275,6 +321,7 @@ function useStyles() {
       fontWeight: '700',
       lineHeight: 34,
       paddingBottom: 10,
+      marginTop: 100,
     },
   });
 }

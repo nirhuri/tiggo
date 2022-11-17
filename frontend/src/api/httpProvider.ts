@@ -12,24 +12,23 @@ const post = async (url: string, data: any) => {
       headers,
       withCredentials: false,
     });
-    console.log(res);
     return res;
   } catch (e) {
-    console.log(JSON.stringify(e));
     return e;
   }
 };
 const get = async (url: string, data: any) => {
   try {
-    await axios({
+    const res = await axios({
       method: 'get',
       url: url,
       data,
       headers,
       withCredentials: false,
     });
+    return JSON.stringify(res);
   } catch (e) {
-    console.log(e);
+    return e;
   }
 };
 export {post, get};

@@ -1,8 +1,13 @@
 import React, {useState} from 'react';
-import {View} from 'react-native';
 import SigninScreen from './SigninScreen';
 import SignupScreen from './SignupScreen';
-export default function Auth() {
+
+interface AuthProps {
+  signedupUser: (newUser: any) => void;
+  signedinUser: (user: any) => void;
+}
+
+const Auth: React.FC<AuthProps> = (props: AuthProps) => {
   const [isHaveAccuont, setIsHaveAccuont] = useState(false);
   return (
     <>
@@ -14,8 +19,13 @@ export default function Auth() {
         />
       )}
       {isHaveAccuont && (
-        <SignupScreen goToSingIn={() => setIsHaveAccuont(false)} />
+        <SignupScreen
+          signedupUser={props.signedupUser}
+          goToSignIn={() => setIsHaveAccuont(false)}
+        />
       )}
     </>
   );
 }
+
+export default Auth;
