@@ -12,8 +12,10 @@ function Navigator() {
   const dispatch = useDispatch();
 
   const signedupUser = (newUser: any) => {
-    dispatch(signupUser(newUser));
-    setIsAuthed(true);
+    if (newUser.token) {
+      dispatch(signupUser(newUser));
+      setIsAuthed(true);
+    }
   };
 
   const signedinUser = (loggedUser: any) => {

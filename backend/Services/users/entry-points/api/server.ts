@@ -4,7 +4,7 @@ import { AddressInfo } from 'net';
 import express from 'express';
 import { errorHandler } from '@practica/error-handling';
 import * as configurationProvider from '@practica/configuration-provider';
-import { jwtVerifierMiddleware } from '@practica/jwt-token-verifier';
+import { jwtVerifierMiddleware } from '../../../../libraries/jwt-token';
 import configurationSchema from '../../config';
 import defineRoutes from './routes';
 

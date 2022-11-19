@@ -1,9 +1,9 @@
-import axios from 'axios';
 import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/repositories/users-repository';
 import { addUserDTO, getNewUserValidator } from './user-schema';
 import { hashPassword } from './encryption-service';
 import { CreateUserDto } from './dto/create-user-dto';
+import { generateJwtToken } from '../../../libraries/auth/index';
 
 export async function createNewUser(newUser: addUserDTO) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
@@ -22,7 +22,8 @@ export async function createNewUser(newUser: addUserDTO) {
   newUser.password = String(encryptedPassword);
   const savedUser = await userRepository.addUser(newUser);
   const { firstName, lastName, email, id } = savedUser.toJSON();
-  return new CreateUserDto(id, firstName, lastName, email);
+  const token = generateJwtToken(id, email, 'privateJwtKey');
+  return new CreateUserDto(id, firstName, lastName, email, token);
 }
 
 function validateNewUserRequest(newUserRequest: addUserDTO) {
@@ -32,12 +33,4 @@ function validateNewUserRequest(newUserRequest: addUserDTO) {
   if (!isValid) {
     throw new AppError('invalid-user', `Validation failed`, 400, true);
   }
-}
-
-export async function deleteUser(userId) {
-  return await userRepository.deleteUser(userId);
-}
-
-export async function getUser(userId) {
-  return await userRepository.getUserById(userId);
 }

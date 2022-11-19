@@ -62,6 +62,7 @@ const SignupScreen: React.FC<SingupProp> = (props: SingupProp) => {
       const response: any = await signup(data);
       if (response.status === HttpStatusCodes.CREATED) {
         const {token} = response.data;
+        console.log("TOKEN: ", token);
         props.signedupUser({
           firstName: data.firstName,
           lastName: data.lastName,

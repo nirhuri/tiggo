@@ -1,4 +1,4 @@
-export class CreateUserDto {
+export class SigninUserDto {
   // eslint-disable-next-line no-useless-constructor
   constructor(
     private id: string,
