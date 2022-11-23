@@ -6,33 +6,25 @@ export default function getUserModel() {
     'users',
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true,
-      },
-      createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
       },
       email: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true,
       },
-      firstName: {
+      first_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      lastName: {
+      last_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      fullName: {
+      full_name: {
         type: DataTypes.STRING,
         allowNull: false,
       },
@@ -40,13 +32,13 @@ export default function getUserModel() {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      roleId: {
-        type: DataTypes.UUID,
+      role_id: {
+        type: DataTypes.INTEGER,
         references: {
           model: { tableName: 'roles' },
-          key: 'id'
-        }
-      }
+          key: 'id',
+        },
+      },
     },
     {
       indexes: [
@@ -55,6 +47,7 @@ export default function getUserModel() {
           fields: ['email'],
         },
       ],
+      underscored: true,
     }
   );
 }
@@ -64,25 +57,17 @@ function getRoleModel() {
     'roles',
     {
       id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
+        type: DataTypes.INTEGER,
+        autoIncrement: true,
         allowNull: false,
         primaryKey: true,
-      },
-      createdAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
-      },
-      updatedAt: {
-        type: DataTypes.DATE,
-        allowNull: false,
       },
       title: {
         type: DataTypes.STRING,
         allowNull: false,
       },
       type: {
-        type: DataTypes.NUMBER,
+        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },
@@ -93,6 +78,7 @@ function getRoleModel() {
           fields: ['type'],
         },
       ],
+      underscored: true,
     }
   );
 }
@@ -100,5 +86,8 @@ function getRoleModel() {
 const Users = getUserModel();
 const Roles = getRoleModel();
 
-Users.belongsTo(Roles, { foreignKey: 'roleId', as: 'user_role'});
-Roles.hasMany(Users);
+Users.sync();
+Roles.sync();
+
+Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'roleId' });
+Roles.hasMany(Users, { foreignKey: 'role_id' });

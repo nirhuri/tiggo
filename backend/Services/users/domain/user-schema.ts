@@ -7,7 +7,7 @@ export const addUserSchema = Type.Object({
   lastName: Type.String(),
   fullName: Type.String(),
   password: Type.String(),
-  roleId: Type.String(),
+  roleId: Type.Integer(),
 });
 
 export const signinUserSchema = Type.Object({
@@ -15,23 +15,23 @@ export const signinUserSchema = Type.Object({
   password: Type.String(),
 });
 
-export type addUserDTO = Static<typeof addUserSchema>;
-export type signinUserDTO = Static<typeof signinUserSchema>;
+export type addUserRequest = Static<typeof addUserSchema>;
+export type signinUserRequest = Static<typeof signinUserSchema>;
 
 export function getNewUserValidator() {
-  const validator = ajv.getSchema<addUserDTO>('new-user');
+  const validator = ajv.getSchema<addUserRequest>('new-user');
   if (!validator) {
     ajv.addSchema(addUserSchema, 'new-user');
   }
 
-  return ajv.getSchema<addUserDTO>('new-user');
+  return ajv.getSchema<addUserRequest>('new-user');
 }
 
 export function getSigninUserValidator() {
-  const validator = ajv.getSchema<signinUserDTO>('signin-user');
+  const validator = ajv.getSchema<signinUserRequest>('signin-user');
   if (!validator) {
     ajv.addSchema(signinUserSchema, 'signin-user');
   }
 
-  return ajv.getSchema<signinUserDTO>('signin-user');
+  return ajv.getSchema<signinUserRequest>('signin-user');
 }

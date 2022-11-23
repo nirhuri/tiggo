@@ -1,23 +1,27 @@
 import { AppError } from '@practica/error-handling';
-import { getSigninUserValidator, signinUserDTO } from './user-schema';
+import { getSigninUserValidator, signinUserRequest } from './user-schema';
 import { checkPassword } from './encryption-service';
 import { SigninUserDto } from './dto/signin-user-dto';
 import * as userRepository from '../data-access/repositories/users-repository';
 import { generateJwtToken } from '../../../libraries/auth/index';
+import { User } from './types';
 
-export async function signinUser(user: signinUserDTO) {
+export async function signinUser(user: signinUserRequest) {
   validateSigninUserRequest(user);
-  const savedUser = await userRepository.getUserByEmail(user.email);
-  const { id, email, password, firstName, lastName } = JSON.parse(savedUser);
+  const savedUser = <User>await userRepository.getUserByEmail(user.email);
+  if (!savedUser) {
+    throw new AppError('user-signin-error', 'User does not exist', 400, true);
+  }
+  const { id, email, password, first_name, last_name } = savedUser;
   const isValidPassword = await checkPassword(user.password, password);
   if (!isValidPassword) {
     throw new AppError('signin-user-error', 'Invalid Password', 400, true);
   }
   const token = generateJwtToken(id, email, 'privateJwtKey');
-  return new SigninUserDto(id, firstName, lastName, email, token);
+  return new SigninUserDto(id, first_name, last_name, email, token);
 }
 
-function validateSigninUserRequest(user: signinUserDTO) {
+function validateSigninUserRequest(user: signinUserRequest) {
   const AjvSchemaValidator = getSigninUserValidator();
   // @ts-expect-error TODO: fix this type error
   const isValid = AjvSchemaValidator(user);

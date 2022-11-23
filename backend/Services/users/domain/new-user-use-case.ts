@@ -1,13 +1,12 @@
 import { AppError } from '@practica/error-handling';
 import * as userRepository from '../data-access/repositories/users-repository';
-import { addUserDTO, getNewUserValidator } from './user-schema';
+import { addUserRequest, getNewUserValidator } from './user-schema';
 import { hashPassword } from './encryption-service';
 import { CreateUserDto } from './dto/create-user-dto';
 import { generateJwtToken } from '../../../libraries/auth/index';
 
-export async function createNewUser(newUser: addUserDTO) {
+export async function createNewUser(newUser: addUserRequest) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
-  newUser.roleId = '2c389a72-038c-48fa-be73-1b28cda61b29';
   validateNewUserRequest(newUser);
   const isUserExist = await userRepository.getUserByEmail(newUser.email);
   if (isUserExist) {
@@ -26,7 +25,7 @@ export async function createNewUser(newUser: addUserDTO) {
   return new CreateUserDto(id, firstName, lastName, email, token);
 }
 
-function validateNewUserRequest(newUserRequest: addUserDTO) {
+function validateNewUserRequest(newUserRequest: addUserRequest) {
   const AjvSchemaValidator = getNewUserValidator();
   // @ts-expect-error TODO: fix this type error
   const isValid = AjvSchemaValidator(newUserRequest);

@@ -4,7 +4,6 @@ import { AddressInfo } from 'net';
 import express from 'express';
 import { errorHandler } from '@practica/error-handling';
 import * as configurationProvider from '@practica/configuration-provider';
-import { jwtVerifierMiddleware } from '../../../../libraries/jwt-token';
 import configurationSchema from '../../config';
 import defineRoutes from './routes';
 
@@ -15,6 +14,7 @@ async function startWebServer(): Promise<AddressInfo> {
   // ️️️✅ Best Practice: Declare a strict configuration schema and fail fast if the configuration is invalid
   configurationProvider.initialize(configurationSchema);
   logger.configureLogger(
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore
     { prettyPrint: configurationProvider.getValue('logger.prettyPrint') },
     true
