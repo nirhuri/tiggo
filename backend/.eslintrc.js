@@ -17,13 +17,15 @@ module.exports = {
   },
   plugins: ['@typescript-eslint', 'prettier'],
   rules: {
+    camelcase: 'off',
+    '@typescript-eslint/camelcase': 'off',
     'prettier/prettier': 'error',
     'import/no-extraneous-dependencies': [
       'error',
       { devDependencies: ['**/tests/**', '**/test/**'] },
     ],
     'no-console': ['error', { allow: ['time', 'timeEnd'] }],
-    // not sure why we need this if Typescript already enforces it.
+    // not sure why we need this if Typescript already enforces itlast_name.
     // If we want to enable these rules, we need use: eslint-import-resolver-typescript
     'import/no-unresolved': 'off',
     'import/extensions': 'off',

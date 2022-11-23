@@ -4,7 +4,7 @@ import { logger } from '@practica/logger';
 import axios from 'axios';
 import { AppError } from '@practica/error-handling';
 import { verifyJwt } from './jwt-middleware';
-import { HTTP_CODES } from './http-status-codes';
+import { HTTP_CODES } from '../../../../libraries/http/http-status-codes';
 
 export function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
@@ -12,7 +12,7 @@ export function defineRoutes(expressApp: express.Application) {
   router.post('/signup', async (req, res, next) => {
     try {
       logger.info(
-        `Gateway API was called to add new User ${util.inspect(req.body)}`
+        `Gateway API was called to add new user ${util.inspect(req.body)}`
       );
       const addUserResponse = await axios
         .post('http://0.0.0.0:3003/users/signup', req.body)
@@ -32,7 +32,9 @@ export function defineRoutes(expressApp: express.Application) {
 
   router.post('/signin', async (req, res, next) => {
     try {
-      logger.info(`Gateway API was called to signin a user`, req.body);
+      logger.info(
+        `Gateway API was called to signin a user ${util.inspect(req.body)}`
+      );
       const signinUserResponse = await axios
         .post('http://0.0.0.0:3003/users/signin', req.body)
         .catch((error) => {
