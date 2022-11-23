@@ -44,28 +44,57 @@ afterAll(async () => {
   stopWebServer();
 });
 
+// ️️️✅ Best Practice: Structure tests by routes and stories
 describe('/api', () => {
-  describe('DELETE /order', () => {
-    test('When deleting an existing order, Then it should NOT be retrievable', async () => {
+  describe('POST /users/signup', () => {
+    // ️️️✅ Best Practice: Check the response
+    test('When adding a new valid user, Then should get back approval with 201 response', async () => {
       // Arrange
-      const orderToDelete = {
-        userId: 1,
-        productId: 2,
-        deliveryAddress: '123 Main St, New York, NY 10001',
-        paymentTermsInDays: 30,
+      const userToAdd = {
+        email: 'mhrr@gml.com',
+        firstName: 'Nir',
+        lastName: 'Huri',
+        createdAt: '2022-08-10',
+        updatedAt: '2022-08-10',
+        password: '12345',
+        roleId: '2c389a72-038c-48fa-be73-1b28cda61b29',
       };
-      const deletedOrderId = (
-        await axiosAPIClient.post('/order', orderToDelete)
-      ).data.id;
 
       // Act
-      await axiosAPIClient.delete(`/order/${deletedOrderId}`);
+      const receivedAPIResponse = await axiosAPIClient.post(
+        '/users/signup',
+        userToAdd
+      );
 
       // Assert
-      const aQueryForDeletedOrder = await axiosAPIClient.get(
-        `/order/${deletedOrderId}`
+      expect(receivedAPIResponse).toMatchObject({
+        data: {
+          id: expect.any(String),
+          firstName: expect.any(String),
+          lastName: expect.any(String),
+          email: expect.any(String),
+          token: expect.any(String),
+        },
+      });
+    });
+
+    test('When trying to register with an existing email, it should return error with status code 409', async () => {
+      const userToAdd = {
+        email: 'mhrr@gml.com',
+        firstName: 'Nir',
+        lastName: 'Huri',
+        createdAt: '2022-08-10',
+        updatedAt: '2022-08-10',
+        password: '12345',
+        roleId: '2c389a72-038c-48fa-be73-1b28cda61b29',
+      };
+
+      const receivedAPIResponse = await axiosAPIClient.post(
+        '/users/signup',
+        userToAdd
       );
-      expect(aQueryForDeletedOrder.status).toBe(404);
+
+      expect(receivedAPIResponse.status).toBe(409);
     });
   });
 });
