@@ -2,8 +2,8 @@ module.exports = {
   up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable('roles', {
       id: {
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.INTEGER,
+        allowNull: false,
         primaryKey: true,
       },
       createdAt: {
@@ -26,17 +26,9 @@ module.exports = {
 
     await queryInterface.createTable('users', {
       id: {
-        type: Sequelize.UUID,
-        defaultValue: Sequelize.UUIDV4,
+        type: Sequelize.INTEGER,
+        allowNull: false,
         primaryKey: true,
-      },
-      createdAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
-      },
-      updatedAt: {
-        type: Sequelize.DATE,
-        allowNull: false,
       },
       email: {
         type: Sequelize.STRING,
@@ -58,24 +50,20 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false,
       },
-    });
-
-    await queryInterface.addColumn('users', 'roleId', {
-      type: Sequelize.UUID,
-      references: {
-        model: { tableName: 'roles' },
-        key: 'id',
+      role: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: { tableName: 'roles' },
+          key: 'id',
+        },
+        onUpdate: 'CASCADE',
+        onDelete: 'SET NULL',
       },
-      onUpdate: 'CASCADE',
-      onDelete: 'SET NULL',
     });
   },
 
-  down: (queryInterface) => {
-    return (
-      queryInterface.dropTable('users'),
-      queryInterface.dropTable('roles'),
-      queryInterface.removeColumn('users', 'roleId')
-    );
-  },
+  down: (queryInterface) => (
+    // eslint-disable-next-line no-sequences
+    queryInterface.dropTable('users'), queryInterface.dropTable('roles')
+  ),
 };

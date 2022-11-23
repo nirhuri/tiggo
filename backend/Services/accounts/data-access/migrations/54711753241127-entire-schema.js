@@ -18,9 +18,5 @@ module.exports = {
     });
   },
 
-  down: (queryInterface) => {
-    return (
-      queryInterface.dropTable('accounts')
-    );
-  },
+  down: (queryInterface) => queryInterface.dropTable('accounts'),
 };
