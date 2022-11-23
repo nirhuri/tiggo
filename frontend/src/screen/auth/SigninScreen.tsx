@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-shadow */
+import React, {useState} from 'react';
 import {
   Alert,
   Keyboard,
@@ -17,12 +18,15 @@ import {COLORS} from '../../Colors';
 import {useDispatch} from 'react-redux';
 import {loginUser} from '../../store/slices/authSlice';
 import {signin} from '../../api/auth';
+import {HttpStatusCodes} from '../../api/httpStatusCodes';
 
 interface FormData {
   email: string;
   password: string;
 }
 const SigninScreen = (props: any) => {
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
   const dispatch = useDispatch();
   const {
     control,
@@ -42,13 +46,30 @@ const SigninScreen = (props: any) => {
   };
 
   const onSubmit = handleSubmit(async data => {
-    const res = await signin(data);
-
-    Alert.alert(JSON.stringify(res));
-    //  dispatch(loginUser(data));
+    setError(false);
+    setErrorMessage('');
+    try {
+      const response: any = await signin(data);
+      if (response.status === HttpStatusCodes.OK) {
+        const {token} = response.data;
+        props.signedinUser({
+          firstName: response.firstName,
+          lastName: response.lastName,
+          email: data.email,
+          password: '',
+          token: token,
+        });
+      } else {
+        setError(true);
+        setErrorMessage('Wrong email or password');
+      }
+      // eslint-disable-next-line no-catch-shadow
+    } catch (error: unknown) {
+      setError(true);
+      setErrorMessage('Something went wrong');
+    }
   });
 
-  console.log('errors', errors);
   const styles = useStyles();
 
   return (
@@ -104,13 +125,18 @@ const SigninScreen = (props: any) => {
           </View>
 
           <TouchableOpacity onPress={props.goToSingup}>
+            <View style={styles.fromButton}>
+              <ButtonPrim
+                disabled={false}
+                text={'Sign In'}
+                onSubmit={onSubmit}
+              />
+            </View>
             <View style={{height: 30}}></View>
             <Text style={styles.textButton}>Click to Signup</Text>
+            <View style={{height: 270}}></View>
+            <Text style={styles.textButton}>Forgot password?</Text>
           </TouchableOpacity>
-          <View style={styles.fromButton}>
-            <ButtonPrim onSubmit={onSubmit} />
-          </View>
-          <Text style={styles.textButton}>Forgot password?</Text>
         </View>
       </View>
     </TouchableWithoutFeedback>
