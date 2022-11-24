@@ -74,7 +74,7 @@ function getRoleModel() {
     {
       indexes: [
         {
-          unique: false,
+          unique: true,
           fields: ['type'],
         },
       ],
@@ -86,8 +86,8 @@ function getRoleModel() {
 const Users = getUserModel();
 const Roles = getRoleModel();
 
-Users.sync();
-Roles.sync();
+// Users.sync();
+// Roles.sync();
 
 Users.belongsTo(Roles, { foreignKey: 'role_id', as: 'roleId' });
 Roles.hasMany(Users, { foreignKey: 'role_id' });

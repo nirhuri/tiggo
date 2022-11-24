@@ -8,13 +8,14 @@ export async function getUserById(id: number) {
 }
 
 export async function getUserByEmail(email: string) {
-  const query1 =
+  const query =
     // eslint-disable-next-line no-multi-str
-    'SELECT users.id, users.email, user.password, users.first_name, users.last_name, users.full_name, \
-    users.created_at, users.updated_at, roles.title as role_title, roles.type as role_type \
-    FROM users LEFT JOIN roles ON users.role_id = roles.id WHERE email =:email';
+    'SELECT users.id, users.email, users.password, users.first_name, users.last_name, \
+    users.full_name, users.created_at, users.updated_at, roles.title as role_title, \
+    roles.type as role_type FROM users LEFT JOIN roles ON users.role_id = roles.id \
+    WHERE email =:email';
   const dbConnection = getDbConnection();
-  const user = await dbConnection.query(query1, {
+  const user = await dbConnection.query(query, {
     replacements: { email },
     raw: true,
     type: sequelize.QueryTypes.SELECT,

@@ -4,7 +4,7 @@ module.exports = {
   database: 'users',
   host: 'localhost',
   port: 5432,
-  logging: false,
+  logging: true,
   dialect: 'postgres',
   pool: {
     max: 10,
