@@ -1,4 +1,8 @@
 node_modules/
+.dist/
 Services/*/node_modules
 Gateways/*/node_modules
 libraries/*/node_modules
+Services/*/.dist
+Gateways/*/.dist
+libraries/*/.dist
