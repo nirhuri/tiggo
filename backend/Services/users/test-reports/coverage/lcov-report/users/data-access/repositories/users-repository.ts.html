@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">75.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>24/30</span>
+                <span class='fraction'>28/37</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>2/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">40% </span>
+                <span class="strong">20% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/5</span>
+                <span class='fraction'>1/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">75.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>24/30</span>
+                <span class='fraction'>28/37</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line medium'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,7 +93,14 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -103,18 +110,25 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -133,18 +147,25 @@ export <span class="fstat-no" title="function not covered" >async function getUs
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export async function getUserByEmail(email: string) {
-  // const query1 = `SELECT * FROM users WHERE email=${email}`;
-  // const dbConnection = getDbConnection();
-  // return await dbConnection.query(query1, {
-  //   type: sequelize.QueryTypes.SELECT,
-  // })[0];
-  return await UserModel().findOne({ where: { email } });
+  const query =
+    // eslint-disable-next-line no-multi-str
+    'SELECT users.id, users.email, users.password, users.first_name, users.last_name, \
+    users.full_name, users.created_at, users.updated_at, roles.title as role_title, \
+    roles.type as role_type FROM users LEFT JOIN roles ON users.role_id = roles.id \
+    WHERE email =:email';
+  const dbConnection = getDbConnection();
+  const user = await dbConnection.query(query, {
+    replacements: { email },
+    raw: true,
+    type: sequelize.QueryTypes.SELECT,
+  });
+  return user[0];
 }
 &nbsp;
-export async function addUser(userDetails) {
-  const addingResponse = await UserModel().create(userDetails);
-  return addingResponse;
-}
+export <span class="fstat-no" title="function not covered" >async function addUser(userDetails) {</span>
+<span class="cstat-no" title="statement not covered" >  const addingResponse = await UserModel().create(userDetails);</span>
+<span class="cstat-no" title="statement not covered" >  return addingResponse;</span>
+<span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
 export <span class="fstat-no" title="function not covered" >async function deleteUser(userIdToDelete: number) {</span>
 <span class="cstat-no" title="statement not covered" >  await UserModel().destroy({ where: { id: userIdToDelete } });</span>
@@ -160,7 +181,7 @@ export <span class="fstat-no" title="function not covered" >async function clean
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Nov 21 2022 00:26:07 GMT+0200 (Israel Standard Time)
+                at Sat Nov 26 2022 18:59:43 GMT+0200 (Israel Standard Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>

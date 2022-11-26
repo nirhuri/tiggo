@@ -4,6 +4,8 @@ import { addUserRequest, getNewUserValidator } from './user-schema';
 import { hashPassword } from './encryption-service';
 import { CreateUserDto } from './dto/create-user-dto';
 import { generateJwtToken } from '../../../libraries/auth/index';
+import { CreateUserDao } from '../data-access/dao/create-user-dao';
+import { User } from './types';
 
 export async function createNewUser(newUser: addUserRequest) {
   newUser.fullName = `${newUser.firstName} ${newUser.lastName}`;
@@ -19,10 +21,12 @@ export async function createNewUser(newUser: addUserRequest) {
   }
   const encryptedPassword = await hashPassword(newUser.password);
   newUser.password = String(encryptedPassword);
-  const savedUser = await userRepository.addUser(newUser);
-  const { firstName, lastName, email, id } = savedUser.toJSON();
+  const savedUser = await userRepository.saveUser(
+    new CreateUserDao(newUser).dtoToDao()
+  );
+  const { id, first_name, last_name, full_name, email } = <User>savedUser;
   const token = generateJwtToken(id, email, 'privateJwtKey');
-  return new CreateUserDto(id, firstName, lastName, email, token);
+  return new CreateUserDto(id, first_name, last_name, full_name, email, token);
 }
 
 function validateNewUserRequest(newUserRequest: addUserRequest) {

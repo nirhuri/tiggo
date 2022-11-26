@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/26</span>
+                <span class='fraction'>12/26</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>1/1</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">46.15% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>13/26</span>
+                <span class='fraction'>12/26</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -93,12 +93,13 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -109,22 +110,21 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AppError } from '@practica/error-handling';
 import bcrypt from 'bcrypt';
 &nbsp;
-export async function hashPassword(password: string) {
-  try {
-    const saltRounds = 10;
-    const salt = await bcrypt.genSalt(saltRounds);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    return hashedPassword;
-  } <span class="branch-0 cbranch-no" title="branch not covered" >catch (err) {</span>
+export <span class="fstat-no" title="function not covered" >async function hashPassword(password: string) {</span>
+<span class="cstat-no" title="statement not covered" >  try {</span>
+<span class="cstat-no" title="statement not covered" >    const saltRounds = 10;</span>
+<span class="cstat-no" title="statement not covered" >    const salt = await bcrypt.genSalt(saltRounds);</span>
+<span class="cstat-no" title="statement not covered" >    const hashedPassword = await bcrypt.hash(password, salt);</span>
+<span class="cstat-no" title="statement not covered" >    return hashedPassword;</span>
+<span class="cstat-no" title="statement not covered" >  } catch (err) {</span>
 <span class="cstat-no" title="statement not covered" >    throw new AppError(</span>
 <span class="cstat-no" title="statement not covered" >      'encryption-error',</span>
 <span class="cstat-no" title="statement not covered" >      'Can not encrypt password',</span>
@@ -132,15 +132,15 @@ export async function hashPassword(password: string) {
 <span class="cstat-no" title="statement not covered" >      true</span>
 <span class="cstat-no" title="statement not covered" >    );</span>
 <span class="cstat-no" title="statement not covered" >  }</span>
-}
-&nbsp;
-export <span class="fstat-no" title="function not covered" >async function checkPassword(</span>
-<span class="cstat-no" title="statement not covered" >  password: string,</span>
-<span class="cstat-no" title="statement not covered" >  hashedPassword: string</span>
-<span class="cstat-no" title="statement not covered" >): Promise&lt;boolean&gt; {</span>
-<span class="cstat-no" title="statement not covered" >  const isSamePassword = await bcrypt.compare(password, hashedPassword);</span>
-<span class="cstat-no" title="statement not covered" >  return isSamePassword;</span>
 <span class="cstat-no" title="statement not covered" >}</span>
+&nbsp;
+export async function checkPassword(
+  password: string,
+  hashedPassword: string
+): Promise&lt;boolean&gt; {
+  const isSamePassword = await bcrypt.compare(password, hashedPassword);
+  return isSamePassword;
+}
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -148,7 +148,7 @@ export <span class="fstat-no" title="function not covered" >async function check
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Nov 21 2022 00:26:07 GMT+0200 (Israel Standard Time)
+                at Sat Nov 26 2022 18:59:43 GMT+0200 (Israel Standard Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

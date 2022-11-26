@@ -13,6 +13,15 @@ export const getAxiosInstance = (address) => {
   return axios.create(axiosConfig);
 };
 
+export function generateRandomEmailAddress() {
+  const randomName = Math.floor(Math.random() * 10000 + 1);
+  const emailProvider = ['gmail', 'gml', 'gmal', 'yahoo', 'yho', 'yo'];
+  const randomProvider =
+    emailProvider[Math.floor(Math.random() * emailProvider.length)];
+  const email = `${randomName}@${randomProvider}.com`;
+  return email;
+}
+
 export function signValidTokenWithDefaultUser() {
   return internalSignTokenSynchronously('joe', 'admin', Date.now() + 60 * 60);
 }

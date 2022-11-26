@@ -2,7 +2,7 @@ import util from 'util';
 import express from 'express';
 import { logger } from '@practica/logger';
 import * as newUserUseCase from '../../domain/new-user-use-case';
-import * as signinUserUseCase from '../../domain/signin-user-user-case';
+import * as signinUserUseCase from '../../domain/signin-user-use-case';
 import * as getUserUseCase from '../../domain/get-user-use-case';
 import { HTTP_CODES } from '../../../../libraries/http/http-status-codes';
 

@@ -1,12 +1,7 @@
 [
   {
-    "duration": 197,
-    "fullName": "/api POST /users/signup When adding a new valid user, Then should get back approval with 201 response",
+    "duration": 147,
+    "fullName": "/api POST /users/signin When signing in with valid user the response should be 200 with the sidned user",
     "status": "passed"
-  },
-  {
-    "duration": 9,
-    "fullName": "/api POST /users/signup Where trying to register with an existing email, it should return error with status code 409",
-    "status": "failed"
   }
 ]

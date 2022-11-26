@@ -46,8 +46,8 @@ afterAll(async () => {
 
 // ️️️✅ Best Practice: Structure tests by routes and stories
 describe('/api', () => {
-  describe('GET /users/signup', () => {
-    test('Get user by email address should return 200 with the correct user', async () => {
+  describe('GET /users/:email', () => {
+    test.skip('Get user by email address should return 200 with the correct user', async () => {
       const userEmail = 'hurinir@gmail.com';
 
       const user = await axiosAPIClient.get(`users/${userEmail}`);
@@ -62,6 +62,14 @@ describe('/api', () => {
           token: expect.any(String),
         },
       });
+    });
+
+    test.skip('Get user by wrong email address should return error with 400 status code', async () => {
+      const userEmail = 'huri@gmail.com';
+
+      const user = await axiosAPIClient.get(`users/${userEmail}`);
+
+      expect(user.status).toBe(400);
     });
   });
 });

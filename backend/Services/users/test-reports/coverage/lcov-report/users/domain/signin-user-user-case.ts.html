@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">32.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>9/30</span>
+                <span class='fraction'>10/31</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">30% </span>
+                <span class="strong">32.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>9/30</span>
+                <span class='fraction'>10/31</span>
             </div>
         
             
@@ -93,7 +93,9 @@
 <a name='L28'></a><a href='#L28'>28</a>
 <a name='L29'></a><a href='#L29'>29</a>
 <a name='L30'></a><a href='#L30'>30</a>
-<a name='L31'></a><a href='#L31'>31</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L31'></a><a href='#L31'>31</a>
+<a name='L32'></a><a href='#L32'>32</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -124,28 +126,29 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { AppError } from '@practica/error-handling';
-import { getSigninUserValidator, signinUserDTO } from './user-schema';
+import { getSigninUserValidator, signinUserRequest } from './user-schema';
 import { checkPassword } from './encryption-service';
 import { SigninUserDto } from './dto/signin-user-dto';
 import * as userRepository from '../data-access/repositories/users-repository';
 import { generateJwtToken } from '../../../libraries/auth/index';
+import { User } from './types';
 &nbsp;
-export <span class="fstat-no" title="function not covered" >async function signinUser(user: signinUserDTO) {</span>
+export <span class="fstat-no" title="function not covered" >async function signinUser(user: signinUserRequest) {</span>
 <span class="cstat-no" title="statement not covered" >  validateSigninUserRequest(user);</span>
-<span class="cstat-no" title="statement not covered" >  // const savedUser = await userRepository.getUserByEmail(user.email);</span>
-<span class="cstat-no" title="statement not covered" >  // console.log('savedUser: ', savedUser);</span>
-<span class="cstat-no" title="statement not covered" >  // const { id, email, password, firstName, lastName } = JSON.parse(savedUser);</span>
-<span class="cstat-no" title="statement not covered" >  // console.log(id, email, password, firstName, lastName);</span>
-<span class="cstat-no" title="statement not covered" >  // const isValidPassword = await checkPassword(user.password, password);</span>
-<span class="cstat-no" title="statement not covered" >  // console.log(isValidPassword);</span>
-<span class="cstat-no" title="statement not covered" >  // if (!isValidPassword) {</span>
-<span class="cstat-no" title="statement not covered" >  //   throw new AppError('signin-user-error', 'Invalid Password', 400, true);</span>
-<span class="cstat-no" title="statement not covered" >  // }</span>
-<span class="cstat-no" title="statement not covered" >  // const token = generateJwtToken(id, email, 'privateJwtKey');</span>
-<span class="cstat-no" title="statement not covered" >  // return new SigninUserDto(id, firstName, lastName, email, token);</span>
+<span class="cstat-no" title="statement not covered" >  const savedUser = &lt;User&gt;await userRepository.getUserByEmail(user.email);</span>
+<span class="cstat-no" title="statement not covered" >  if (!savedUser) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new AppError('user-signin-error', 'User does not exist', 400, true);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const { id, email, password, first_name, last_name } = savedUser;</span>
+<span class="cstat-no" title="statement not covered" >  const isValidPassword = await checkPassword(user.password, password);</span>
+<span class="cstat-no" title="statement not covered" >  if (!isValidPassword) {</span>
+<span class="cstat-no" title="statement not covered" >    throw new AppError('signin-user-error', 'Invalid Password', 400, true);</span>
+<span class="cstat-no" title="statement not covered" >  }</span>
+<span class="cstat-no" title="statement not covered" >  const token = generateJwtToken(id, email, 'privateJwtKey');</span>
+<span class="cstat-no" title="statement not covered" >  return new SigninUserDto(id, first_name, last_name, email, token);</span>
 <span class="cstat-no" title="statement not covered" >}</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function validateSigninUserRequest(user: signinUserDTO) {</span></span>
+<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >function validateSigninUserRequest(user: signinUserRequest) {</span></span>
 <span class="cstat-no" title="statement not covered" >  const AjvSchemaValidator = getSigninUserValidator();</span>
 <span class="cstat-no" title="statement not covered" >  // @ts-expect-error TODO: fix this type error</span>
 <span class="cstat-no" title="statement not covered" >  const isValid = AjvSchemaValidator(user);</span>
@@ -160,7 +163,7 @@ export <span class="fstat-no" title="function not covered" >async function signi
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Nov 21 2022 00:26:07 GMT+0200 (Israel Standard Time)
+                at Sat Nov 26 2022 15:29:00 GMT+0200 (Israel Standard Time)
             </div>
         <script src="../../prettify.js"></script>
         <script>

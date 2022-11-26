@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">59.18% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/36</span>
+                <span class='fraction'>29/49</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">66.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>2/3</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">75% </span>
+                <span class="strong">59.18% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/36</span>
+                <span class='fraction'>29/49</span>
             </div>
         
             
@@ -99,7 +99,20 @@
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
 <a name='L36'></a><a href='#L36'>36</a>
-<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L37'></a><a href='#L37'>37</a>
+<a name='L38'></a><a href='#L38'>38</a>
+<a name='L39'></a><a href='#L39'>39</a>
+<a name='L40'></a><a href='#L40'>40</a>
+<a name='L41'></a><a href='#L41'>41</a>
+<a name='L42'></a><a href='#L42'>42</a>
+<a name='L43'></a><a href='#L43'>43</a>
+<a name='L44'></a><a href='#L44'>44</a>
+<a name='L45'></a><a href='#L45'>45</a>
+<a name='L46'></a><a href='#L46'>46</a>
+<a name='L47'></a><a href='#L47'>47</a>
+<a name='L48'></a><a href='#L48'>48</a>
+<a name='L49'></a><a href='#L49'>49</a>
+<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -110,15 +123,28 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -139,31 +165,44 @@
 import express from 'express';
 import { logger } from '@practica/logger';
 import * as newUserUseCase from '../../domain/new-user-use-case';
-import * as signinUserUseCase from '../../domain/signin-user-user-case';
+import * as signinUserUseCase from '../../domain/signin-user-use-case';
+import * as getUserUseCase from '../../domain/get-user-use-case';
 import { HTTP_CODES } from '../../../../libraries/http/http-status-codes';
 &nbsp;
 export default function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
 &nbsp;
   router.post('/signup', async (req, res, next) =&gt; {
-    try {
-      logger.info(
-        `User API was called to add new user ${util.inspect(req.body)}`
-      );
-      const newUserResponse = await newUserUseCase.createNewUser(req.body);
-      return res.status(HTTP_CODES.CREATED).json(newUserResponse);
-    } catch (error: unknown) {
-      return next(error);
-    }
-  });
-&nbsp;
-  router.get('/signin', async (req, res, next) =&gt; {
 <span class="cstat-no" title="statement not covered" >    try {</span>
 <span class="cstat-no" title="statement not covered" >      logger.info(</span>
 <span class="cstat-no" title="statement not covered" >        `User API was called to add new user ${util.inspect(req.body)}`</span>
 <span class="cstat-no" title="statement not covered" >      );</span>
-<span class="cstat-no" title="statement not covered" >      const signedinUser = await signinUserUseCase.signinUser(req.body);</span>
-<span class="cstat-no" title="statement not covered" >      return res.status(HTTP_CODES.OK).json(signedinUser);</span>
+<span class="cstat-no" title="statement not covered" >      const newUserResponse = await newUserUseCase.createNewUser(req.body);</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(HTTP_CODES.CREATED).json(newUserResponse);</span>
+<span class="cstat-no" title="statement not covered" >    } catch (error: unknown) {</span>
+<span class="cstat-no" title="statement not covered" >      return next(error);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+&nbsp;
+  router.post('/signin', async (req, res, next) =&gt; {
+    try {
+      logger.info(
+        `User API was called to add new user ${util.inspect(req.body)}`
+      );
+      const signedinUser = await signinUserUseCase.signinUser(req.body);
+      return res.status(HTTP_CODES.OK).json(signedinUser);
+    } <span class="branch-0 cbranch-no" title="branch not covered" >catch (error) {</span>
+<span class="cstat-no" title="statement not covered" >      return next(error);</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+  });
+&nbsp;
+  router.get('/:email', async (req, res, next) =&gt; {
+<span class="cstat-no" title="statement not covered" >    try {</span>
+<span class="cstat-no" title="statement not covered" >      logger.info(</span>
+<span class="cstat-no" title="statement not covered" >        `User API was called to add new user ${util.inspect(req.body)}`</span>
+<span class="cstat-no" title="statement not covered" >      );</span>
+<span class="cstat-no" title="statement not covered" >      const user = await getUserUseCase.getByEmail(req.params.email);</span>
+<span class="cstat-no" title="statement not covered" >      return res.status(HTTP_CODES.OK).json(user);</span>
 <span class="cstat-no" title="statement not covered" >    } catch (error) {</span>
 <span class="cstat-no" title="statement not covered" >      return next(error);</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
@@ -178,7 +217,7 @@ export default function defineRoutes(expressApp: express.Application) {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Mon Nov 21 2022 00:26:07 GMT+0200 (Israel Standard Time)
+                at Sat Nov 26 2022 18:59:43 GMT+0200 (Israel Standard Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>
