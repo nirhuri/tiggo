@@ -8,8 +8,6 @@ import * as testHelpers from './test-helpers';
 // all the tests to approach with a shortened syntax
 let axiosAPIClient;
 
-const generatedEmailAddress = testHelpers.generateRandomEmailAddress();
-
 beforeAll(async () => {
   process.env.JWT_TOKEN_SECRET = testHelpers.exampleSecret;
   // ️️️✅ Best Practice: Place the backend under test within the same process
@@ -48,7 +46,7 @@ afterAll(async () => {
 
 // ️️️✅ Best Practice: Structure tests by routes and stories
 describe('/api', () => {
-  describe('POST /users/signin', () => {
+  describe.skip('POST /users/signin', () => {
     // ️️️✅ Best Practice: Check the response
     test('When signing in with valid user the response should be 200 with the sidned user', async () => {
       // Arrange
@@ -75,7 +73,35 @@ describe('/api', () => {
           roleTitle: expect.any(String),
           token: expect.any(String),
         },
+        status: 200,
       });
+    });
+
+    test('Signing in with unknown email address should return 400', async () => {
+      const userToSign = {
+        email: 'f123@gmf.com',
+        password: '12345',
+      };
+
+      const receivedAPIResponse = await axiosAPIClient.post(
+        '/users/signin',
+        userToSign
+      );
+
+      expect(receivedAPIResponse.status).toBe(400);
+    });
+
+    test('Signing in with missing email address should return 400', async () => {
+      const userToSign = {
+        password: '12345',
+      };
+
+      const receivedAPIResponse = await axiosAPIClient.post(
+        '/users/signin',
+        userToSign
+      );
+
+      expect(receivedAPIResponse.status).toBe(400);
     });
   });
 });
