@@ -1,7 +1,17 @@
 [
   {
-    "duration": 147,
+    "duration": 144,
     "fullName": "/api POST /users/signin When signing in with valid user the response should be 200 with the sidned user",
+    "status": "passed"
+  },
+  {
+    "duration": 26,
+    "fullName": "/api POST /users/signin Signing in with unknown email address should return 400",
+    "status": "passed"
+  },
+  {
+    "duration": 2,
+    "fullName": "/api POST /users/signin Signing in with missing email address should return 400",
     "status": "passed"
   }
 ]

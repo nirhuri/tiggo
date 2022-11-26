@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.25% </span>
+                <span class="strong">96.25% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>61/80</span>
+                <span class='fraction'>77/80</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">87.5% </span>
+                <span class="strong">72.72% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>7/8</span>
+                <span class='fraction'>8/11</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.25% </span>
+                <span class="strong">96.25% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>61/80</span>
+                <span class='fraction'>77/80</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -201,24 +201,24 @@
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
@@ -281,24 +281,24 @@ async function openConnection(
 function handleRouteErrors(expressApp: express.Application) {
   expressApp.use(
     async (
-<span class="cstat-no" title="statement not covered" >      // eslint-disable-next-line @typescript-eslint/no-explicit-any</span>
-<span class="cstat-no" title="statement not covered" >      error: any,</span>
-<span class="cstat-no" title="statement not covered" >      req: express.Request,</span>
-<span class="cstat-no" title="statement not covered" >      res: express.Response,</span>
-<span class="cstat-no" title="statement not covered" >      // Express requires next function in default error handlers</span>
-<span class="cstat-no" title="statement not covered" >      // eslint-disable-next-line @typescript-eslint/no-unused-vars</span>
-<span class="cstat-no" title="statement not covered" >      next: express.NextFunction</span>
-<span class="cstat-no" title="statement not covered" >    ) =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      if (error &amp;&amp; typeof error === 'object') {</span>
-<span class="cstat-no" title="statement not covered" >        if (error.isTrusted === undefined || error.isTrusted === null) {</span>
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      error: any,
+      req: express.Request,
+      res: express.Response,
+      // Express requires next function in default error handlers
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      next: express.NextFunction
+    ) =&gt; {
+      if (error &amp;&amp; typeof error === 'object') {
+        if (error.isTrusted === undefined || error.isTrusted === null) <span class="branch-0 cbranch-no" title="branch not covered" >{</span>
 <span class="cstat-no" title="statement not covered" >          error.isTrusted = true; // Error during a specific request is usually not fatal and should not lead to process exit</span>
 <span class="cstat-no" title="statement not covered" >        }</span>
-<span class="cstat-no" title="statement not covered" >      }</span>
-<span class="cstat-no" title="statement not covered" >      // ✅ Best Practice: Pass all error to a centralized error handler so they get treated equally</span>
-<span class="cstat-no" title="statement not covered" >      errorHandler.handleError(error);</span>
-<span class="cstat-no" title="statement not covered" ></span>
-<span class="cstat-no" title="statement not covered" >      res.status(error?.HTTPStatus || 500).send(error?.message);</span>
-<span class="cstat-no" title="statement not covered" >    }</span>
+      }
+      // ✅ Best Practice: Pass all error to a centralized error handler so they get treated equally
+      errorHandler.handleError(error);
+&nbsp;
+      res.status(error?.HTTPStatus<span class="branch-0 cbranch-no" title="branch not covered" > || 500)</span>.send(error?.message);
+    }
   );
 }
 &nbsp;
@@ -310,7 +310,7 @@ export { startWebServer, stopWebServer };
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at Sat Nov 26 2022 18:59:43 GMT+0200 (Israel Standard Time)
+                at Sun Nov 27 2022 00:34:24 GMT+0200 (Israel Standard Time)
             </div>
         <script src="../../../prettify.js"></script>
         <script>
