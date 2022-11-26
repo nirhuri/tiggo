@@ -12,13 +12,31 @@ export async function signinUser(user: signinUserRequest) {
   if (!savedUser) {
     throw new AppError('user-signin-error', 'User does not exist', 400, true);
   }
-  const { id, email, password, first_name, last_name } = savedUser;
+  const {
+    id,
+    email,
+    password,
+    first_name,
+    last_name,
+    full_name,
+    role_type,
+    role_title,
+  } = savedUser;
   const isValidPassword = await checkPassword(user.password, password);
   if (!isValidPassword) {
     throw new AppError('signin-user-error', 'Invalid Password', 400, true);
   }
   const token = generateJwtToken(id, email, 'privateJwtKey');
-  return new SigninUserDto(id, first_name, last_name, email, token);
+  return new SigninUserDto(
+    id,
+    first_name,
+    last_name,
+    full_name,
+    email,
+    role_type,
+    role_title,
+    token
+  );
 }
 
 function validateSigninUserRequest(user: signinUserRequest) {
