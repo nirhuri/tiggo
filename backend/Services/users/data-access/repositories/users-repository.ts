@@ -2,7 +2,6 @@ import sequelize, { QueryTypes } from 'sequelize';
 import getDbConnection from '../db-connection';
 import UserModel from '../models/users-model';
 
-// ️️️✅ Best Practice: The repository pattern - Wrap the entire DB layer with a simple interface that returns plain JS objects
 export async function getUserById(id: number) {
   return await UserModel().findOne({ where: { id } });
 }
@@ -51,11 +50,6 @@ export async function saveUser(user) {
   });
 
   return savedUser[0][0];
-}
-
-export async function addUser(userDetails) {
-  const addingResponse = await UserModel().create(userDetails);
-  return addingResponse;
 }
 
 export async function deleteUser(userIdToDelete: number) {
