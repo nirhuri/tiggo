@@ -5,6 +5,7 @@ import express from 'express';
 import { errorHandler } from '@practica/error-handling';
 import * as configurationProvider from '@practica/configuration-provider';
 import { jwtVerifierMiddleware } from '@practica/jwt-token-verifier';
+import { natsWrapper } from '../../../../libraries/nats-streaming/nats-wrapper';
 import configurationSchema from '../../config';
 import defineRoutes from './routes';
 
@@ -25,6 +26,7 @@ async function startWebServer(): Promise<AddressInfo> {
   defineRoutes(expressApp);
   handleRouteErrors(expressApp);
   const APIAddress = await openConnection(expressApp);
+  // natsWrapper.connect()
   return APIAddress;
 }
 
