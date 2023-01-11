@@ -1,5 +1,4 @@
 import { AppError } from '@practica/error-handling';
-import { HTTP_CODES } from '../../../libraries/http/http-status-codes';
 import * as userRepository from '../data-access/repositories/users-repository';
 import { GetUserDto } from './dto/get-user-dto';
 import { User } from './types';
@@ -22,11 +21,6 @@ export const getByEmail = async (userEmail: string): Promise<GetUserDto> => {
 
 function validateGetUserRequest(userField: string): void {
   if (!userField || typeof userField !== 'string') {
-    throw new AppError(
-      'invalid-data',
-      'wrong data provided',
-      HTTP_CODES.BAD_REQUEST,
-      true
-    );
+    throw new AppError('invalid-data', 'wrong data provided', 400, true);
   }
 }

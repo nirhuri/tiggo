@@ -3,7 +3,7 @@ import { getSigninUserValidator, signinUserRequest } from './user-schema';
 import { checkPassword } from './encryption-service';
 import { SigninUserDto } from './dto/signin-user-dto';
 import * as userRepository from '../data-access/repositories/users-repository';
-import { generateJwtToken } from '../../../libraries/auth/index';
+import { generateJwtToken } from './jwt';
 import { User } from './types';
 
 export async function signinUser(user: signinUserRequest) {
@@ -24,7 +24,7 @@ export async function signinUser(user: signinUserRequest) {
   } = savedUser;
   const isValidPassword = await checkPassword(user.password, password);
   if (!isValidPassword) {
-    throw new AppError('signin-user-error', 'Invalid Password', 400, true);
+    throw new AppError('user-signin-error', 'Invalid Password', 400, true);
   }
   const token = generateJwtToken(id, email, 'privateJwtKey');
   return new SigninUserDto(

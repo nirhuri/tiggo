@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mobile-gateway-depl
+spec:
+  replicas: 1
+  selector: 
+    matchLabels:
+      app: mobile-gateway
+  template:
+    metadata: 
+      labels:
+        app: mobile-gateway
+    spec:
+      containers:
+        - name: mobile-gateway
+          image: hurinir/mobile-gateway
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mobile-gateway-srv
+spec:
+  selector:
+    app: mobile-gateway
+  ports:
+    - name: mobile-gateway
+      protocol: TCP
+      port: 3000
+      targetPort: 3000

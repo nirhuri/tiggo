@@ -8,11 +8,19 @@ build:
   local: 
     push: false
   artifacts:
-    - image: hurinir/users
-      context: Services/users
+    - image: hurinir/mobile-gateway
+      context: Gateways/mobile-gateway
       docker: 
         dockerfile: Dockerfile
       sync: 
         manual: 
+          - src: '**/*.ts'
+            dest: .
+    - image: hurinir/users
+      context: Services/users
+      docker:
+        dockerfile: Dockerfile
+      sync:
+        manual:
           - src: '**/*.ts'
             dest: .

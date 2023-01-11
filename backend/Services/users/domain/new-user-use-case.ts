@@ -3,7 +3,7 @@ import * as userRepository from '../data-access/repositories/users-repository';
 import { addUserRequest, getNewUserValidator } from './user-schema';
 import { hashPassword } from './encryption-service';
 import { CreateUserDto } from './dto/create-user-dto';
-import { generateJwtToken } from '../../../libraries/auth/index';
+import { generateJwtToken } from './jwt';
 import { CreateUserDao } from '../data-access/dao/create-user-dao';
 import { User } from './types';
 

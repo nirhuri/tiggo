@@ -4,7 +4,6 @@ import { logger } from '@practica/logger';
 import axios from 'axios';
 import { AppError } from '@practica/error-handling';
 import { verifyJwt } from './jwt-middleware';
-import { HTTP_CODES } from '../../../../libraries/http/http-status-codes';
 
 export function defineRoutes(expressApp: express.Application) {
   const router = express.Router();
@@ -15,7 +14,7 @@ export function defineRoutes(expressApp: express.Application) {
         `Gateway API was called to add new user ${util.inspect(req.body)}`
       );
       const addUserResponse = await axios
-        .post('http://0.0.0.0:3003/users/signup', req.body)
+        .post('http://users-srv:3000/users/signup', req.body)
         .catch((error) => {
           throw new AppError(
             'user-creation-error',
@@ -24,7 +23,7 @@ export function defineRoutes(expressApp: express.Application) {
             true
           );
         });
-      return res.status(HTTP_CODES.CREATED).send(addUserResponse.data);
+      return res.status(201).send(addUserResponse.data);
     } catch (error: unknown) {
       return next(error);
     }
@@ -36,7 +35,7 @@ export function defineRoutes(expressApp: express.Application) {
         `Gateway API was called to signin a user ${util.inspect(req.body)}`
       );
       const signinUserResponse = await axios
-        .post('http://0.0.0.0:3003/users/signin', req.body)
+        .post('http://users-srv:3000/users/signin', req.body)
         .catch((error) => {
           throw new AppError(
             'signin-user-error',
@@ -45,11 +44,11 @@ export function defineRoutes(expressApp: express.Application) {
             true
           );
         });
-      return res.status(HTTP_CODES.OK).send(signinUserResponse.data);
+      return res.status(200).send(signinUserResponse.data);
     } catch (error: unknown) {
       return next(error);
     }
   });
 
-  expressApp.use('/users', router);
+  expressApp.use('/api/users', router);
 }
